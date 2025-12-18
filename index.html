@@ -1,111 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DSP Records</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DSP Records (Dyrtie Sound Productions) is an independent underground electronic music label focused on bass-driven music, community, and artist development.">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #0b0b0b;
-      color: #e0e0e0;
-      line-height: 1.6;
-      <<img src="./DFP-logo.png" alt="DSP Records logo">
 
+  <style>
+    body{
+      margin:0;
+      padding:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color:#0b0b0f;
+      color:#f2f2f2;
+      line-height:1.6;
     }
-    header {
-      padding: 60px 20px;
-      text-align: center;
-      border-bottom: 1px solid #222;
+    header{
+      padding:24px 18px 10px 18px;
+      text-align:center;
     }
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
+    .logo{
+      display:block;
+      margin:0 auto 14px auto;
+      max-width:240px;
+      height:auto;
     }
-    header p {
-      font-size: 1.1em;
-      color: #aaaaaa;
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      padding:0 18px 28px 18px;
     }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+    .tagline{
+      margin:0;
+      opacity:.9;
+      font-size:14px;
+      letter-spacing:.3px;
     }
-    h2 {
-      border-bottom: 1px solid #222;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
+    h1{
+      margin:0 0 6px 0;
+      font-size:34px;
+      letter-spacing:.6px;
     }
-    a {
-      color: #66ccff;
-      text-decoration: none;
+    .card{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;
+      padding:18px;
+      margin-top:18px;
+      background: rgba(255,255,255,.03);
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      border-top: 1px solid #222;
-      color: #777;
-      font-size: 0.9em;
-    }
+    a{ color:#9fd3ff; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .links{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:12px; }
+    .small{ font-size:13px; opacity:.9; }
   </style>
 </head>
 
 <body>
+  <header>
+    <!-- LOGO FIRST THING ON PAGE -->
+    <img class="logo" src="DFP-logo.png" alt="DSP Records logo" />
 
-<header>
-  <h1>DSP Records</h1>
-  <p>Dyrtie Sound Productions</p>
-  <p>Underground electronic music • Bass culture • Artist-first</p>
-</header>
+    <h1>DSP Records</h1>
+    <p class="tagline">Always fresh, still dirty.</p>
 
-<section>
-  <h2>About</h2>
-  <p>
-    DSP Records (Dyrtie Sound Productions) is an independent underground electronic
-    music label focused on bass-driven sounds built for dark rooms, loud systems,
-    and real connection.
-  </p>
-  <p>
-    Founded to support artists and community over hype, DSP Records is committed
-    to long-term growth, creative freedom, and reinvesting back into the scene.
-  </p>
-</section>
+    <div class="links small">
+      <a href="https://www.facebook.com/dyrtiesoundrecords" target="_blank" rel="noreferrer">DSP Records (Facebook)</a>
+      <a href="https://www.facebook.com/Subfixx" target="_blank" rel="noreferrer">Sub Fixx (Facebook)</a>
+    </div>
+  </header>
 
-<section>
-  <h2>Flagship Artist</h2>
-  <p>
-    <strong>Sub Fixx</strong><br>
-    Emotionally driven underground bass music built for dark rooms,
-    loud systems, and connection.
-  </p>
-</section>
-
-<section>
-  <h2>Links</h2>
-  <p>
-    <a href="https://www.facebook.com/dyrtiesoundrecords" target="_blank">DSP Records on Facebook</a><br>
-    <a href="https://www.facebook.com/Subfixx" target="_blank">Sub Fixx on Facebook</a>
-  </p>
-</section>
-
-<section>
-  <h2>Contact</h2>
-  <p>
-    Email: <a href="mailto:dyrtiesound@live.ca">dyrtiesound@live.ca</a>
-  </p>
-</section>
-
-<footer>
-  <p>© DSP Records — All rights reserved</p>
-</footer>
-
+  <main class="wrap">
+    <section class="card">
+      <h2 style="margin:0 0 8px 0;">Flagship Artist</h2>
+      <p style="margin:0 0 10px 0;">Sub Fixx — emotionally driven underground bass music built for dark rooms, loud systems, and connection.</p>
+      <p style="margin:0;" class="small">Contact: <a href="mailto:dyrtiesound@live.ca">dyrtiesound@live.ca</a></p>
+    </section>
+  </main>
 </body>
 </html>
+Do this:
