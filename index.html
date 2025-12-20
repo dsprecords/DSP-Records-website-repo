@@ -80,13 +80,16 @@
       border-bottom: 1px solid var(--line);
       padding: 24px 0;
     }
-    .feature-btn{
-      display:block;
-      text-decoration:none;
-      border:2px solid rgba(255,255,255,0.18);
-      background: linear-gradient(180deg, #070707, #000);
-      border-radius: var(--radius);
-      padding: 28px;
+    ..feature-btn{
+  display:block;
+  text-decoration:none;
+  border:2px solid rgba(255,255,255,0.18);
+  background: linear-gradient(180deg, #070707, #000);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;   /* ✅ centers the title + sub */
+}
+
     }
     .feature-btn:hover{ border-color: rgba(255,255,255,0.35); }
     .feature-btn .title{
@@ -193,7 +196,7 @@
       .links-grid{ grid-template-columns: 1fr 1fr; }
       .hero-title h1{ font-size: 2.4rem; }
       .hero-title p{ font-size: 1.05rem; }
-      p{ text-align:left; }
+      p{ text-align:center; }
     }
   </style>
 </head>
