@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>DnB_Culture | Nocturnal Emissions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DnB_Culture — a home for drum & bass music video culture. Led by Dan Snakehead (Nocturnal Emissions) with hosting support from DSP Records." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DnB_Culture — a home for drum & bass music video culture. Led by Dan Snakehead with hosting support from DSP Records.">
 
   <style>
-    :root{
-      --bg:#000;
-      --text:#fff;
-      --muted:#bdbdbd;
-      --panel:#0b0b0b;
-      --line:#151515;
-      --max: 980px;
-    }
-
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
-      background:var(--bg);
-      color:var(--text);
+      background:#000000;
+      color:#ffffff;
       line-height:1.6;
     }
 
-    /* Top banners: full-width, stacked, tight */
+    /* FULL-WIDTH TOP BANNERS */
     .top-banners{
       width:100%;
       margin:0;
@@ -34,116 +25,64 @@
     .top-banners img{
       width:100%;
       height:auto;
-      display:block;         /* removes gaps */
+      display:block;
       margin:0;
       padding:0;
       border:0;
     }
 
-    /* Content wrapper */
+    /* CONTENT WRAPPER */
     .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 18px;
+      max-width:980px;
+      margin:0 auto;
+      padding:0 18px;
     }
 
     section{
-      padding: 44px 0;
-      border-top: 1px solid var(--line);
+      padding:44px 0;
+      border-top:1px solid #151515;
     }
 
     h1{
-      margin: 0;
+      margin:0;
+      font-size:2.2rem;
+      letter-spacing:2px;
       text-align:center;
-      font-size: 2.2rem;
-      letter-spacing: 2px;
-    }
-
-    h2{
-      margin: 0 0 12px;
-      text-align:center;
-      font-size: 1.5rem;
     }
 
     p{
-      max-width: 860px;
-      margin: 0 auto 16px;
-      color: var(--muted);
+      max-width:860px;
+      margin:14px auto 0;
+      color:#bdbdbd;
       text-align:center;
-      padding: 0 6px;
+      padding:0 6px;
     }
 
-    /* Overview cards */
-    .grid{
-      max-width: 980px;
-      margin: 18px auto 0;
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      padding: 0 6px;
-      text-align:left;
-    }
-
-    .card{
-      border: 1px solid #1a1a1a;
-      background: var(--panel);
-      border-radius: 12px;
-      padding: 18px;
-    }
-
-    .card h3{
-      margin: 0 0 10px;
-      font-size: 1.05rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #ffffff;
-    }
-
-    .card p{
-      margin: 0;
-      text-align:left;
-      max-width: none;
-      color: var(--muted);
-      padding: 0;
-    }
-
+    /* NOTE / TRANSPARENCY BOX */
     .note{
-      max-width: 900px;
-      margin: 18px auto 0;
-      padding: 14px 16px;
-      border: 1px solid #1a1a1a;
-      background: linear-gradient(180deg, #050505, #000000);
-      border-radius: 12px;
-      color: #d8d8d8;
+      max-width:900px;
+      margin:18px auto 0;
+      padding:14px 16px;
+      border:1px solid #1a1a1a;
+      background:linear-gradient(180deg, #050505, #000000);
+      border-radius:12px;
+      color:#d8d8d8;
       text-align:center;
     }
 
-    footer{
-      padding: 40px 18px;
-      text-align:center;
-      font-size: 0.85rem;
-      color: #666;
-      border-top: 1px solid var(--line);
-      margin-top: 44px;
-    }
-
-    @media (min-width: 860px){
-      .grid{ grid-template-columns: repeat(3, 1fr); }
-    }
-
-    @media (max-width: 768px){
-      h1{ font-size: 1.85rem; }
+    @media (max-width:768px){
+      h1{ font-size:1.85rem; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- FULL-WIDTH TOP BANNERS (tight stacked) -->
-<div class="top-banners">
-  <img src="assets/DSP_DnB-Culture_Banner.png" alt="DnB Culture banner">
-  <img src="assets/DSP_Under-construction_Banner.png" alt="Under construction banner">
-</div>
+  <!-- FULL-WIDTH BANNERS (STACKED, TIGHT) -->
+  <div class="top-banners">
+    <img src="assets/DSP_DnB-Culture_Banner.png" alt="DnB Culture banner">
+    <img src="assets/DSP_Under-construction_Banner.png" alt="Under construction banner">
+  </div>
 
   <!-- OVERVIEW -->
   <section>
@@ -152,50 +91,11 @@
       <p>A home for drum &amp; bass music video culture.</p>
 
       <div class="note">
-        This is a DSP Records–hosted page built to support an independent project.
-        Hosting does not equal ownership.
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>What This Is</h3>
-          <p>
-            A dedicated space for drum &amp; bass music videos, visual mixes, filmed sets, and long-form DnB visual projects —
-            built to give proper visibility to the creators behind the visuals.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Project Lead</h3>
-          <p>
-            This is <strong style="color:#fff;">Dan Snakehead’s</strong> project (host of
-            <strong style="color:#fff;">Nocturnal Emissions</strong>).
-            Dan leads the direction, curation, and execution of what appears on this page.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>DSP Role</h3>
-          <p>
-            <strong style="color:#fff;">DSP Records is collaborating on Dan’s project</strong> by providing web hosting,
-            structure, and amplification — without controlling the content or taking credit for the work.
-          </p>
-        </div>
-      </div>
-
-      <div class="note" style="margin-top:14px;">
-        This platform is being built in stages. Features, videos, and submissions will be added as the project rolls out.
+        This is an independent project led by <strong>Dan Snakehead</strong> (Nocturnal Emissions).<br>
+        DSP Records provides hosting and infrastructure support only — not ownership or creative control.
       </div>
     </div>
   </section>
-
-  <footer>
-    © <span id="y"></span> DnB_Culture • Nocturnal Emissions • hosted with support from DSP Records
-  </footer>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
 
 </body>
 </html>
