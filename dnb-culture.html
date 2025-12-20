@@ -16,8 +16,11 @@
       --line:#151515;
       --accent:#f2c400;   /* caution yellow */
       --accent2:#9aa3ff;  /* nocturnal tone */
-      --max: 980px;
+      --max: 1400px;
+      --pad: clamp(16px, 2.5vw, 28px);
     }
+
+    *{ box-sizing: border-box; }
 
     body{
       margin:0;
@@ -25,6 +28,8 @@
       background:var(--bg);
       color:var(--text);
       line-height:1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     a{
@@ -34,7 +39,7 @@
     }
     a:hover{ border-bottom-color:#777; }
 
-    /* FULL-WIDTH TOP BANNERS (tight stacked) */
+    /* FULL-WIDTH TOP BANNERS (stacked) */
     .top-banners{
       width:100%;
       margin:0;
@@ -42,51 +47,58 @@
     }
     .top-banners img{
       width:100%;
-      height:auto;
-      display:block; /* removes gaps */
+      height: 24vh;          /* each banner uses viewport height */
+      max-height: 240px;
+      min-height: 130px;
+      object-fit: cover;
+      object-position: center;
+      display:block;
       margin:0;
       padding:0;
       border:0;
     }
 
-    /* Content wrapper */
+    /* Layout wrapper (desktop-friendly) */
     .wrap{
+      width:100%;
       max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 18px;
+      margin:0 auto;
+      padding: 0 var(--pad);
     }
 
     section{
-      padding: 44px 0;
+      padding: clamp(44px, 6vw, 72px) 0;
       border-top: 1px solid var(--line);
     }
 
+    /* Headings */
     h1{
-      margin: 0;
+      margin:0;
       text-align:center;
-      font-size: 2.2rem;
+      font-size: clamp(1.85rem, 3vw, 2.7rem);
       letter-spacing: 2px;
     }
 
     h2{
       margin: 0 0 12px;
       text-align:center;
-      font-size: 1.5rem;
+      font-size: clamp(1.35rem, 2vw, 1.9rem);
     }
 
     p{
-      max-width: 860px;
+      max-width: 980px;               /* wider on desktop */
       margin: 0 auto 16px;
       color: var(--muted);
       text-align:center;
       padding: 0 6px;
+      font-size: clamp(0.96rem, 1.05vw, 1.06rem);
     }
 
     /* Callout note */
     .note{
-      max-width: 900px;
+      max-width: 980px;
       margin: 18px auto 0;
-      padding: 14px 16px;
+      padding: 16px 18px;
       border: 1px solid #1a1a1a;
       background: linear-gradient(180deg, #050505, #000000);
       border-radius: 12px;
@@ -96,57 +108,64 @@
 
     /* Promo blocks */
     .promo-section{
-      padding: 54px 0;
+      padding: clamp(44px, 6vw, 72px) 0;
       border-top: 1px solid var(--line);
     }
+
     .promo-box{
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 18px;
+      padding: clamp(30px, 5vw, 46px) clamp(16px, 2vw, 22px);
       border: 2px solid #1a1a1a;
       background: linear-gradient(180deg, #050505, #000000);
-      border-radius: 14px;
-      font-size: 2.15rem;
+      border-radius: 16px;
+      font-size: clamp(1.55rem, 2.8vw, 2.25rem);
       font-weight: 900;
       letter-spacing: 2px;
       color: #ffffff;
       text-transform: uppercase;
       text-align:center;
     }
+
     .promo-box span{
       display:block;
       margin-top: 14px;
-      font-size: 1.2rem;
+      font-size: clamp(1.0rem, 1.15vw, 1.2rem);
       letter-spacing: 4px;
       color: var(--accent);
     }
+
     .promo-section.nocturnal .promo-box span{
       color: var(--accent2);
     }
 
     /* Overview cards */
     .grid{
-      max-width: 980px;
+      max-width: 1200px;
       margin: 18px auto 0;
       display:grid;
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 18px;
       padding: 0 6px;
       text-align:left;
     }
+
     .card{
       border: 1px solid #1a1a1a;
       background: var(--panel);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 18px;
     }
+
     .card h3{
       margin: 0 0 10px;
       font-size: 1.05rem;
       letter-spacing: 1px;
       text-transform: uppercase;
       color: #ffffff;
+      text-align:left;
     }
+
     .card p{
       margin: 0;
       text-align:left;
@@ -155,21 +174,23 @@
       padding: 0;
     }
 
-    /* Video placeholder slot */
+    /* Video slot */
     .video-slot{
-      max-width: 980px;
+      max-width: 1200px;
       margin: 18px auto 0;
       border: 1px solid #1a1a1a;
       background: #070707;
-      border-radius: 14px;
+      border-radius: 16px;
       padding: 18px;
       text-align:left;
     }
+
     .video-slot .label{
       font-size: 0.95rem;
       color: var(--muted2);
       margin-bottom: 10px;
     }
+
     .video{
       position: relative;
       width: 100%;
@@ -179,6 +200,7 @@
       border: 1px solid #1a1a1a;
       background: #000;
     }
+
     .video iframe{
       position:absolute;
       inset:0;
@@ -188,7 +210,7 @@
     }
 
     footer{
-      padding: 40px 18px;
+      padding: 44px 18px;
       text-align:center;
       font-size: 0.85rem;
       color: #666;
@@ -196,41 +218,19 @@
       margin-top: 44px;
     }
 
-    @media (min-width: 860px){
+    @media (min-width: 900px){
       .grid{ grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 768px){
-      h1{ font-size: 1.85rem; }
-      .promo-box{ font-size: 1.6rem; }
-      .promo-box span{ font-size: 1.05rem; letter-spacing: 3px; }
     }
   </style>
 </head>
 
 <body>
 
-/* TOP BANNERS: keep both visible in top half of screen */
-.top-banners{
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.top-banners img{
-  width: 100%;
-  height: 24vh;          /* each banner = 24% of viewport height */
-  max-height: 220px;     /* keeps them from getting huge on big screens */
-  min-height: 120px;     /* keeps them readable on small screens */
-  object-fit: cover;     /* crops nicely instead of squishing */
-  object-position: center;
-  display: block;
-  margin: 0;
-  padding: 0;
-  border: 0;
-
-}
-
-
+  <!-- TOP BANNERS (replace filenames if yours differ) -->
+  <div class="top-banners">
+    <img src="assets/dnb-culture-banner-1.png" alt="DnB Culture banner" />
+    <img src="assets/dnb-culture-banner-2.png" alt="Nocturnal Emissions banner" />
+  </div>
 
   <!-- OVERVIEW -->
   <section>
@@ -239,7 +239,7 @@
       <p>A home for drum &amp; bass music video culture.</p>
 
       <div class="note">
-        This is an independent project led by <strong>Dan Snakehead</strong> (Nocturnal Emissions).<br>
+        This is an independent project led by <strong>Dan Snakehead</strong> (Nocturnal Emissions).<br />
         DSP Records provides hosting and infrastructure support only — not ownership or creative control.
       </div>
     </div>
@@ -325,18 +325,15 @@
     </div>
   </section>
 
-  <!-- CONTACT (matches what you asked earlier) -->
+  <!-- CONTACT -->
   <section>
     <div class="wrap">
       <h2>Contact</h2>
-
-     
-   <p>
-        <strong style="color:#ffffff;">DnB_Culture / Nocturnal Emissions</strong><br>
-        Drum &amp; bass video submissions • features • project inquiries<br>
+      <p>
+        <strong style="color:#ffffff;">DnB_Culture / Nocturnal Emissions</strong><br />
+        Drum &amp; bass video submissions • features • project inquiries<br />
         <strong style="color:#ffffff;">Dansnakehead@gmail.com</strong>
       </p>
-      
     </div>
   </section>
 
@@ -348,6 +345,5 @@
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 
-   
 </body>
 </html>
