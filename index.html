@@ -16,9 +16,9 @@
       --line:#151515;
       --accent:#f2c400;
 
-      /* FULL SCREEN DESKTOP CANVAS */
-      --max: 2400px;
-      --pad: 28px;
+      /* desktop first */
+      --max: 2000px;
+      --pad: 32px;
       --radius: 16px;
     }
 
@@ -30,86 +30,117 @@
       background:var(--bg);
       color:var(--text);
       line-height:1.6;
+      font-size: 18px; /* make desktop readable */
     }
 
-    img{ display:block; }
-
-    /* ====== ABSOLUTE DESKTOP WIDTH (NO CAPS) ====== */
+    /* BIG desktop container (not a narrow column) */
     .wrap{
-      width: 100%;
-      max-width: var(--max);   /* huge, effectively uncapped */
-      margin: 0 auto;
+      width:100%;
+      max-width: var(--max);
+      margin:0 auto;
       padding: 0 var(--pad);
     }
 
-    /* ===== HERO BANNER ===== */
-    .hero{
+    /* =========================
+       HERO / BANNER (NO CROP)
+       ========================= */
+    header.hero{
       width:100%;
       border-bottom:1px solid var(--line);
       background:#000;
-    }
-    .hero img{
-      width:100%;
-      height: 460px;          /* desktop-sized banner */
-      object-fit: cover;
-      object-position:center;
+      padding: 0;
+      margin: 0;
     }
 
-    /* ===== FEATURE BUTTON ===== */
+    /* This guarantees the FULL banner is visible */
+    .hero img{
+      width:100%;
+      height:auto;        /* <-- NO fixed height */
+      display:block;
+      object-fit: unset;  /* <-- NO cropping */
+    }
+
+    /* Big centered headline under banner */
+    .hero-title{
+      padding: 22px 0 26px;
+      text-align:center;
+      border-top:1px solid var(--line);
+    }
+
+    .hero-title h1{
+      margin:0;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 3rem;
+    }
+
+    .hero-title .tagline{
+      margin-top: 10px;
+      color: #d6d6d6;
+      font-size: 1.15rem;
+      max-width: 1100px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    /* Feature link row */
     .feature-row{
       border-bottom:1px solid var(--line);
-      padding: 26px 0;
+      padding: 24px 0;
     }
+
     .feature-btn{
       display:block;
-      padding: 20px 22px;
-      border-radius: var(--radius);
-      border: 2px solid rgba(255,255,255,0.18);
-      background: linear-gradient(180deg, #070707, #000);
       text-decoration:none;
       color:#fff;
+      border:2px solid rgba(255,255,255,0.18);
+      background: linear-gradient(180deg, #070707, #000);
+      border-radius: var(--radius);
+      padding: 20px 22px;
     }
+
+    .feature-btn:hover{ border-color: rgba(255,255,255,0.35); }
+
     .feature-btn .title{
       font-weight:900;
       letter-spacing:1px;
       text-transform:uppercase;
-      font-size: 1.35rem;
+      font-size: 1.4rem;
     }
+
     .feature-btn .sub{
       margin-top: 6px;
       color: var(--accent);
-      letter-spacing:3px;
+      letter-spacing: 3px;
       text-transform:uppercase;
       font-size: 1.05rem;
     }
 
-    /* ===== SECTIONS ===== */
+    /* Sections */
     section{
-      padding: 70px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    h1{
-      margin:0;
-      padding: 26px 0 0;
-      font-weight:900;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      font-size: 3.2rem;
+      padding: 64px 0;
+      border-bottom:1px solid var(--line);
     }
 
     h2{
-      margin:0 0 12px;
-      font-size: 2.0rem;
+      margin:0 0 14px;
+      font-size: 2rem;
       letter-spacing:0.5px;
     }
 
-    /* IMPORTANT: NO max-width anywhere */
     p{
       margin:0 0 16px;
-      color:var(--muted);
-      font-size: 1.08rem;
-      max-width:none;
+      color: var(--muted);
+      max-width: none; /* IMPORTANT: no narrow column */
+    }
+
+    /* About layout */
+    .about-grid{
+      display:grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 26px;
+      align-items:start;
     }
 
     .note{
@@ -120,23 +151,24 @@
       color:#d8d8d8;
     }
 
-    /* Two-column desktop about */
-    .about-grid{
-      display:grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 26px;
-      align-items:start;
-    }
-
     /* Cards */
     .card{
-      border: 1px solid #1a1a1a;
+      border:1px solid #1a1a1a;
       background: var(--panel);
       border-radius: var(--radius);
-      padding: 16px;
+      padding: 18px;
     }
 
-    /* Links grid */
+    /* Release image */
+    .release-img{
+      width:100%;
+      border-radius: var(--radius);
+      border: 1px solid #1a1a1a;
+      display:block;
+      background:#000;
+    }
+
+    /* Links */
     .links-grid{
       display:grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -158,16 +190,26 @@
       text-align:center;
       font-size: 0.9rem;
       color:#666;
-      border-top: 1px solid var(--line);
+    }
+
+    /* If your monitor is huge, bump headline a bit */
+    @media (min-width: 1400px){
+      .hero-title h1{ font-size: 3.4rem; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
+  <!-- BANNER (FULL IMAGE, NO CROP) -->
   <header class="hero">
+    <!-- IMPORTANT: this filename must exactly match your repo -->
     <img src="assets/dsp-records-underground-bass-music-banner.png" alt="DSP Records underground bass music banner" />
+
+    <div class="wrap hero-title">
+      <h1>UNDERGROUND BASS MUSIC</h1>
+      <div class="tagline">DSP Records — built for dark rooms, loud systems, and real connection.</div>
+    </div>
   </header>
 
   <!-- FEATURE LINK -->
@@ -183,8 +225,6 @@
   <!-- ABOUT -->
   <section>
     <div class="wrap">
-      <h1>DSP Records</h1>
-
       <div class="about-grid">
         <div>
           <h2>About</h2>
@@ -207,7 +247,7 @@
       <h2>DSP Playlist</h2>
       <p>Upcoming and label releases in one place.</p>
 
-      <div class="card" aria-label="DSP Records SoundCloud releases playlist">
+      <div class="card">
         <iframe
           width="100%"
           height="460"
@@ -233,7 +273,7 @@
     <div class="wrap">
       <h2>Release Schedule</h2>
       <p>Current schedule and upcoming drops.</p>
-      <img src="assets/DSP_ReleaseSchedule.png" alt="DSP Records upcoming release schedule" style="width:100%;border-radius:var(--radius);border:1px solid #1a1a1a;" />
+      <img class="release-img" src="assets/DSP_ReleaseSchedule.png" alt="DSP Records upcoming release schedule" />
     </div>
   </section>
 
