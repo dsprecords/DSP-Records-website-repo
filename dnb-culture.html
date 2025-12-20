@@ -4,19 +4,15 @@
   <meta charset="UTF-8" />
   <title>DnB_Culture | Nocturnal Emissions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <meta name="description" content="DnB_Culture — a home for drum & bass music video culture. Operated by Dan Snakehead (Nocturnal Emissions Radio) with hosting support from DSP Records." />
+  <meta name="description" content="DnB_Culture — a home for drum & bass music video culture. Led by Dan Snakehead (Nocturnal Emissions) with hosting support from DSP Records." />
 
   <style>
     :root{
-      --bg:#000000;
-      --panel:#0b0b0b;
-      --text:#ffffff;
+      --bg:#000;
+      --text:#fff;
       --muted:#bdbdbd;
-      --muted2:#9a9a9a;
+      --panel:#0b0b0b;
       --line:#151515;
-      --accent:#f2c400; /* caution yellow */
-      --accent2:#9aa3ff; /* nocturnal tone */
       --max: 980px;
     }
 
@@ -28,158 +24,57 @@
       line-height:1.6;
     }
 
-    a{
-      color:#e5e5e5;
-      text-decoration:none;
-      border-bottom:1px solid #444;
+    /* Top banners: full-width, stacked, tight */
+    .top-banners{
+      width:100%;
+      margin:0;
+      padding:0;
     }
-    a:hover{ border-bottom-color:#777; }
 
+    .top-banners img{
+      width:100%;
+      height:auto;
+      display:block;         /* removes gaps */
+      margin:0;
+      padding:0;
+      border:0;
+    }
+
+    /* Content wrapper */
     .wrap{
       max-width: var(--max);
       margin: 0 auto;
       padding: 0 18px;
     }
 
-    /* Banners */
-    .banner{
-      padding: 24px 0 10px;
-      text-align:center;
-    }
-    .banner img{
-      width:100%;
-      max-width:1100px;
-      height:auto;
-      display:block;
-      margin:0 auto;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: #050505;
-    }
-
-    /* Optional small note under banners */
-    .banner-note{
-      max-width: 900px;
-      margin: 12px auto 0;
-      color: var(--muted2);
-      font-size: 0.95rem;
-      text-align:center;
-      padding: 0 10px;
-    }
-
-    /* Logo space (you paste yours in later) */
-    .logo-space{
-      max-width: 1100px;
-      margin: 14px auto 0;
-      border: 1px dashed rgba(255,255,255,0.18);
-      border-radius: 12px;
-      padding: 14px 12px;
-      color: rgba(255,255,255,0.6);
-      font-size: 0.95rem;
-      text-align:center;
-    }
-
-    /* Quick Links (5 bubbles) */
-    .quick-links{
-      margin: 14px auto 0;
-      padding: 0 18px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:center;
-    }
-    .quick-link{
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.18);
-      background:rgba(255,255,255,0.04);
-      color:#f2f2f2;
-      text-decoration:none;
-      font-size:0.95rem;
-      opacity:0.92;
-      border-bottom: none;
-    }
-    .quick-link:hover{
-      opacity:1;
-      border-color:rgba(255,255,255,0.30);
-      background:rgba(255,255,255,0.06);
-    }
-    .quick-link.placeholder{
-      opacity:0.55;
-      cursor:default;
-      pointer-events:none;
-    }
-
-    /* Sections */
     section{
       padding: 44px 0;
       border-top: 1px solid var(--line);
     }
+
     h1{
       margin: 0;
-      font-size: 2.4rem;
-      letter-spacing: 2px;
       text-align:center;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
     }
+
     h2{
       margin: 0 0 12px;
-      font-size: 1.6rem;
       text-align:center;
+      font-size: 1.5rem;
     }
+
     p{
       max-width: 860px;
-      margin: 0 auto 18px;
+      margin: 0 auto 16px;
       color: var(--muted);
       text-align:center;
       padding: 0 6px;
     }
 
-    /* Captions / callouts */
-    .capt{
-      max-width: 900px;
-      margin: 0 auto 18px;
-      padding: 14px 16px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, #050505, #000000);
-      border-radius: 14px;
-      color: #d8d8d8;
-      text-align:center;
-      font-size: 1.05rem;
-    }
-    .capt strong{ color: #ffffff; }
-
-    /* Promo blocks */
-    .promo-section{
-      padding: 54px 0;
-    }
-    .promo-box{
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 18px;
-      border: 2px solid #1a1a1a;
-      background: linear-gradient(180deg, #050505, #000000);
-      border-radius: 14px;
-      font-size: 2.15rem;
-      font-weight: 900;
-      letter-spacing: 2px;
-      color: #ffffff;
-      text-transform: uppercase;
-      text-align:center;
-    }
-    .promo-box span{
-      display:block;
-      margin-top: 14px;
-      font-size: 1.2rem;
-      letter-spacing: 4px;
-      color: var(--accent);
-    }
-    .promo-section.nocturnal .promo-box span{
-      color: var(--accent2);
-    }
-
     /* Overview cards */
-    .overview-grid{
+    .grid{
       max-width: 980px;
       margin: 18px auto 0;
       display:grid;
@@ -188,20 +83,23 @@
       padding: 0 6px;
       text-align:left;
     }
-    .overview-card{
+
+    .card{
       border: 1px solid #1a1a1a;
       background: var(--panel);
       border-radius: 12px;
       padding: 18px;
     }
-    .overview-card h3{
+
+    .card h3{
       margin: 0 0 10px;
       font-size: 1.05rem;
       letter-spacing: 1px;
       text-transform: uppercase;
       color: #ffffff;
     }
-    .overview-card p{
+
+    .card p{
       margin: 0;
       text-align:left;
       max-width: none;
@@ -209,40 +107,19 @@
       padding: 0;
     }
 
-    /* Video placeholder */
-    .video-slot{
-      max-width: 980px;
+    .note{
+      max-width: 900px;
       margin: 18px auto 0;
+      padding: 14px 16px;
       border: 1px solid #1a1a1a;
-      background: #070707;
-      border-radius: 14px;
-      padding: 18px;
-      text-align:left;
-    }
-    .video-slot .label{
-      font-size: 0.95rem;
-      color: var(--muted2);
-      margin-bottom: 10px;
-    }
-    .video{
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;
+      background: linear-gradient(180deg, #050505, #000000);
       border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #1a1a1a;
-      background: #000;
-    }
-    .video iframe{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      border:0;
+      color: #d8d8d8;
+      text-align:center;
     }
 
     footer{
-      padding: 42px 0;
+      padding: 40px 18px;
       text-align:center;
       font-size: 0.85rem;
       color: #666;
@@ -251,151 +128,64 @@
     }
 
     @media (min-width: 860px){
-      .overview-grid{ grid-template-columns: repeat(3, 1fr); }
+      .grid{ grid-template-columns: repeat(3, 1fr); }
     }
+
     @media (max-width: 768px){
-      h1{ font-size: 2rem; }
-      .promo-box{ font-size: 1.6rem; }
-      .promo-box span{ font-size: 1.05rem; letter-spacing: 3px; }
+      h1{ font-size: 1.85rem; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- BANNER 1 (DnB_Culture theme banner) -->
-  <div class="banner">
-    <!-- Replace filename with your actual banner file in /assets/ when ready -->
-    <img src="assets/dnb-culture-banner.png" alt="DnB_Culture banner" />
-    <div class="banner-note">A home for drum & bass music video culture.</div>
-
-    <!-- Optional: keep this space so you can paste your yellow DSP logo manually -->
-    <div class="logo-space">LOGO SPACE — paste your DSP logo here (yellow version)</div>
+  <!-- FULL-WIDTH TOP BANNERS (tight stacked) -->
+  <div class="top-banners">
+    <img src="assets/DSP_DnB-Culture_Banner.png" alt="DnB_Culture banner" />
+    <img src="assets/DSP_Under-Construction_Banner.png" alt="Under construction banner" />
   </div>
 
-  <!-- BANNER 2 (Under Construction caution banner) -->
-  <div class="banner" style="padding-top:10px;">
-    <!-- Replace filename with your actual under-construction banner file in /assets/ -->
-    <img src="assets/under-construction-banner.png" alt="Under Construction banner" />
-  </div>
-
-  <!-- Quick Links -->
-  <div class="quick-links">
-    <a class="quick-link" href="index.html">DSP Home</a>
-    <a class="quick-link" href="dnb-culture.html">DnB_Culture</a>
-    <a class="quick-link placeholder" href="#" aria-disabled="true">Link coming soon</a>
-    <a class="quick-link placeholder" href="#" aria-disabled="true">Link coming soon</a>
-    <a class="quick-link placeholder" href="#" aria-disabled="true">Link coming soon</a>
-  </div>
-
-  <!-- Page Title -->
+  <!-- OVERVIEW -->
   <section>
     <div class="wrap">
       <h1>DnB_Culture</h1>
+      <p>A home for drum &amp; bass music video culture.</p>
 
-      <!-- CAPT (big bold caption block) -->
-      <div class="capt">
-        <strong>DRUM &amp; BASS MUSIC VIDEOS</strong> — promotional space coming soon.
+      <div class="note">
+        This is a DSP Records–hosted page built to support an independent project.
+        Hosting does not equal ownership.
       </div>
 
-      <p>
-        This page is hosted on the DSP Records domain for practical reasons during early development.
-        The project itself is independent and led by Nocturnal Emissions.
-      </p>
-    </div>
-  </section>
-
-  <!-- Promo blocks -->
-  <section class="promo-section">
-    <div class="wrap">
-      <div class="promo-box">
-        DRUM &amp; BASS MUSIC VIDEOS
-        <span>COMING SOON</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="promo-section nocturnal">
-    <div class="wrap">
-      <div class="promo-box">
-        NOCTURNAL EMISSIONS
-        <span>PROMOTIONAL SPACE — COMING SOON</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Collaboration / Ownership clarity -->
-  <section>
-    <div class="wrap">
-      <h2>What This Page Is</h2>
-
-      <p>
-        <strong style="color:#fff;">DnB_Culture</strong> is a platform being built to grow and exhibit drum &amp; bass video culture —
-        long-form video mixes, filmed sets, and visual projects built around the music.
-      </p>
-
-      <div class="overview-grid">
-        <div class="overview-card">
-          <h3>Leadership</h3>
+      <div class="grid">
+        <div class="card">
+          <h3>What This Is</h3>
           <p>
-            This is <strong style="color:#fff;">Dan Snakehead’s</strong> page — the host of
-            <strong style="color:#fff;">Nocturnal Emissions Radio</strong>.
-            Dan leads the direction, selection, and execution of what appears here.
+            A dedicated space for drum &amp; bass music videos, visual mixes, filmed sets, and long-form DnB visual projects —
+            built to give proper visibility to the creators behind the visuals.
           </p>
         </div>
 
-        <div class="overview-card">
+        <div class="card">
+          <h3>Project Lead</h3>
+          <p>
+            This is <strong style="color:#fff;">Dan Snakehead’s</strong> project (host of
+            <strong style="color:#fff;">Nocturnal Emissions</strong>).
+            Dan leads the direction, curation, and execution of what appears on this page.
+          </p>
+        </div>
+
+        <div class="card">
           <h3>DSP Role</h3>
           <p>
-            <strong style="color:#fff;">DSP Records is collaborating on Dan’s project</strong> by providing hosting, infrastructure,
-            and amplification — without administering the page or taking credit for the project.
-          </p>
-        </div>
-
-        <div class="overview-card">
-          <h3>Alignment</h3>
-          <p>
-            Dan’s values, beliefs, and objectives are fully aligned with the reform DSP wants to see in the scene —
-            culture-first, respect-first, and real contribution over hype.
+            <strong style="color:#fff;">DSP Records is collaborating on Dan’s project</strong> by providing web hosting,
+            structure, and amplification — without controlling the content or taking credit for the work.
           </p>
         </div>
       </div>
 
-      <div class="capt" style="margin-top:18px;">
-        <strong>Transparency:</strong> Hosted under DSP for practicality — not ownership.
-        Dan maintains creative control and administration.
+      <div class="note" style="margin-top:14px;">
+        This platform is being built in stages. Features, videos, and submissions will be added as the project rolls out.
       </div>
-    </div>
-  </section>
-
-  <!-- Featured video placeholder (add embed later) -->
-  <section>
-    <div class="wrap">
-      <h2>Featured Video</h2>
-      <p>Embed will be added once the video is hosted (YouTube / Vimeo). For now, this is the slot.</p>
-
-      <div class="video-slot">
-        <div class="label">Replace VIDEO_ID_HERE with your embed link later.</div>
-        <div class="video" aria-label="Featured drum & bass video embed slot">
-          <iframe
-            src="about:blank"
-            title="DnB_Culture Featured Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact / submissions (optional, low pressure) -->
-  <section>
-    <div class="wrap">
-      <h2>Contact</h2>
-      <p>
-        Recommendations and submissions will be coordinated through DSP while the page is in early build.
-        Send a link + short intro to: <strong style="color:#fff;">dyrtiesound@live.ca</strong>
-      </p>
     </div>
   </section>
 
