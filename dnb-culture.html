@@ -8,21 +8,22 @@
 
   <style>
     :root{
-      --bg:#000000;
-      --text:#ffffff;
+      --bg:#000;
+      --panel:#0b0b0b;
+      --text:#fff;
       --muted:#bdbdbd;
       --muted2:#9a9a9a;
-      --panel:#0b0b0b;
       --line:#151515;
       --accent:#f2c400;
       --accent2:#9aa3ff;
 
-      /* make desktop feel BIG */
-      --max: 1680px;
-      --pad: clamp(16px, 2.5vw, 34px);
+      /* REAL DESKTOP CANVAS */
+      --max: 1800px;
+      --pad: clamp(16px, 2.6vw, 36px);
+      --radius: 18px;
     }
 
-    *{ box-sizing: border-box; }
+    *{ box-sizing:border-box; }
 
     body{
       margin:0;
@@ -41,146 +42,170 @@
     }
     a:hover{ border-bottom-color:#777; }
 
-    /* FULL-WIDTH TOP BANNERS */
-    .top-banners{ width:100%; margin:0; padding:0; }
-    .top-banners img{
-      width:100%;
-      height: 24vh;
-      max-height: 260px;
-      min-height: 130px;
-      object-fit: cover;
-      object-position: center;
-      display:block;
-      margin:0;
-      padding:0;
-      border:0;
-    }
-
-    /* Layout wrapper */
+    /* Full-width layout wrapper */
     .wrap{
       width:100%;
-      max-width: var(--max);
+      max-width:var(--max);
       margin:0 auto;
-      padding: 0 var(--pad);
+      padding:0 var(--pad);
     }
 
-    section{
-      padding: clamp(44px, 6vw, 76px) 0;
-      border-top: 1px solid var(--line);
+    /* HERO COVER (the "banner/cover image") */
+    .hero{
+      position:relative;
+      width:100%;
+      height: clamp(260px, 46vh, 520px);
+      overflow:hidden;
+      border-bottom: 1px solid var(--line);
+      background:#000;
+    }
+
+    .hero img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      filter: contrast(1.05) brightness(0.92);
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.75) 70%, rgba(0,0,0,0.95) 100%);
+      pointer-events:none;
+    }
+
+    .hero-inner{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:flex-end;
+      padding: clamp(18px, 3vw, 40px);
+      z-index:1;
+    }
+
+    .hero-title{
+      width:min(1100px, 100%);
     }
 
     h1{
-      margin:0;
-      text-align:center;
-      font-size: clamp(1.85rem, 3vw, 2.9rem);
+      margin:0 0 10px;
+      font-weight: 900;
       letter-spacing: 2px;
+      font-size: clamp(1.9rem, 3.4vw, 3.2rem);
+      text-transform: uppercase;
     }
 
-    h2{
-      margin: 0 0 12px;
-      text-align:center;
-      font-size: clamp(1.35rem, 2vw, 2.05rem);
+    .hero-sub{
+      margin:0;
+      color:#d6d6d6;
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      max-width: 70ch;
     }
 
-    /* MOBILE DEFAULTS (readable) */
-    p{
-      max-width: 980px;
-      margin: 0 auto 16px;
-      color: var(--muted);
-      text-align:center;
-      padding: 0 6px;
-      font-size: clamp(0.96rem, 1.05vw, 1.08rem);
-    }
-
-    .note{
-      max-width: 980px;
-      margin: 18px auto 0;
-      padding: 16px 18px;
-      border: 1px solid #1a1a1a;
-      background: linear-gradient(180deg, #050505, #000000);
-      border-radius: 12px;
-      color: #d8d8d8;
-      text-align:center;
-    }
-
-    /* Promo blocks */
-    .promo-section{
-      padding: clamp(44px, 6vw, 76px) 0;
+    /* SECTIONS */
+    section{
+      padding: clamp(44px, 6vw, 84px) 0;
       border-top: 1px solid var(--line);
     }
 
-    .promo-box{
-      max-width: 1500px;
-      margin: 0 auto;
-      padding: clamp(30px, 5vw, 54px) clamp(16px, 2vw, 26px);
-      border: 2px solid #1a1a1a;
-      background: linear-gradient(180deg, #050505, #000000);
-      border-radius: 16px;
-      font-size: clamp(1.55rem, 2.8vw, 2.45rem);
-      font-weight: 900;
-      letter-spacing: 2px;
-      color: #ffffff;
-      text-transform: uppercase;
-      text-align:center;
+    h2{
+      margin:0 0 12px;
+      font-size: clamp(1.35rem, 2vw, 2.05rem);
+      letter-spacing:0.5px;
     }
 
-    .promo-box span{
-      display:block;
-      margin-top: 14px;
-      font-size: clamp(1.0rem, 1.15vw, 1.2rem);
-      letter-spacing: 4px;
-      color: var(--accent);
+    /* IMPORTANT: stop the “mobile reading-width caps” */
+    p{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size: clamp(0.98rem, 1.05vw, 1.08rem);
+      max-width:none;   /* <-- key */
     }
 
-    .promo-section.nocturnal .promo-box span{ color: var(--accent2); }
-
-    /* Overview cards */
-    .grid{
-      max-width: 1500px;
-      margin: 18px auto 0;
+    /* Intro block layout */
+    .intro{
       display:grid;
       grid-template-columns: 1fr;
       gap: 18px;
-      padding: 0 6px;
-      text-align:left;
+    }
+
+    .note{
+      border: 1px solid #1a1a1a;
+      background: linear-gradient(180deg, #050505, #000);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      color:#d8d8d8;
+    }
+
+    /* PROMO blocks */
+    .promo{
+      border: 2px solid #1a1a1a;
+      background: linear-gradient(180deg, #050505, #000);
+      border-radius: var(--radius);
+      padding: clamp(26px, 4vw, 54px);
+      text-align:center;
+    }
+
+    .promo .big{
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: clamp(1.55rem, 2.7vw, 2.55rem);
+      margin: 0;
+    }
+
+    .promo .tag{
+      display:block;
+      margin-top: 14px;
+      font-size: clamp(1rem, 1.1vw, 1.2rem);
+      letter-spacing: 4px;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .promo.nocturnal .tag{ color: var(--accent2); }
+
+    /* CARDS */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 18px;
     }
 
     .card{
       border: 1px solid #1a1a1a;
       background: var(--panel);
-      border-radius: 14px;
-      padding: 18px;
+      border-radius: var(--radius);
+      padding: 20px;
     }
 
     .card h3{
-      margin: 0 0 10px;
+      margin:0 0 10px;
       font-size: 1.05rem;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: #ffffff;
-      text-align:left;
     }
 
     .card p{
-      margin: 0;
-      text-align:left;
-      max-width: none;
-      color: var(--muted);
-      padding: 0;
+      margin:0;
+      color:var(--muted);
     }
 
-    /* Video slot */
+    /* VIDEO */
     .video-slot{
-      max-width: 1500px;
-      margin: 18px auto 0;
       border: 1px solid #1a1a1a;
       background: #070707;
-      border-radius: 16px;
+      border-radius: var(--radius);
       padding: 18px;
-      text-align:left;
+      margin-top: 18px;
     }
 
-    .video-slot .label{
+    .label{
       font-size: 0.95rem;
       color: var(--muted2);
       margin-bottom: 10px;
@@ -190,7 +215,7 @@
       position: relative;
       width: 100%;
       padding-top: 56.25%;
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
       border: 1px solid #1a1a1a;
       background: #000;
@@ -205,116 +230,107 @@
     }
 
     footer{
-      padding: 44px 18px;
+      padding: 44px var(--pad);
       text-align:center;
       font-size: 0.85rem;
       color: #666;
       border-top: 1px solid var(--line);
-      margin-top: 44px;
     }
 
+    /* RESPONSIVE */
     @media (min-width: 900px){
       .grid{ grid-template-columns: repeat(3, 1fr); }
-    }
-
-    /* ✅ DESKTOP FIX: remove "mobile reading width" caps so it fills the screen */
-    @media (min-width: 1100px){
-      h2{ text-align:left; }
-
-      p{
-        max-width: none;     /* THIS is the key */
-        text-align:left;
-        padding: 0;
-        margin-left: 0;
-        margin-right: 0;
-      }
-
-      .note{
-        max-width: none;     /* THIS too */
-        text-align:left;
-        margin-left: 0;
-        margin-right: 0;
-      }
+      .intro{ grid-template-columns: 1.1fr 0.9fr; align-items:start; }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="top-banners">
-    <img src="assets/dnb-culture-banner-1.png" alt="DnB Culture banner" />
-    <img src="assets/dnb-culture-banner-2.png" alt="Nocturnal Emissions banner" />
-  </div>
+  <!-- HERO COVER IMAGE (THIS IS YOUR "BANNER/COVER") -->
+  <!-- 🔥 Change this filename to your REAL existing cover image -->
+  <header class="hero">
+    <img src="assets/dnb-culture-cover.png" alt="DnB_Culture cover image" />
+    <div class="hero-inner">
+      <div class="hero-title">
+        <h1>DnB_Culture</h1>
+        <p class="hero-sub">A home for drum &amp; bass music video culture.</p>
+      </div>
+    </div>
+  </header>
 
+  <!-- OVERVIEW -->
   <section>
     <div class="wrap">
-      <h1>DnB_Culture</h1>
-      <p>A home for drum &amp; bass music video culture.</p>
+      <div class="intro">
+        <div>
+          <h2>Overview</h2>
+          <p>
+            Built to spotlight the creators behind DnB visuals — curated, culture-first, and designed to grow over time.
+          </p>
+        </div>
 
-      <div class="note">
-        This is an independent project led by <strong>Dan Snakehead</strong> (Nocturnal Emissions).<br />
-        DSP Records provides hosting and infrastructure support only — not ownership or creative control.
+        <div class="note">
+          Independent project led by <strong>Dan Snakehead</strong> (Nocturnal Emissions).<br />
+          DSP Records provides hosting and infrastructure support only — not ownership or creative control.
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="promo-section">
+  <!-- PROMO -->
+  <section>
     <div class="wrap">
-      <div class="promo-box">
-        DRUM &amp; BASS MUSIC VIDEOS
-        <span>COMING SOON</span>
+      <div class="promo">
+        <p class="big">DRUM &amp; BASS MUSIC VIDEOS</p>
+        <span class="tag">COMING SOON</span>
       </div>
     </div>
-  </div>
-
-  <div class="promo-section nocturnal">
-    <div class="wrap">
-      <div class="promo-box">
-        NOCTURNAL EMISSIONS
-        <span>PROMOTIONAL SPACE — COMING SOON</span>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <section>
     <div class="wrap">
-      <h2>How This Works</h2>
-      <p>
-        Built to spotlight the creators behind DnB visuals — curated, culture-first, and designed to grow over time.
-      </p>
+      <div class="promo nocturnal">
+        <p class="big">NOCTURNAL EMISSIONS</p>
+        <span class="tag">PROMOTIONAL SPACE — COMING SOON</span>
+      </div>
+    </div>
+  </section>
 
+  <!-- HOW THIS WORKS -->
+  <section>
+    <div class="wrap">
+      <h2>How This Works</h2>
       <div class="grid">
         <div class="card">
           <h3>What This Is</h3>
           <p>
-            A dedicated space for drum &amp; bass music videos, visual mixes, filmed sets, and long-form DnB visual projects —
-            giving real visibility to the work behind the visuals.
+            A dedicated space for drum &amp; bass music videos, visual mixes, filmed sets, and long-form DnB visual projects.
           </p>
         </div>
 
         <div class="card">
           <h3>Project Lead</h3>
           <p>
-            This is <strong style="color:#fff;">Dan Snakehead’s</strong> project (Nocturnal Emissions). Dan leads the direction,
-            curation, and execution of what appears here.
+            This is <strong style="color:#fff;">Dan Snakehead’s</strong> project. Dan leads direction, curation, and execution.
           </p>
         </div>
 
         <div class="card">
           <h3>DSP Role</h3>
           <p>
-            DSP Records supports by providing hosting, structure, and amplification — without administering the page or taking credit
-            for Dan’s work.
+            Hosting, structure, and amplification — without taking credit or creative control.
           </p>
         </div>
       </div>
 
-      <div class="note" style="margin-top:14px;">
+      <div class="note" style="margin-top:18px;">
         Hosted under the DSP domain for practicality — not ownership.
       </div>
     </div>
   </section>
 
+  <!-- FEATURED VIDEO -->
   <section>
     <div class="wrap">
       <h2>Featured Video</h2>
@@ -334,6 +350,7 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section>
     <div class="wrap">
       <h2>Contact</h2>
