@@ -4,9 +4,18 @@
   <meta charset="UTF-8" />
   <title>DSP Records</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DSP Records is an independent underground electronic music label built for dark rooms, loud systems, and real connection." />
+  <meta name="description" content="DSP Records — underground bass music built for dark rooms, loud systems, and real connection." />
 
   <style>
+    /* =========================
+       HARD RESET (wipes leftover styling)
+       ========================= */
+    html, body { width:100% !important; max-width:none !important; overflow-x:hidden !important; }
+    body { margin:0 !important; padding:0 !important; }
+    * { box-sizing:border-box !important; }
+    img, iframe { max-width:100% !important; }
+    p, h1, h2, h3, header, section, div { max-width:none !important; }
+
     :root{
       --bg:#000;
       --panel:#0b0b0b;
@@ -15,204 +24,198 @@
       --muted2:#9a9a9a;
       --line:#151515;
       --accent:#f2c400;
-
-      /* desktop first */
-      --max: 2000px;
-      --pad: 32px;
       --radius: 16px;
+      --pad: 32px;
     }
-
-    *{ box-sizing:border-box; }
 
     body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      font-size: 18px; /* make desktop readable */
+      font-family: Arial, Helvetica, sans-serif !important;
+      background: var(--bg) !important;
+      color: var(--text) !important;
+      line-height: 1.6 !important;
+      font-size: 18px !important; /* desktop readable */
     }
 
-    /* BIG desktop container (not a narrow column) */
+    a{ color:inherit !important; }
+
+    /* FULL-WIDTH desktop layout */
     .wrap{
-      width:100%;
-      max-width: var(--max);
-      margin:0 auto;
-      padding: 0 var(--pad);
+      width:100% !important;
+      max-width: 2000px !important;   /* big canvas */
+      margin: 0 auto !important;
+      padding: 0 var(--pad) !important;
     }
 
     /* =========================
-       HERO / BANNER (NO CROP)
+       HERO BANNER (NO CROP)
+       Shows FULL IMAGE (no fixed height)
        ========================= */
-    header.hero{
-      width:100%;
-      border-bottom:1px solid var(--line);
-      background:#000;
-      padding: 0;
-      margin: 0;
+    .hero{
+      width:100% !important;
+      background:#000 !important;
+      border-bottom: 1px solid var(--line) !important;
     }
 
-    /* This guarantees the FULL banner is visible */
     .hero img{
-      width:100%;
-      height:auto;        /* <-- NO fixed height */
-      display:block;
-      object-fit: unset;  /* <-- NO cropping */
+      width:100% !important;
+      height:auto !important;              /* IMPORTANT: no cropping */
+      display:block !important;
+      object-fit: initial !important;      /* IMPORTANT: no cropping */
+      object-position: center !important;
     }
 
-    /* Big centered headline under banner */
     .hero-title{
-      padding: 22px 0 26px;
-      text-align:center;
-      border-top:1px solid var(--line);
+      border-top: 1px solid var(--line) !important;
+      padding: 22px 0 28px !important;
+      text-align:center !important;
     }
 
     .hero-title h1{
-      margin:0;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 3rem;
+      margin:0 !important;
+      font-weight: 900 !important;
+      letter-spacing: 2px !important;
+      text-transform: uppercase !important;
+      font-size: 3.2rem !important;
     }
 
-    .hero-title .tagline{
-      margin-top: 10px;
-      color: #d6d6d6;
-      font-size: 1.15rem;
-      max-width: 1100px;
-      margin-left:auto;
-      margin-right:auto;
+    .hero-title p{
+      margin: 10px auto 0 !important;
+      color:#d6d6d6 !important;
+      font-size: 1.15rem !important;
+      width: min(1100px, 100%) !important;
     }
 
     /* Feature link row */
     .feature-row{
-      border-bottom:1px solid var(--line);
-      padding: 24px 0;
+      border-bottom: 1px solid var(--line) !important;
+      padding: 24px 0 !important;
     }
 
     .feature-btn{
-      display:block;
-      text-decoration:none;
-      color:#fff;
-      border:2px solid rgba(255,255,255,0.18);
-      background: linear-gradient(180deg, #070707, #000);
-      border-radius: var(--radius);
-      padding: 20px 22px;
+      display:block !important;
+      text-decoration:none !important;
+      color:#fff !important;
+      border:2px solid rgba(255,255,255,0.18) !important;
+      background: linear-gradient(180deg, #070707, #000) !important;
+      border-radius: var(--radius) !important;
+      padding: 20px 22px !important;
     }
 
-    .feature-btn:hover{ border-color: rgba(255,255,255,0.35); }
+    .feature-btn:hover{ border-color: rgba(255,255,255,0.35) !important; }
 
     .feature-btn .title{
-      font-weight:900;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      font-size: 1.4rem;
+      font-weight:900 !important;
+      letter-spacing:1px !important;
+      text-transform:uppercase !important;
+      font-size: 1.4rem !important;
     }
 
     .feature-btn .sub{
-      margin-top: 6px;
-      color: var(--accent);
-      letter-spacing: 3px;
-      text-transform:uppercase;
-      font-size: 1.05rem;
+      margin-top:6px !important;
+      color: var(--accent) !important;
+      letter-spacing: 3px !important;
+      text-transform:uppercase !important;
+      font-size: 1.05rem !important;
     }
 
     /* Sections */
     section{
-      padding: 64px 0;
-      border-bottom:1px solid var(--line);
+      padding: 64px 0 !important;
+      border-bottom: 1px solid var(--line) !important;
     }
 
     h2{
-      margin:0 0 14px;
-      font-size: 2rem;
-      letter-spacing:0.5px;
+      margin:0 0 14px !important;
+      font-size: 2rem !important;
+      letter-spacing: .5px !important;
     }
 
     p{
-      margin:0 0 16px;
-      color: var(--muted);
-      max-width: none; /* IMPORTANT: no narrow column */
+      margin:0 0 16px !important;
+      color: var(--muted) !important;
+      font-size: 1.08rem !important;
+      text-align:left !important;
     }
 
     /* About layout */
     .about-grid{
-      display:grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 26px;
-      align-items:start;
+      display:grid !important;
+      grid-template-columns: 1.35fr 0.65fr !important;
+      gap: 26px !important;
+      align-items:start !important;
     }
 
     .note{
-      border:1px solid #1a1a1a;
-      background: linear-gradient(180deg, #050505, #000);
-      border-radius: var(--radius);
-      padding: 18px 20px;
-      color:#d8d8d8;
+      border:1px solid #1a1a1a !important;
+      background: linear-gradient(180deg, #050505, #000) !important;
+      border-radius: var(--radius) !important;
+      padding: 18px 20px !important;
+      color:#d8d8d8 !important;
     }
 
-    /* Cards */
     .card{
-      border:1px solid #1a1a1a;
-      background: var(--panel);
-      border-radius: var(--radius);
-      padding: 18px;
+      border:1px solid #1a1a1a !important;
+      background: var(--panel) !important;
+      border-radius: var(--radius) !important;
+      padding: 18px !important;
     }
 
-    /* Release image */
     .release-img{
-      width:100%;
-      border-radius: var(--radius);
-      border: 1px solid #1a1a1a;
-      display:block;
-      background:#000;
+      width:100% !important;
+      height:auto !important;
+      display:block !important;
+      border-radius: var(--radius) !important;
+      border:1px solid #1a1a1a !important;
+      background:#000 !important;
     }
 
-    /* Links */
     .links-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px 28px;
-      margin-top: 8px;
+      display:grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 10px 28px !important;
+      margin-top: 8px !important;
     }
 
     .links-grid a{
-      color:#e5e5e5;
-      text-decoration:none;
-      border-bottom:1px solid #444;
-      padding: 6px 0;
-      width: fit-content;
+      color:#e5e5e5 !important;
+      text-decoration:none !important;
+      border-bottom:1px solid #444 !important;
+      padding: 6px 0 !important;
+      width: fit-content !important;
     }
-    .links-grid a:hover{ border-bottom-color:#777; }
+
+    .links-grid a:hover{ border-bottom-color:#777 !important; }
 
     footer{
-      padding: 34px var(--pad);
-      text-align:center;
-      font-size: 0.9rem;
-      color:#666;
+      padding: 34px var(--pad) !important;
+      text-align:center !important;
+      font-size: 0.9rem !important;
+      color:#666 !important;
     }
 
-    /* If your monitor is huge, bump headline a bit */
-    @media (min-width: 1400px){
-      .hero-title h1{ font-size: 3.4rem; }
+    /* Simple mobile fallback (we can tune later) */
+    @media (max-width: 900px){
+      .wrap{ padding: 0 18px !important; }
+      .about-grid{ grid-template-columns: 1fr !important; }
+      .links-grid{ grid-template-columns: 1fr 1fr !important; }
+      .hero-title h1{ font-size: 2.2rem !important; }
+      .hero-title p{ font-size: 1.02rem !important; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- BANNER (FULL IMAGE, NO CROP) -->
+  <!-- HERO (FULL IMAGE, NO CROP) -->
   <header class="hero">
-    <!-- IMPORTANT: this filename must exactly match your repo -->
     <img src="assets/dsp-records-underground-bass-music-banner.png" alt="DSP Records underground bass music banner" />
-
     <div class="wrap hero-title">
       <h1>UNDERGROUND BASS MUSIC</h1>
-      <div class="tagline">DSP Records — built for dark rooms, loud systems, and real connection.</div>
+      <p>DSP Records — built for dark rooms, loud systems, and real connection.</p>
     </div>
   </header>
 
-  <!-- FEATURE LINK -->
+  <!-- FEATURE -->
   <div class="feature-row">
     <div class="wrap">
       <a class="feature-btn" href="dnb-culture.html">
@@ -247,7 +250,7 @@
       <h2>DSP Playlist</h2>
       <p>Upcoming and label releases in one place.</p>
 
-      <div class="card">
+      <div class="card" aria-label="DSP Records SoundCloud releases playlist">
         <iframe
           width="100%"
           height="460"
