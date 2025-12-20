@@ -39,79 +39,39 @@
       padding: 18px 0 10px;
     }
 
-    /* Quick Links (5 bubbles) */
-    .quick-links{
-      margin: 14px auto 0;
+    /* SINGLE FEATURED LINK */
+    .single-link-wrap {
+      margin: 28px auto 0;
       padding: 0 20px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:center;
+      text-align: center;
     }
 
-    .quick-link{
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.18);
-      background:rgba(255,255,255,0.04);
-      color:#f2f2f2;
-      text-decoration:none;
-      font-size:0.95rem;
-      opacity:0.92;
-    }
-
-    .quick-link:hover{
-      opacity:1;
-      border-color:rgba(255,255,255,0.30);
-      background:rgba(255,255,255,0.06);
-    }
-
-    .quick-link.placeholder{
-      opacity:0.55;
-      cursor:default;
-      pointer-events:none;
-    }
-
-    /* Links section */
-    .links-wrap{
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 6px;
-      text-align: left;
-    }
-
-    .links-grid{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      margin-top: 16px;
-    }
-
-    .link-card{
-      border: 1px solid #222;
-      background: #0b0b0b;
-      border-radius: 10px;
-      padding: 18px;
-    }
-
-    .link-card h3{
-      margin: 0 0 10px;
-      font-size: 1.05rem;
+    .single-link {
+      display: inline-block;
+      padding: 18px 28px;
+      border-radius: 14px;
+      border: 2px solid rgba(255,255,255,0.22);
+      background: linear-gradient(180deg, #080808, #000000);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: 900;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: #ffffff;
     }
 
-    .link-list{
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .single-link span {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: #f2c400;
     }
 
-    .link-list li{
-      margin: 10px 0;
-      color: #bdbdbd;
+    .single-link:hover {
+      border-color: rgba(255,255,255,0.45);
+      background: linear-gradient(180deg, #0c0c0c, #000000);
     }
 
     section {
@@ -157,6 +117,7 @@
 
     @media (max-width: 768px) {
       .header-statement { font-size: 2rem; }
+      .single-link { font-size: 1.15rem; }
     }
 
     @media (max-width: 420px) {
@@ -172,44 +133,13 @@
   <div class="header-statement">UNDERGROUND BASS MUSIC LABEL</div>
 </header>
 
-<!-- Quick Links -->
-<div class="quick-links">
-  <a class="quick-link" href="dnb-culture.html">DnB_Culture</a>
-  <a class="quick-link placeholder" href="#" aria-disabled="true">Link coming soon</a>
-  <a class="quick-link placeholder" href="#" aria-disabled="true">Link coming soon</a>
-  <a class="quick-link placeholder" href="#" aria-disabled="true">Link coming soon</a>
-  <a class="quick-link placeholder" href="#" aria-disabled="true">Link coming soon</a>
+<!-- SINGLE FEATURED LINK -->
+<div class="single-link-wrap">
+  <a class="single-link" href="dnb-culture.html">
+    Dan Snakehead’s DnB Culture
+    <span>Music &amp; Videos</span>
+  </a>
 </div>
-
-<!-- Streaming / Social Links -->
-<section>
-  <h2>Links</h2>
-  <p>DSP Records and Sub Fixx links across platforms.</p>
-
-  <div class="links-wrap">
-    <div class="links-grid">
-
-      <div class="link-card">
-        <h3>DSP Records</h3>
-        <ul class="link-list">
-          <li><a href="https://dsprecords.ca" target="_blank" rel="noopener">DSP Records Website</a></li>
-          <li><a href="https://www.facebook.com/dyrtiesoundrecords" target="_blank" rel="noopener">DSP Records Facebook</a></li>
-          <li><em>(add Spotify / Apple Music / Beatport / Amazon links here later)</em></li>
-        </ul>
-      </div>
-
-      <div class="link-card">
-        <h3>Sub Fixx</h3>
-        <ul class="link-list">
-          <li><a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener">Sub Fixx SoundCloud</a></li>
-          <li><a href="https://www.facebook.com/Subfixx" target="_blank" rel="noopener">Sub Fixx Facebook</a></li>
-          <li><em>(add Instagram / YouTube / Spotify links here later)</em></li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <section>
   <h2>About</h2>
@@ -230,10 +160,10 @@
     All tracks in the SoundCloud playlist below are available as promotional copies (not commercial release masters).
   </div>
 
-  <!-- SoundCloud embed ABOVE the release image -->
   <div class="embed-wrap">
     <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2158029551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2158029551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+    </iframe>
 
     <div style="font-size:10px;color:#cccccc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
       <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener">Sub Fixx</a> ·
@@ -243,7 +173,6 @@
     </div>
   </div>
 
-  <!-- Release schedule image BELOW embed and CENTERED -->
   <img class="release-img" src="assets/DSP_ReleaseSchedule.png" alt="DSP Records upcoming release schedule">
 </section>
 
