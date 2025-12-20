@@ -14,10 +14,12 @@
       --muted2:#9a9a9a;
       --panel:#0b0b0b;
       --line:#151515;
-      --accent:#f2c400;   /* caution yellow */
-      --accent2:#9aa3ff;  /* nocturnal tone */
-      --max: 1400px;
-      --pad: clamp(16px, 2.5vw, 28px);
+      --accent:#f2c400;
+      --accent2:#9aa3ff;
+
+      /* make desktop feel BIG */
+      --max: 1680px;
+      --pad: clamp(16px, 2.5vw, 34px);
     }
 
     *{ box-sizing: border-box; }
@@ -39,16 +41,12 @@
     }
     a:hover{ border-bottom-color:#777; }
 
-    /* FULL-WIDTH TOP BANNERS (stacked) */
-    .top-banners{
-      width:100%;
-      margin:0;
-      padding:0;
-    }
+    /* FULL-WIDTH TOP BANNERS */
+    .top-banners{ width:100%; margin:0; padding:0; }
     .top-banners img{
       width:100%;
-      height: 24vh;          /* each banner uses viewport height */
-      max-height: 240px;
+      height: 24vh;
+      max-height: 260px;
       min-height: 130px;
       object-fit: cover;
       object-position: center;
@@ -58,7 +56,7 @@
       border:0;
     }
 
-    /* Layout wrapper (desktop-friendly) */
+    /* Layout wrapper */
     .wrap{
       width:100%;
       max-width: var(--max);
@@ -67,34 +65,33 @@
     }
 
     section{
-      padding: clamp(44px, 6vw, 72px) 0;
+      padding: clamp(44px, 6vw, 76px) 0;
       border-top: 1px solid var(--line);
     }
 
-    /* Headings */
     h1{
       margin:0;
       text-align:center;
-      font-size: clamp(1.85rem, 3vw, 2.7rem);
+      font-size: clamp(1.85rem, 3vw, 2.9rem);
       letter-spacing: 2px;
     }
 
     h2{
       margin: 0 0 12px;
       text-align:center;
-      font-size: clamp(1.35rem, 2vw, 1.9rem);
+      font-size: clamp(1.35rem, 2vw, 2.05rem);
     }
 
+    /* MOBILE DEFAULTS (readable) */
     p{
-      max-width: 980px;               /* wider on desktop */
+      max-width: 980px;
       margin: 0 auto 16px;
       color: var(--muted);
       text-align:center;
       padding: 0 6px;
-      font-size: clamp(0.96rem, 1.05vw, 1.06rem);
+      font-size: clamp(0.96rem, 1.05vw, 1.08rem);
     }
 
-    /* Callout note */
     .note{
       max-width: 980px;
       margin: 18px auto 0;
@@ -108,18 +105,18 @@
 
     /* Promo blocks */
     .promo-section{
-      padding: clamp(44px, 6vw, 72px) 0;
+      padding: clamp(44px, 6vw, 76px) 0;
       border-top: 1px solid var(--line);
     }
 
     .promo-box{
-      max-width: 1200px;
+      max-width: 1500px;
       margin: 0 auto;
-      padding: clamp(30px, 5vw, 46px) clamp(16px, 2vw, 22px);
+      padding: clamp(30px, 5vw, 54px) clamp(16px, 2vw, 26px);
       border: 2px solid #1a1a1a;
       background: linear-gradient(180deg, #050505, #000000);
       border-radius: 16px;
-      font-size: clamp(1.55rem, 2.8vw, 2.25rem);
+      font-size: clamp(1.55rem, 2.8vw, 2.45rem);
       font-weight: 900;
       letter-spacing: 2px;
       color: #ffffff;
@@ -135,13 +132,11 @@
       color: var(--accent);
     }
 
-    .promo-section.nocturnal .promo-box span{
-      color: var(--accent2);
-    }
+    .promo-section.nocturnal .promo-box span{ color: var(--accent2); }
 
     /* Overview cards */
     .grid{
-      max-width: 1200px;
+      max-width: 1500px;
       margin: 18px auto 0;
       display:grid;
       grid-template-columns: 1fr;
@@ -176,7 +171,7 @@
 
     /* Video slot */
     .video-slot{
-      max-width: 1200px;
+      max-width: 1500px;
       margin: 18px auto 0;
       border: 1px solid #1a1a1a;
       background: #070707;
@@ -221,18 +216,36 @@
     @media (min-width: 900px){
       .grid{ grid-template-columns: repeat(3, 1fr); }
     }
+
+    /* ✅ DESKTOP FIX: remove "mobile reading width" caps so it fills the screen */
+    @media (min-width: 1100px){
+      h2{ text-align:left; }
+
+      p{
+        max-width: none;     /* THIS is the key */
+        text-align:left;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .note{
+        max-width: none;     /* THIS too */
+        text-align:left;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- TOP BANNERS (replace filenames if yours differ) -->
   <div class="top-banners">
     <img src="assets/dnb-culture-banner-1.png" alt="DnB Culture banner" />
     <img src="assets/dnb-culture-banner-2.png" alt="Nocturnal Emissions banner" />
   </div>
 
-  <!-- OVERVIEW -->
   <section>
     <div class="wrap">
       <h1>DnB_Culture</h1>
@@ -245,7 +258,6 @@
     </div>
   </section>
 
-  <!-- PROMO: DnB videos coming soon -->
   <div class="promo-section">
     <div class="wrap">
       <div class="promo-box">
@@ -255,7 +267,6 @@
     </div>
   </div>
 
-  <!-- PROMO: Nocturnal Emissions coming soon -->
   <div class="promo-section nocturnal">
     <div class="wrap">
       <div class="promo-box">
@@ -265,7 +276,6 @@
     </div>
   </div>
 
-  <!-- ROLE CLARITY / STRUCTURE -->
   <section>
     <div class="wrap">
       <h2>How This Works</h2>
@@ -305,7 +315,6 @@
     </div>
   </section>
 
-  <!-- FEATURED VIDEO SLOT -->
   <section>
     <div class="wrap">
       <h2>Featured Video</h2>
@@ -325,7 +334,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section>
     <div class="wrap">
       <h2>Contact</h2>
