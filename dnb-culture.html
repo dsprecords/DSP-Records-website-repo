@@ -1,125 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>DnB Culture</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="DnB Culture — a home for drum & bass music video culture.">
+<meta charset="UTF-8" />
+<title>DnB_Culture</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="DnB_Culture — a home for drum & bass music video culture." />
 
 <style>
-/* ================= RESET ================= */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-html, body{
-  width:100%;
-  overflow-x:hidden;
-}
-body{
-  font-family: Arial, Helvetica, sans-serif;
-  background:#000;
-  color:#fff;
-  line-height:1.6;
-  font-size:20px;
-}
-
-/* ================= LAYOUT ================= */
-.wrap{
-  width:100%;
-  max-width:2000px;
-  margin:0 auto;
-  padding:0 48px;
-}
-
-/* ================= BANNERS ================= */
-/* THIS IS THE IMPORTANT PART */
-.top-banners{
-  width:100%;
-}
-
-.top-banners img{
-  width:100%;
-  height:20vh;              /* ⬅️ SHRUNK HEIGHT */
-  max-height:180px;         /* ⬅️ HARD CAP */
-  object-fit:contain;       /* ⬅️ NO CROP */
-  display:block;
-}
-
-/* ================= HEADER ================= */
-header{
-  padding:32px 0;
-  border-bottom:1px solid #151515;
-  text-align:center;
-}
-
-h1{
-  font-size:3rem;
-  font-weight:900;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-header p{
-  margin-top:10px;
-  color:#bdbdbd;
-  font-size:1.1rem;
-}
-
-/* ================= SECTIONS ================= */
-section{
-  padding:64px 0;
-  border-bottom:1px solid #151515;
-}
-
-.note{
-  max-width:1100px;
-  margin:0 auto;
-  padding:24px;
-  border:1px solid #1a1a1a;
-  background:linear-gradient(180deg,#050505,#000);
-  text-align:center;
-}
-
-/* ================= MOBILE ================= */
-@media (max-width:600px){
-  .wrap{ padding:0 18px; }
-  .top-banners img{
-    height:auto;            /* phones see full image */
-    max-height:none;
+  /* ============== RESET ============== */
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html, body{ width:100%; overflow-x:hidden; }
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#000;
+    color:#fff;
+    line-height:1.65;
+    font-size:20px;
   }
-  h1{ font-size:2.2rem; }
-  section{ padding:48px 0; }
-}
+  a{ color:inherit; text-decoration:none; }
+  img{ display:block; }
+
+  :root{
+    --bg:#000;
+    --panel:#0b0b0b;
+    --text:#fff;
+    --muted:#bdbdbd;
+    --line:#151515;
+    --accent:#f2c400;
+    --radius:16px;
+  }
+
+  /* ============== LAYOUT ============== */
+  .wrap{
+    width:100%;
+    max-width:2400px;
+    margin:0 auto;
+    padding:0 64px;
+  }
+
+  /* ============== TOP BANNERS ============== */
+  .top-banners{
+    width:100%;
+    border-bottom:1px solid var(--line);
+  }
+
+  /* FULL WIDTH BANNERS (fixes “mobile sized” look) */
+  .top-banners img{
+    width:100%;
+    height:20vh;          /* same vertical sizing behavior */
+    max-height:180px;     /* hard cap for desktop */
+    object-fit:cover;     /* IMPORTANT: fills width */
+    object-position:center;
+  }
+
+  /* ============== HEADER ============== */
+  header{
+    border-bottom:1px solid var(--line);
+    padding:28px 0 34px;
+    text-align:center;
+  }
+  h1{
+    font-size:3.2rem;
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
+  }
+  header p{
+    margin:10px auto 0;
+    color:var(--muted);
+    max-width:1100px;
+    font-size:1.15rem;
+  }
+
+  /* ============== SECTIONS ============== */
+  section{
+    padding:72px 0;
+    border-bottom:1px solid var(--line);
+  }
+  h2{
+    font-size:2.2rem;
+    margin:0 0 14px;
+    text-align:center;
+    letter-spacing:.5px;
+  }
+  p{
+    color:var(--muted);
+    margin:0 0 14px;
+    text-align:center;
+  }
+
+  .card{
+    background:var(--panel);
+    border:1px solid #1a1a1a;
+    border-radius:var(--radius);
+    padding:24px;
+  }
+
+  .note{
+    max-width:1200px;
+    margin:0 auto;
+    text-align:center;
+    background:linear-gradient(180deg,#050505,#000);
+    border:1px solid #1a1a1a;
+    border-radius:var(--radius);
+    padding:22px;
+    color:#d8d8d8;
+  }
+
+  /* ============== VIDEO GRID ============== */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+    margin-top:18px;
+  }
+  .tile{
+    border-radius:var(--radius);
+    border:1px solid #1a1a1a;
+    background:#050505;
+    padding:18px;
+    min-height:140px;
+  }
+  .tile .title{
+    font-weight:900;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .tile .meta{
+    color:var(--muted);
+    font-size:0.95rem;
+    line-height:1.5;
+  }
+  .tile a.cta{
+    display:inline-block;
+    margin-top:12px;
+    color:var(--accent);
+    border-bottom:1px solid rgba(242,196,0,.45);
+    padding-bottom:2px;
+  }
+
+  /* ============== EMBEDS ============== */
+  .embed{
+    margin-top:18px;
+  }
+  iframe{
+    width:100%;
+    border:0;
+    border-radius:var(--radius);
+  }
+
+  /* ============== MOBILE ============== */
+  @media (max-width: 900px){
+    .wrap{ padding:0 18px; }
+    .grid{ grid-template-columns:1fr; }
+    section{ padding:46px 0; }
+    h1{ font-size:2.2rem; }
+    /* allow banners to show full image on phones */
+    .top-banners img{
+      height:auto;
+      max-height:none;
+      object-fit:contain;
+      background:#000;
+    }
+  }
 </style>
 </head>
 
 <body>
 
-<!-- ================= BANNERS ================= -->
-<div class="top-banners">
-  <img src="/assets/DSP_DnB-Culture_Banner.png" alt="DnB Culture banner">
-  <img src="/assets/DSP_Under-Construction_Banner.png" alt="Under construction banner">
-</div>
-
-<!-- ================= HEADER ================= -->
-<header>
-  <div class="wrap">
-    <h1>DnB Culture</h1>
-    <p>A home for drum &amp; bass music video culture.</p>
+  <!-- TOP BANNERS -->
+  <div class="top-banners">
+    <img src="/assets/DSP_DnB-Culture_Banner.png" alt="DnB Culture banner" />
+    <img src="/assets/DSP_Under-Construction_Banner.png" alt="Under construction banner" />
   </div>
-</header>
 
-<!-- ================= CONTENT ================= -->
-<section>
-  <div class="wrap">
-    <div class="note">
-      This page is under construction.<br>
-      Video submissions, features, and updates coming soon.
+  <!-- HEADER -->
+  <header>
+    <div class="wrap">
+      <h1>DnB_Culture</h1>
+      <p>A home for drum &amp; bass music video culture.</p>
     </div>
-  </div>
-</section>
+  </header>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="wrap">
+      <div class="note">
+        <strong style="color:#fff;">Purpose:</strong><br />
+        A curated hub for drum &amp; bass music videos, edits, and scene culture — with Nocturnal Emissions Radio features and submissions.
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section id="videos">
+    <div class="wrap">
+      <h2>Videos</h2>
+      <p>Featured music videos and submissions (curated).</p>
+
+      <div class="grid">
+        <!-- Replace these tiles with your real links -->
+        <div class="tile">
+          <div class="title">Featured Video #1</div>
+          <div class="meta">Artist • Track • Label • Year</div>
+          <a class="cta" href="#" target="_blank" rel="noopener">Watch</a>
+        </div>
+
+        <div class="tile">
+          <div class="title">Featured Video #2</div>
+          <div class="meta">Artist • Track • Label • Year</div>
+          <a class="cta" href="#" target="_blank" rel="noopener">Watch</a>
+        </div>
+
+        <div class="tile">
+          <div class="title">Featured Video #3</div>
+          <div class="meta">Artist • Track • Label • Year</div>
+          <a class="cta" href="#" target="_blank" rel="noopener">Watch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOCTURNAL EMISSIONS RADIO -->
+  <section id="nocturnal-emissions">
+    <div class="wrap">
+      <h2>Nocturnal Emissions Radio</h2>
+      <p>DnB culture features, highlights, and radio content.</p>
+
+      <div class="card">
+        <p style="margin-bottom:10px;">
+          Drop your embed here (SoundCloud / Mixcloud / YouTube). If you don’t have it yet, keep this section as a placeholder.
+        </p>
+
+        <!-- OPTIONAL EMBED EXAMPLE (replace src with your real link) -->
+        <div class="embed">
+          <iframe
+            height="420"
+            scrolling="no"
+            allow="autoplay"
+            src="">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBMISSIONS -->
+  <section id="submissions">
+    <div class="wrap">
+      <h2>Submissions</h2>
+      <p>Send music video links, edits, and feature requests.</p>
+
+      <div class="note">
+        <strong style="color:#fff;">Email submissions:</strong><br />
+        Dansnakehead@gmail.com
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+
+      <div class="card" style="text-align:center;">
+        <p style="margin-bottom:12px;">
+          <strong style="color:#fff;">DnB_Culture / Nocturnal Emissions</strong><br />
+          Dansnakehead@gmail.com
+        </p>
+
+        <p style="margin-top:18px;">
+          <strong style="color:#fff;">DSP Records</strong><br />
+          dyrtiesound@live.ca
+        </p>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
