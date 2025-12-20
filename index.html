@@ -25,30 +25,30 @@
       --line:#151515;
       --accent:#f2c400;
       --radius: 16px;
-      --pad: 32px;
     }
 
     body{
       font-family: Arial, Helvetica, sans-serif !important;
       background: var(--bg) !important;
       color: var(--text) !important;
-      line-height: 1.6 !important;
-      font-size: 18px !important; /* desktop readable */
+      line-height: 1.65 !important;
+      font-size: 20px !important; /* desktop scale */
     }
 
     a{ color:inherit !important; }
 
-    /* FULL-WIDTH desktop layout */
+    /* =========================
+       DESKTOP CANVAS (FULL SCREEN FEEL)
+       ========================= */
     .wrap{
       width:100% !important;
-      max-width: 2000px !important;   /* big canvas */
+      max-width: 2400px !important;
       margin: 0 auto !important;
-      padding: 0 var(--pad) !important;
+      padding: 0 64px !important;
     }
 
     /* =========================
        HERO BANNER (NO CROP)
-       Shows FULL IMAGE (no fixed height)
        ========================= */
     .hero{
       width:100% !important;
@@ -58,9 +58,9 @@
 
     .hero img{
       width:100% !important;
-      height:auto !important;              /* IMPORTANT: no cropping */
+      height:auto !important;            /* NO cropping */
       display:block !important;
-      object-fit: initial !important;      /* IMPORTANT: no cropping */
+      object-fit: initial !important;    /* NO cropping */
       object-position: center !important;
     }
 
@@ -75,17 +75,19 @@
       font-weight: 900 !important;
       letter-spacing: 2px !important;
       text-transform: uppercase !important;
-      font-size: 3.2rem !important;
+      font-size: 3.9rem !important;
     }
 
     .hero-title p{
       margin: 10px auto 0 !important;
       color:#d6d6d6 !important;
-      font-size: 1.15rem !important;
-      width: min(1100px, 100%) !important;
+      font-size: 1.25rem !important;
+      width: min(1300px, 100%) !important;
     }
 
-    /* Feature link row */
+    /* =========================
+       FEATURE LINK
+       ========================= */
     .feature-row{
       border-bottom: 1px solid var(--line) !important;
       padding: 24px 0 !important;
@@ -98,7 +100,7 @@
       border:2px solid rgba(255,255,255,0.18) !important;
       background: linear-gradient(180deg, #070707, #000) !important;
       border-radius: var(--radius) !important;
-      padding: 20px 22px !important;
+      padding: 28px !important;
     }
 
     .feature-btn:hover{ border-color: rgba(255,255,255,0.35) !important; }
@@ -107,7 +109,7 @@
       font-weight:900 !important;
       letter-spacing:1px !important;
       text-transform:uppercase !important;
-      font-size: 1.4rem !important;
+      font-size: 1.85rem !important;
     }
 
     .feature-btn .sub{
@@ -115,18 +117,20 @@
       color: var(--accent) !important;
       letter-spacing: 3px !important;
       text-transform:uppercase !important;
-      font-size: 1.05rem !important;
+      font-size: 1.25rem !important;
     }
 
-    /* Sections */
+    /* =========================
+       SECTIONS
+       ========================= */
     section{
-      padding: 64px 0 !important;
+      padding: 96px 0 !important;
       border-bottom: 1px solid var(--line) !important;
     }
 
     h2{
       margin:0 0 14px !important;
-      font-size: 2rem !important;
+      font-size: 2.4rem !important;
       letter-spacing: .5px !important;
     }
 
@@ -141,7 +145,7 @@
     .about-grid{
       display:grid !important;
       grid-template-columns: 1.35fr 0.65fr !important;
-      gap: 26px !important;
+      gap: 40px !important;
       align-items:start !important;
     }
 
@@ -149,7 +153,7 @@
       border:1px solid #1a1a1a !important;
       background: linear-gradient(180deg, #050505, #000) !important;
       border-radius: var(--radius) !important;
-      padding: 18px 20px !important;
+      padding: 28px !important;
       color:#d8d8d8 !important;
     }
 
@@ -157,7 +161,11 @@
       border:1px solid #1a1a1a !important;
       background: var(--panel) !important;
       border-radius: var(--radius) !important;
-      padding: 18px !important;
+      padding: 28px !important;
+    }
+
+    .card iframe{
+      height: 520px !important;
     }
 
     .release-img{
@@ -187,26 +195,26 @@
     .links-grid a:hover{ border-bottom-color:#777 !important; }
 
     footer{
-      padding: 34px var(--pad) !important;
+      padding: 34px 64px !important;
       text-align:center !important;
       font-size: 0.9rem !important;
       color:#666 !important;
     }
 
-    /* Simple mobile fallback (we can tune later) */
+    /* Simple mobile fallback (we'll refine later) */
     @media (max-width: 900px){
       .wrap{ padding: 0 18px !important; }
       .about-grid{ grid-template-columns: 1fr !important; }
       .links-grid{ grid-template-columns: 1fr 1fr !important; }
-      .hero-title h1{ font-size: 2.2rem !important; }
-      .hero-title p{ font-size: 1.02rem !important; }
+      .hero-title h1{ font-size: 2.4rem !important; }
+      .hero-title p{ font-size: 1.05rem !important; }
+      section{ padding: 54px 0 !important; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO (FULL IMAGE, NO CROP) -->
   <header class="hero">
     <img src="assets/dsp-records-underground-bass-music-banner.png" alt="DSP Records underground bass music banner" />
     <div class="wrap hero-title">
@@ -215,7 +223,6 @@
     </div>
   </header>
 
-  <!-- FEATURE -->
   <div class="feature-row">
     <div class="wrap">
       <a class="feature-btn" href="dnb-culture.html">
@@ -225,7 +232,6 @@
     </div>
   </div>
 
-  <!-- ABOUT -->
   <section>
     <div class="wrap">
       <div class="about-grid">
@@ -244,7 +250,6 @@
     </div>
   </section>
 
-  <!-- PLAYLIST -->
   <section>
     <div class="wrap">
       <h2>DSP Playlist</h2>
@@ -253,7 +258,6 @@
       <div class="card" aria-label="DSP Records SoundCloud releases playlist">
         <iframe
           width="100%"
-          height="460"
           scrolling="no"
           frameborder="no"
           allow="autoplay"
@@ -271,7 +275,6 @@
     </div>
   </section>
 
-  <!-- RELEASE SCHEDULE -->
   <section>
     <div class="wrap">
       <h2>Release Schedule</h2>
@@ -280,7 +283,6 @@
     </div>
   </section>
 
-  <!-- LINKS -->
   <section>
     <div class="wrap">
       <h2>Streaming &amp; Store Links</h2>
@@ -302,7 +304,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section>
     <div class="wrap">
       <h2>Contact</h2>
