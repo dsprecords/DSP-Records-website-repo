@@ -118,7 +118,7 @@
       margin:0 0 16px;
       color: var(--muted);
       font-size: 1.08rem;
-      text-align:left;            /* body text left */
+      text-align:cednter;            /* body text left */
     }
 
     /* ABOUT GRID (THIS MUST BE CLOSED IN HTML) */
@@ -187,3 +187,140 @@
 
     /* MOBILE (leave as-is since your phone looks perfect) */
     @media (max-width: 600px){
+      .wrap{ padding: 0 18px; }
+      section{ padding: 54px 0; }
+      .about-grid{ grid-template-columns: 1fr; }
+      .links-grid{ grid-template-columns: 1fr 1fr; }
+      .hero-title h1{ font-size: 2.4rem; }
+      .hero-title p{ font-size: 1.05rem; }
+      p{ text-align:left; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <img src="assets/dsp-records-underground-bass-music-banner.png" alt="DSP Records underground bass music banner" />
+    <div class="wrap hero-title">
+      <h1>UNDERGROUND BASS MUSIC</h1>
+      <p>DSP Records — built for dark rooms, loud systems, and real connection.</p>
+    </div>
+  </header>
+
+  <!-- FEATURE -->
+  <div class="feature-row">
+    <div class="wrap">
+      <a class="feature-btn" href="dnb-culture.html">
+        <div class="title">Dan Snakehead’s DnB_Culture</div>
+        <div class="sub">Music &amp; Videos</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ABOUT (CLOSE YOUR DIVS HERE) -->
+  <section>
+    <div class="wrap">
+      <h2>About</h2>
+
+      <div class="about-grid">
+        <div>
+          <p>DSP Records is an independent underground electronic music label built for dark rooms, loud systems, and real connection.</p>
+          <p>Founded from years in the scene, DSP exists to protect and push the music itself — the culture, the energy, and the unity that happens when sound, space, and people align.</p>
+          <p>DSP Records isn’t about hype cycles or shortcuts. It’s about consistency, momentum, and building something real — one release, one connection, one system at a time.</p>
+        </div>
+
+        <div class="note">
+          <strong style="color:#fff;">Heads up:</strong><br />
+          The playlist below contains promotional versions — not commercial release masters.
+        </div>
+      </div><!-- ✅ closes .about-grid -->
+    </div><!-- ✅ closes .wrap -->
+  </section><!-- ✅ closes About section -->
+
+  <!-- PLAYLIST (NOW IT WILL BE BELOW, NOT BESIDE) -->
+  <section>
+    <div class="wrap">
+      <h2>DSP Playlist</h2>
+      <div class="embed-lead">Upcoming and label releases in one place.</div>
+
+      <div class="card" aria-label="DSP Records SoundCloud releases playlist">
+        <iframe
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2158029551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+        </iframe>
+
+        <div style="margin-top:10px;color:#cccccc;font-size:0.95rem; text-align:center;">
+          <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;">Sub Fixx</a>
+          &nbsp;·&nbsp;
+          <a href="https://soundcloud.com/subfixx/sets/dsp-records-the-movement-label" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;">
+            DSP Records – The Movement (Label Releases)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELEASE SCHEDULE -->
+  <section>
+    <div class="wrap">
+      <h2>Release Schedule</h2>
+      <p style="text-align:center;">Current schedule and upcoming drops.</p>
+      <img class="release-img" src="assets/DSP_ReleaseSchedule.png" alt="DSP Records upcoming release schedule" />
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section>
+    <div class="wrap">
+      <h2>Streaming &amp; Store Links</h2>
+      <p style="text-align:center;">Find DSP Records releases across platforms.</p>
+
+      <div class="card">
+        <div class="links-grid">
+          <a href="#" target="_blank" rel="noopener">Beatport</a>
+          <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener">SoundCloud</a>
+          <a href="#" target="_blank" rel="noopener">Spotify</a>
+          <a href="#" target="_blank" rel="noopener">Apple Music</a>
+          <a href="#" target="_blank" rel="noopener">YouTube Music</a>
+          <a href="#" target="_blank" rel="noopener">Amazon Music</a>
+          <a href="#" target="_blank" rel="noopener">Deezer</a>
+          <a href="#" target="_blank" rel="noopener">TIDAL</a>
+          <a href="#" target="_blank" rel="noopener">Bandcamp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="wrap">
+      <h2>Contact</h2>
+
+      <p style="text-align:center;">
+        <strong style="color:#fff;">DSP Records</strong><br />
+        Record label inquiries • bookings • demo submissions<br />
+        <strong style="color:#fff;">dyrtiesound@live.ca</strong>
+      </p>
+
+      <p style="margin-top:22px; text-align:center;">
+        <strong style="color:#fff;">DnB_Culture / Nocturnal Emissions</strong><br />
+        Drum &amp; bass video submissions • features • project inquiries<br />
+        <strong style="color:#fff;">Dansnakehead@gmail.com</strong>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="y"></span> DSP Records
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
