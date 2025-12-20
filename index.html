@@ -33,12 +33,9 @@
     }
 
     .header-statement {
-      text-align: center;
       font-size: 3rem;
       font-weight: 900;
       letter-spacing: 2px;
-      margin: 0;
-      color: #ffffff;
       padding: 18px 0 10px;
     }
 
@@ -49,7 +46,6 @@
 
     h2 {
       font-size: 1.6rem;
-      margin-top: 0;
       margin-bottom: 10px;
     }
 
@@ -57,7 +53,6 @@
       max-width: 700px;
       margin: 0 auto 20px;
       color: #bdbdbd;
-      padding: 0 6px;
     }
 
     .small-note {
@@ -65,199 +60,82 @@
       margin: 12px auto 18px;
       color: #9a9a9a;
       font-size: 0.95rem;
-      padding: 0 6px;
     }
 
-    /* SoundCloud embed wrapper */
     .embed-wrap {
       max-width: 900px;
       margin: 18px auto 0;
-      padding: 0 6px;
     }
 
-    /* Releases image spacing + CENTERING */
     .release-img {
       display: block;
       max-width: 100%;
-      height: auto;
-      margin: 20px auto 0; /* centers the image */
-    }
-
-    /* Links hub */
-    .links-wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: left;
-      padding: 0 6px;
-    }
-
-    .links-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      margin-top: 16px;
-    }
-
-    .link-card {
-      border: 1px solid #222;
-      background: #0b0b0b;
-      border-radius: 10px;
-      padding: 18px;
-    }
-
-    .link-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #ffffff;
-    }
-
-    .link-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .link-list li {
-      margin: 10px 0;
-      color: #bdbdbd;
-    }
-
-    a {
-      color: #e5e5e5;
-      text-decoration: none;
-      border-bottom: 1px solid #444;
-    }
-
-    a:hover {
-      border-bottom-color: #777;
+      margin: 20px auto 0;
     }
 
     footer {
       padding: 40px 20px;
-      text-align: center;
       font-size: 0.85rem;
       color: #666;
+      text-align: center;
     }
 
-    /* MOBILE OPTIMIZATION */
     @media (max-width: 768px) {
-      section { padding: 28px 16px; }
-
-      .header-statement {
-        font-size: 2rem;
-        letter-spacing: 1px;
-        padding: 14px 0 8px;
-      }
-
-      h2 { font-size: 1.35rem; }
-
-      p {
-        max-width: 680px;
-        margin-bottom: 16px;
-        font-size: 1rem;
-      }
+      .header-statement { font-size: 2rem; }
     }
 
     @media (max-width: 420px) {
-      header { padding: 0 14px; }
-      section { padding: 22px 14px; }
-
-      .header-statement {
-        font-size: 1.55rem;
-        letter-spacing: 0.5px;
-      }
-
-      p { font-size: 0.98rem; }
+      .header-statement { font-size: 1.55rem; }
     }
   </style>
 </head>
 
 <body>
 
-  <header class="site-header">
-    <img src="assets/dsp-records-underground-bass-music-banner.png" alt="DSP Records underground bass music banner">
-    <div class="header-statement">UNDERGROUND BASS MUSIC LABEL</div>
-  </header>
+<header class="site-header">
+  <img src="assets/dsp-records-underground-bass-music-banner.png" alt="DSP Records underground bass music banner">
+  <div class="header-statement">UNDERGROUND BASS MUSIC LABEL</div>
+</header>
 
-  <section>
-    <h2>About</h2>
-    <p>
-      DSP Records is an independent underground electronic music label built for dark rooms, loud systems, and real connection.
-      <br><br>
-      Founded from years in the scene, DSP exists to protect and push the music itself — the culture, the energy, and the unity that happens when sound, space, and people align. We focus on bass-driven underground sounds, raw intention, and releases made to be felt on proper systems, not rushed for trends or algorithms.
-      <br><br>
-      The label is rooted in respect for the craft and the community that surrounds it. Music comes first, supported by fair representation, creative freedom, and a structure designed for long-term growth rather than short-term hype. Every release is handled with care, purpose, and reinvestment back into the scene that gives it life.
-      <br><br>
-      DSP Records isn’t about hype cycles or shortcuts. It’s about consistency, momentum, and building something real — one release, one connection, one system at a time.
-    </p>
-  </section>
+<section>
+  <h2>About</h2>
+  <p>
+    DSP Records is an independent underground electronic music label built for dark rooms, loud systems, and real connection.
+    <br><br>
+    Founded from years in the scene, DSP exists to protect and push the music itself — the culture, the energy, and the unity that happens when sound, space, and people align.
+    <br><br>
+    DSP Records isn’t about hype cycles or shortcuts. It’s about consistency, momentum, and building something real — one release, one connection, one system at a time.
+  </p>
+</section>
 
-  <section>
-    <h2>Releases</h2>
-    <p>Current and upcoming releases.</p>
+<section>
+  <h2>Releases</h2>
+  <p>Current and upcoming releases.</p>
 
-    <div class="small-note">
-      All tracks in the SoundCloud playlist below are available for streaming as promotional copies (not commercial release masters).
+  <div class="small-note">
+    All tracks in the SoundCloud playlist below are available as promotional copies (not commercial release masters).
+  </div>
+
+  <!-- SoundCloud embed ABOVE the release image -->
+  <div class="embed-wrap">
+    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2158029551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+
+    <div style="font-size:10px;color:#cccccc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+      <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener">Sub Fixx</a> ·
+      <a href="https://soundcloud.com/subfixx/sets/dsp-records-the-movement-label" target="_blank" rel="noopener">
+        DSP Records – The Movement (Label Releases)
+      </a>
     </div>
+  </div>
 
-    <!-- SoundCloud embed ABOVE the release image -->
-    <div class="embed-wrap" aria-label="DSP Records SoundCloud releases playlist">
-      <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2158029551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+  <!-- Release schedule image BELOW embed and CENTERED -->
+  <img class="release-img" src="assets/DSP_ReleaseSchedule.png" alt="DSP Records upcoming release schedule">
+</section>
 
-      <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-        <a href="https://soundcloud.com/subfixx" title="Sub Fixx" target="_blank" rel="noopener" style="color: #cccccc; text-decoration: none;">Sub Fixx</a>
-        ·
-        <a href="https://soundcloud.com/subfixx/sets/dsp-records-the-movement-label" title="DSP Records - The Movement (Label Releases)" target="_blank" rel="noopener" style="color: #cccccc; text-decoration: none;">DSP Records - The Movement (Label Releases)</a>
-      </div>
-    </div>
-
-    <!-- Release schedule image BELOW embed and CENTERED -->
-    <img class="release-img" src="assets/DSP_ReleaseSchedule.png" alt="DSP Records upcoming release schedule">
-  </section>
-
-  <section>
-    <h2>DSP Music Links</h2>
-    <p>Listen, follow, and connect.</p>
-
-    <div class="links-wrap">
-      <div class="links-grid">
-
-        <div class="link-card">
-          <h3>Links</h3>
-          <ul class="link-list">
-            <li><a href="https://www.beatport.com/artist/sub-fixx/760979" target="_blank" rel="noopener">Beatport</a></li>
-            <li><a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener">SoundCloud</a></li>
-            <li><a href="https://soundcloud.com/subfixx/sets/dsp-records-the-movement-label" target="_blank" rel="noopener">SoundCloud Releases Playlist</a></li>
-            <li><a href="https://music.apple.com/artist/sub-fixx/1453221236" target="_blank" rel="noopener">Apple Music</a></li>
-            <li><a href="https://music.amazon.ca/artists/B07NSKXC27/sub-fixx" target="_blank" rel="noopener">Amazon Music</a></li>
-            <li><a href="https://volumo.com/artist/192484-sub-fixx" target="_blank" rel="noopener">Volumo</a></li>
-            <li><a href="https://www.instagram.com/sub_fixx/" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://www.facebook.com/dyrtiesoundrecords/" target="_blank" rel="noopener">DSP Records Facebook</a></li>
-            <li><a href="https://www.facebook.com/Subfixx" target="_blank" rel="noopener">Sub Fixx Facebook</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p>Booking inquiries, demo submissions, and general contact.</p>
-
-    <div class="links-wrap" style="text-align:center;">
-      <div class="link-card" style="max-width:700px;margin:0 auto;">
-        <p style="margin:0;">
-          <a href="mailto:dyrtiesound@live.ca">dyrtiesound@live.ca</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <footer>© DSP Records</footer>
+<footer>
+  © DSP Records
+</footer>
 
 </body>
 </html>
