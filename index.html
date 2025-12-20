@@ -108,6 +108,57 @@
       margin: 20px auto 0;
     }
 
+    /* Links section */
+    .links-wrap{
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 6px;
+      text-align: left;
+    }
+
+    .links-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .link-card{
+      border: 1px solid #222;
+      background: #0b0b0b;
+      border-radius: 10px;
+      padding: 18px;
+    }
+
+    .link-card h3{
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .link-list{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .link-list li{
+      margin: 10px 0;
+      color: #bdbdbd;
+    }
+
+    .link-list a{
+      color: #e5e5e5;
+      text-decoration: none;
+      border-bottom: 1px solid #444;
+    }
+
+    .link-list a:hover{
+      border-bottom-color: #777;
+    }
+
     footer {
       padding: 40px 20px;
       font-size: 0.85rem;
@@ -141,6 +192,7 @@
   </a>
 </div>
 
+<!-- ABOUT -->
 <section>
   <h2>About</h2>
   <p>
@@ -152,28 +204,61 @@
   </p>
 </section>
 
+<!-- SOUNDCLOUD EMBED (FIRST) -->
 <section>
-  <h2>Releases</h2>
-  <p>Current and upcoming releases.</p>
+  <h2>DSP Playlist</h2>
+  <p>Upcoming and label releases in one place.</p>
 
   <div class="small-note">
     All tracks in the SoundCloud playlist below are available as promotional copies (not commercial release masters).
   </div>
 
-  <div class="embed-wrap">
+  <div class="embed-wrap" aria-label="DSP Records SoundCloud releases playlist">
     <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2158029551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-    </iframe>
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2158029551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
 
     <div style="font-size:10px;color:#cccccc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
-      <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener">Sub Fixx</a> ·
-      <a href="https://soundcloud.com/subfixx/sets/dsp-records-the-movement-label" target="_blank" rel="noopener">
+      <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;border-bottom:none;">Sub Fixx</a> ·
+      <a href="https://soundcloud.com/subfixx/sets/dsp-records-the-movement-label" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;border-bottom:none;">
         DSP Records – The Movement (Label Releases)
       </a>
     </div>
   </div>
+</section>
 
+<!-- RELEASE SCHEDULE IMAGE (SECOND) -->
+<section>
+  <h2>Release Schedule</h2>
+  <p>Current schedule and upcoming drops.</p>
   <img class="release-img" src="assets/DSP_ReleaseSchedule.png" alt="DSP Records upcoming release schedule">
+</section>
+
+<!-- LINKS (BOTTOM) -->
+<section>
+  <h2>Links</h2>
+  <p>Official pages and platforms.</p>
+
+  <div class="links-wrap">
+    <div class="links-grid">
+
+      <div class="link-card">
+        <h3>DSP Records</h3>
+        <ul class="link-list">
+          <li><a href="https://dsprecords.ca" target="_blank" rel="noopener">DSP Records Website</a></li>
+          <li><a href="https://www.facebook.com/dyrtiesoundrecords" target="_blank" rel="noopener">DSP Records Facebook</a></li>
+        </ul>
+      </div>
+
+      <div class="link-card">
+        <h3>Sub Fixx</h3>
+        <ul class="link-list">
+          <li><a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener">Sub Fixx SoundCloud</a></li>
+          <li><a href="https://www.facebook.com/Subfixx" target="_blank" rel="noopener">Sub Fixx Facebook</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <footer>
