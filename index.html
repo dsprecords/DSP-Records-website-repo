@@ -75,36 +75,44 @@
       width: min(1300px, 100%);
     }
 
-    /* FEATURE */
     .feature-row{
-      border-bottom: 1px solid var(--line);
-      padding: 24px 0;
-    }
-    ..feature-btn{
+  border-bottom: 1px solid var(--line);
+  padding: 24px 0;
+}
+
+.feature-btn{
   display:block;
   text-decoration:none;
   border:2px solid rgba(255,255,255,0.18);
   background: linear-gradient(180deg, #070707, #000);
   border-radius: var(--radius);
   padding: 28px;
-  text-align: center;   /* ✅ centers the title + sub */
 }
 
-    }
-    .feature-btn:hover{ border-color: rgba(255,255,255,0.35); }
-    .feature-btn .title{
-      font-weight:900;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      font-size: 1.85rem;
-    }
-    .feature-btn .sub{
-      margin-top:6px;
-      color: var(--accent);
-      letter-spacing:3px;
-      text-transform:uppercase;
-      font-size: 1.25rem;
-    }
+/* FORCE CENTERING — this is the missing part */
+.feature-btn,
+.feature-btn *{
+  text-align: center !important;
+}
+
+.feature-btn:hover{
+  border-color: rgba(255,255,255,0.35);
+}
+
+.feature-btn .title{
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  font-size: 1.85rem;
+}
+
+.feature-btn .sub{
+  margin-top:6px;
+  color: var(--accent);
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-size: 1.25rem;
+}
 
     /* SECTIONS */
     section{
