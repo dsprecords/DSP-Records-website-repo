@@ -240,49 +240,59 @@
 
   <!-- ABOUT (CLOSE YOUR DIVS HERE) -->
  <!-- ABOUT -->
-<section>
+<!-- ===== ABOUT + PLAYLIST (REWRITE: disclaimer will be BELOW About, ABOVE playlist) ===== -->
+
+<!-- ABOUT -->
+<section id="about">
   <div class="wrap">
     <h2>About</h2>
 
     <div class="about-grid">
-      <div>
+      <div class="about-left">
         <p>DSP Records is an independent underground electronic music label built for dark rooms, loud systems, and real connection.</p>
         <p>Founded from years in the scene, DSP exists to protect and push the music itself — the culture, the energy, and the unity that happens when sound, space, and people align.</p>
         <p>DSP Records isn’t about hype cycles or shortcuts. It’s about consistency, momentum, and building something real — one release, one connection, one system at a time.</p>
       </div>
-    </div><!-- closes .about-grid -->
+    </div><!-- /about-grid -->
 
-  </div><!-- closes .wrap -->
+  </div><!-- /wrap -->
 </section>
 
-  <!-- PLAYLIST (NOW IT WILL BE BELOW, NOT BESIDE) -->
-  <section>
+<!-- PLAYLIST -->
+<section id="playlist">
+  <div class="wrap">
+    <h2>DSP Playlist</h2>
 
-     <div class="note">
-          <strong style="color:#fff;">Heads up:</strong><br />
-          The playlist below contains promotional versions — not commercial release masters.
-    <div class="wrap">
-      <h2>DSP Playlist</h2>
-      <div class="embed-lead">Upcoming and label releases in one place.</div>
+    <!-- DISCLAIMER (always sits here, never beside About) -->
+    <div class="note playlist-note">
+      <strong style="color:#fff;">Heads up:</strong><br />
+      All tracks in this playlist are for promotional streaming — they are not the commercial release masters.
+    </div>
 
-      <div class="card" aria-label="DSP Records SoundCloud releases playlist">
-        <iframe
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2158029551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-        </iframe>
+    <div class="embed-lead">Upcoming and label releases in one place.</div>
 
-        <div style="margin-top:10px;color:#cccccc;font-size:0.95rem; text-align:center;">
-          <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;">Sub Fixx</a>
-          &nbsp;·&nbsp;
-          <a href="https://soundcloud.com/subfixx/sets/dsp-records-the-movement-label" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;">
-            DSP Records – The Movement (Label Releases)
-          </a>
-        </div>
+    <div class="card" aria-label="DSP Records SoundCloud releases playlist">
+      <iframe
+        width="100%"
+        height="520"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2158029551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+      </iframe>
+
+      <div style="margin-top:10px;color:#cccccc;font-size:0.95rem; text-align:center;">
+        <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;">Sub Fixx</a>
+        &nbsp;·&nbsp;
+        <a href="https://soundcloud.com/subfixx/sets/dsp-records-the-movement-label" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;">
+          DSP Records – The Movement (Label Releases)
+        </a>
       </div>
     </div>
-  </section>
+
+  </div><!-- /wrap -->
+</section>
+
 
   <!-- RELEASE SCHEDULE -->
   <section>
