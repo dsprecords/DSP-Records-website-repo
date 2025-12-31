@@ -22,6 +22,7 @@
       --line:#151515;
       --accent:#f2c400;
       --radius: 16px;
+      --content: 1100px; /* <<< key: readable centered column */
     }
 
     body{
@@ -29,18 +30,18 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.65;
-      font-size: 20px; /* desktop readable */
+      font-size: 20px;
+      text-align: center; /* <<< global: everything centered */
     }
 
     a{ color:inherit; }
 
-    /* CENTERED CANVAS (NOT A TINY COLUMN) */
+    /* CENTERED CANVAS (controls the visual "middle") */
     .wrap{
       width:100%;
-      max-width: 2400px;
-      margin-left:auto;
-      margin-right:auto;
-      padding: 0 64px;
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
     /* HERO */
@@ -51,14 +52,14 @@
     }
     .hero img{
       width:100%;
-      height:auto;          /* full image, no crop */
+      height:auto;
       display:block;
       object-fit: initial;
       object-position:center;
     }
     .hero-title{
       border-top: 1px solid var(--line);
-      padding:0px 0 28px;
+      padding: 0 0 28px;
       text-align:center;
     }
     .hero-title h1{
@@ -69,11 +70,11 @@
       font-size: 3.9rem;
     }
     .hero-title p{
-      margin: 0px auto 0;
+      margin: 0 auto 0;
       color:#d6d6d6;
       font-size: 1.25rem;
-      width: min(1300px, 100%);
-      text-align: center; /* keep hero tagline centered */
+      max-width: 900px;
+      text-align: center;
     }
 
     .feature-row{
@@ -81,7 +82,7 @@
       padding: 24px 0;
     }
 
-    /* FEATURE BUTTON (kept exactly as you had it) */
+    /* FEATURE BUTTON (kept as you had it) */
     .feature-btn{
       display: flex !important;
       flex-direction: column !important;
@@ -95,7 +96,7 @@
       border-radius: var(--radius) !important;
       padding: 28px !important;
 
-      max-width: 1200px !important;
+      max-width: 980px !important;
       margin-left: auto !important;
       margin-right: auto !important;
     }
@@ -127,10 +128,9 @@
       margin:0 0 14px;
       font-size: 2.4rem;
       letter-spacing: .5px;
-      text-align:center; /* headings centered */
+      text-align:center;
     }
 
-    /* BODY TEXT: left on desktop (this is the key fix) */
     p{
       margin:0 0 16px;
       color: var(--muted);
@@ -138,12 +138,18 @@
       text-align:center;
     }
 
-    /* ABOUT GRID */
+    /* ABOUT GRID (make it a true centered single column) */
     .about-grid{
       display:grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 40px;
+      grid-template-columns: 1fr;
+      gap: 28px;
       align-items:center;
+      justify-items: center;
+    }
+    .about-left{
+      width:100%;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .note{
@@ -152,6 +158,9 @@
       border-radius: var(--radius);
       padding: 28px;
       color:#d8d8d8;
+      max-width: 980px;
+      margin: 24px auto 0;
+      text-align:center;
     }
 
     /* CARDS */
@@ -160,20 +169,29 @@
       background: var(--panel);
       border-radius: var(--radius);
       padding: 28px;
+      max-width: 980px;
+      margin: 0 auto;
+      text-align:center;
     }
 
     /* PLAYLIST CAPTION (ABOVE EMBED) */
     .embed-lead{
-      text-align:center; /* caption centered */
+      text-align:center;
       color: var(--muted);
-      margin-bottom: 18px;
+      margin: 18px auto 18px;
       font-size: 1.08rem;
+      max-width: 980px;
     }
 
-    .card iframe{ height: 520px; width:100%; display:block; }
+    .card iframe{
+      height: 520px;
+      width:100%;
+      display:block;
+      border:0;
+    }
 
     .release-img{
-      width:70%;
+      width: min(900px, 100%);
       height:auto;
       display:block;
       margin: 0 auto;
@@ -184,22 +202,25 @@
 
     .links-grid{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px 28px;
       margin-top: 8px;
+      justify-items: center; /* <<< centers each link cell */
     }
     .links-grid a{
       color:#e5e5e5;
       text-decoration:none;
       border-bottom:1px solid #444;
       padding: 6px 0;
-      width: fit-content;
+      width: 100%;           /* <<< no more "fit-content" drift */
+      text-align: center;    /* <<< center text inside each cell */
+      max-width: 260px;
     }
     .links-grid a:hover{ border-bottom-color:#777; }
 
     /* FEATURED MIX meta line */
     .mix-meta{
-      margin-top: 8px;
+      margin-top: 10px;
       text-align: center;
       font-size: 0.95rem;
       color: #cccccc;
@@ -213,21 +234,19 @@
     }
 
     footer{
-      padding: 34px 64px;
+      padding: 34px 24px;
       text-align:center;
       font-size: 0.9rem;
       color:#666;
     }
 
-    /* MOBILE (keep your behavior: body text centered on small screens) */
+    /* MOBILE */
     @media (max-width: 600px){
       .wrap{ padding: 0 18px; }
       section{ padding: 54px 0; }
-      .about-grid{ grid-template-columns: 1fr; }
       .links-grid{ grid-template-columns: 1fr 1fr; }
       .hero-title h1{ font-size: 2.4rem; }
       .hero-title p{ font-size: 1.05rem; }
-      p{ text-align:center; }
     }
   </style>
 </head>
@@ -257,10 +276,10 @@
           <p>Founded from years in the scene, DSP exists to protect and push the music itself — the culture, the energy, and the unity that happens when sound, space, and people align.</p>
           <p>DSP Records isn’t about hype cycles or shortcuts. It’s about consistency, momentum, and building something real — one release, one connection, one system at a time.</p>
         </div>
-      </div><!-- /about-grid -->
+      </div>
 
-      <!-- FEATURED MIX (no nested .wrap; keeps alignment consistent) -->
-      <section class="featured-mix" aria-label="Featured artist mix">
+      <!-- FEATURED MIX -->
+      <div class="featured-mix" aria-label="Featured artist mix">
         <h2>Featured Artist Mix Sub Fixx-Dark Side Conversion Vol. 05</h2>
 
         <iframe
@@ -279,9 +298,9 @@
             Dark Side Conversion Vol. 05
           </a>
         </div>
-      </section>
+      </div>
 
-      <!-- DISCLAIMER (below About, above playlist) -->
+      <!-- DISCLAIMER -->
       <div class="note playlist-note">
         <strong style="color:#fff;">Heads up:</strong><br />
         All tracks in this playlist are for promotional streaming — they are not the commercial release masters.
@@ -308,10 +327,10 @@
         </div>
       </div>
 
-    </div><!-- /wrap -->
+    </div>
   </section>
 
-  <!-- PLAYLIST (kept, even though it’s currently empty) -->
+  <!-- PLAYLIST -->
   <section id="playlist">
     <div class="wrap">
       <h2>DSP Playlist</h2>
@@ -322,7 +341,7 @@
   <section>
     <div class="wrap">
       <h2>Release Schedule</h2>
-      <p style="text-align:center;">Current schedule and upcoming drops.</p>
+      <p>Current schedule and upcoming drops.</p>
       <img class="release-img" src="assets/DSP_ReleaseSchedule.png" alt="DSP Records upcoming release schedule" />
     </div>
   </section>
@@ -331,7 +350,7 @@
   <section>
     <div class="wrap">
       <h2>Streaming &amp; Store Links</h2>
-      <p style="text-align:center;">Find DSP Records releases across platforms.</p>
+      <p>Find DSP Records releases across platforms.</p>
 
       <div class="card">
         <div class="links-grid">
@@ -354,13 +373,13 @@
     <div class="wrap">
       <h2>Contact</h2>
 
-      <p style="text-align:center;">
+      <p>
         <strong style="color:#fff;">DSP Records</strong><br />
         Record label inquiries • bookings • demo submissions<br />
         <strong style="color:#fff;">dyrtiesound@live.ca</strong>
       </p>
 
-      <p style="margin-top:22px; text-align:center;">
+      <p style="margin-top:22px;">
         <strong style="color:#fff;">DnB_Culture / Nocturnal Emissions</strong><br />
         Drum &amp; bass video submissions • features • project inquiries<br />
         <strong style="color:#fff;">Dansnakehead@gmail.com</strong>
