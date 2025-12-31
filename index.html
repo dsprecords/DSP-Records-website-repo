@@ -18,11 +18,10 @@
       --panel:#0b0b0b;
       --text:#fff;
       --muted:#bdbdbd;
-      --muted2:#9a9a9a;
       --line:#151515;
       --accent:#f2c400;
       --radius: 16px;
-      --content: 1100px; /* <<< key: readable centered column */
+      --content: 1100px; /* centered column width */
     }
 
     body{
@@ -31,12 +30,12 @@
       color: var(--text);
       line-height: 1.65;
       font-size: 20px;
-      text-align: center; /* <<< global: everything centered */
+      text-align: center;
     }
 
     a{ color:inherit; }
 
-    /* CENTERED CANVAS (controls the visual "middle") */
+    /* CENTERED CANVAS */
     .wrap{
       width:100%;
       max-width: var(--content);
@@ -54,12 +53,11 @@
       width:100%;
       height:auto;
       display:block;
-      object-fit: initial;
       object-position:center;
     }
     .hero-title{
       border-top: 1px solid var(--line);
-      padding: 0 0 28px;
+      padding: 0 0 24px;
       text-align:center;
     }
     .hero-title h1{
@@ -70,79 +68,38 @@
       font-size: 3.9rem;
     }
     .hero-title p{
-      margin: 0 auto 0;
+      margin: 6px auto 0;
       color:#d6d6d6;
       font-size: 1.25rem;
       max-width: 900px;
       text-align: center;
     }
 
-    .feature-row{
-      border-bottom: 1px solid var(--line);
-      padding: 24px 0;
-    }
-
-    /* FEATURE BUTTON (kept as you had it) */
-    .feature-btn{
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      text-align: center !important;
-      text-decoration: none !important;
-
-      border: 2px solid rgba(255,255,255,0.18) !important;
-      background: linear-gradient(180deg, #070707, #000) !important;
-      border-radius: var(--radius) !important;
-      padding: 28px !important;
-
-      max-width: 980px !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-
-    .feature-btn .title{
-      font-weight: 900 !important;
-      letter-spacing: 1px !important;
-      text-transform: uppercase !important;
-      font-size: 1.85rem !important;
-      text-align: center !important;
-    }
-
-    .feature-btn .sub{
-      margin-top: 6px !important;
-      color: var(--accent) !important;
-      letter-spacing: 3px !important;
-      text-transform: uppercase !important;
-      font-size: 1.25rem !important;
-      text-align: center !important;
-    }
-
     /* SECTIONS */
     section{
-      padding: 96px 0;
+      padding: 72px 0; /* tightened globally */
       border-bottom: 1px solid var(--line);
     }
 
     h2{
-      margin:0 0 14px;
+      margin:0 0 10px;
       font-size: 2.4rem;
       letter-spacing: .5px;
       text-align:center;
     }
 
     p{
-      margin:0 0 16px;
+      margin:0 0 14px;
       color: var(--muted);
       font-size: 1.08rem;
       text-align:center;
     }
 
-    /* ABOUT GRID (make it a true centered single column) */
+    /* ABOUT GRID */
     .about-grid{
       display:grid;
       grid-template-columns: 1fr;
-      gap: 28px;
+      gap: 18px; /* tighter */
       align-items:center;
       justify-items: center;
     }
@@ -152,15 +109,51 @@
       margin: 0 auto;
     }
 
+    /* FEATURED MIX meta line */
+    .mix-meta{
+      margin-top: 8px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #cccccc;
+    }
+    .mix-meta a{
+      color:#cccccc;
+      text-decoration:none;
+    }
+    .mix-meta a:hover{ text-decoration:underline; }
+
+    /* NOTE / DISCLAIMER */
     .note{
       border:1px solid #1a1a1a;
       background: linear-gradient(180deg, #050505, #000);
       border-radius: var(--radius);
-      padding: 28px;
+      padding: 18px 22px;     /* tighter */
       color:#d8d8d8;
       max-width: 980px;
-      margin: 24px auto 0;
+      margin: 0 auto;         /* no default top gap */
       text-align:center;
+    }
+
+    /* PLAYLIST SECTION: title + disclaimer tight, no extra padding */
+    #playlist{
+      padding-top: 46px;
+      padding-bottom: 52px;
+    }
+    #playlist h2{
+      margin-bottom: 8px;
+    }
+    #playlist .note{
+      margin-top: 0;          /* directly under DSP Playlist */
+      margin-bottom: 18px;    /* small gap before embed lead */
+    }
+
+    /* PLAYLIST CAPTION (ABOVE EMBED) */
+    .embed-lead{
+      text-align:center;
+      color: var(--muted);
+      margin: 10px auto 14px; /* tighter */
+      font-size: 1.05rem;
+      max-width: 980px;
     }
 
     /* CARDS */
@@ -168,21 +161,11 @@
       border:1px solid #1a1a1a;
       background: var(--panel);
       border-radius: var(--radius);
-      padding: 28px;
+      padding: 22px;          /* slightly tighter */
       max-width: 980px;
       margin: 0 auto;
       text-align:center;
     }
-
-    /* PLAYLIST CAPTION (ABOVE EMBED) */
-    .embed-lead{
-      text-align:center;
-      color: var(--muted);
-      margin: 18px auto 18px;
-      font-size: 1.08rem;
-      max-width: 980px;
-    }
-
     .card iframe{
       height: 520px;
       width:100%;
@@ -205,33 +188,18 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px 28px;
       margin-top: 8px;
-      justify-items: center; /* <<< centers each link cell */
+      justify-items: center;
     }
     .links-grid a{
       color:#e5e5e5;
       text-decoration:none;
       border-bottom:1px solid #444;
       padding: 6px 0;
-      width: 100%;           /* <<< no more "fit-content" drift */
-      text-align: center;    /* <<< center text inside each cell */
+      width: 100%;
+      text-align: center;
       max-width: 260px;
     }
     .links-grid a:hover{ border-bottom-color:#777; }
-
-    /* FEATURED MIX meta line */
-    .mix-meta{
-      margin-top: 10px;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #cccccc;
-    }
-    .mix-meta a{
-      color:#cccccc;
-      text-decoration:none;
-    }
-    .mix-meta a:hover{
-      text-decoration:underline;
-    }
 
     footer{
       padding: 34px 24px;
@@ -244,6 +212,7 @@
     @media (max-width: 600px){
       .wrap{ padding: 0 18px; }
       section{ padding: 54px 0; }
+      #playlist{ padding-top: 40px; padding-bottom: 44px; }
       .links-grid{ grid-template-columns: 1fr 1fr; }
       .hero-title h1{ font-size: 2.4rem; }
       .hero-title p{ font-size: 1.05rem; }
@@ -279,7 +248,7 @@
       </div>
 
       <!-- FEATURED MIX -->
-      <div class="featured-mix" aria-label="Featured artist mix">
+      <div class="featured-mix" aria-label="Featured artist mix" style="margin-top:26px;">
         <h2>Featured Artist Mix Sub Fixx-Dark Side Conversion Vol. 05</h2>
 
         <iframe
@@ -299,13 +268,16 @@
           </a>
         </div>
       </div>
+
+    </div>
+  </section>
+
   <!-- PLAYLIST -->
   <section id="playlist">
     <div class="wrap">
       <h2>DSP Playlist</h2>
-    </div>
-  </section>
-      <!-- DISCLAIMER -->
+
+      <!-- DISCLAIMER (moved here, tight under title) -->
       <div class="note playlist-note">
         <strong style="color:#fff;">Heads up:</strong><br />
         All tracks in this playlist are for promotional streaming — they are not the commercial release masters.
@@ -331,11 +303,8 @@
           </a>
         </div>
       </div>
-
     </div>
   </section>
-
-
 
   <!-- RELEASE SCHEDULE -->
   <section>
