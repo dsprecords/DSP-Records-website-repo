@@ -2,367 +2,503 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DSP Records</title>
+  <title>DSP Records — Past Hosted Events</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DSP Records — underground bass music built for dark rooms, loud systems, and real connection." />
-
+  <meta name="description" content="Archive of past DSP Records hosted events, featuring New Year's Eve 2013 Black & White Masquerade photos from Liquid Nightclub." />
   <style>
-    /* HARD RESET */
-    html, body { width:100%; max-width:none; overflow-x:hidden; }
-    body { margin:0; padding:0; }
-    * { box-sizing:border-box; }
-    img, iframe { max-width:100%; }
-
-    :root{
-      --bg:#000;
-      --panel:#0b0b0b;
-      --text:#fff;
-      --muted:#bdbdbd;
-      --line:#151515;
-      --accent:#f2c400;
-      --radius: 16px;
-      --content: 1100px; /* centered column width */
-    }
-
-    body{
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      font-size: 20px;
+      background: #000;
+      color: #fff;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 16px 56px;
+    }
+    header {
+      border-bottom: 1px solid #151515;
+      background: #050505;
+    }
+    .topbar {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .9rem;
+    }
+    nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: .9rem;
+    }
+    nav a {
+      opacity: .75;
+      padding: 4px 0;
+    }
+    nav a:hover { opacity: 1; }
+    h1 {
+      font-size: 2.2rem;
+      margin: 26px 0 10px;
       text-align: center;
+      letter-spacing: .04em;
     }
-
-    a{ color:inherit; }
-
-    /* CENTERED CANVAS */
-    .wrap{
-      width:100%;
-      max-width: var(--content);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* HERO */
-    .hero{
-      width:100%;
-      background:#000;
-      border-bottom: 1px solid var(--line);
-    }
-    .hero img{
-      width:100%;
-      height:auto;
-      display:block;
-      object-position:center;
-    }
-    .hero-title{
-      border-top: 1px solid var(--line);
-      padding: 0 0 24px;
-      text-align:center;
-    }
-    .hero-title h1{
-      margin:0;
-      font-weight:900;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      font-size: 3.9rem;
-    }
-    .hero-title p{
-      margin: 6px auto 0;
-      color:#d6d6d6;
-      font-size: 1.25rem;
-      max-width: 900px;
+    .intro {
+      max-width: 720px;
+      margin: 0 auto 24px;
       text-align: center;
+      color: #bdbdbd;
+      font-size: 1rem;
+      line-height: 1.5;
     }
-
-    /* SECTIONS */
-    section{
-      padding: 72px 0; /* tightened globally */
-      border-bottom: 1px solid var(--line);
-    }
-
-    h2{
-      margin:0 0 10px;
-      font-size: 2.4rem;
-      letter-spacing: .5px;
-      text-align:center;
-    }
-
-    p{
-      margin:0 0 14px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      text-align:center;
-    }
-
-    /* ABOUT GRID */
-    .about-grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px; /* tighter */
-      align-items:center;
-      justify-items: center;
-    }
-    .about-left{
-      width:100%;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    /* FEATURED MIX meta line */
-    .mix-meta{
-      margin-top: 8px;
+    .event-meta-top {
       text-align: center;
-      font-size: 0.95rem;
-      color: #cccccc;
+      color: #c7c7c7;
+      margin-bottom: 26px;
+      font-size: .96rem;
     }
-    .mix-meta a{
-      color:#cccccc;
-      text-decoration:none;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
     }
-    .mix-meta a:hover{ text-decoration:underline; }
-
-    /* NOTE / DISCLAIMER */
-    .note{
-      border:1px solid #1a1a1a;
-      background: linear-gradient(180deg, #050505, #000);
-      border-radius: var(--radius);
-      padding: 18px 22px;     /* tighter */
-      color:#d8d8d8;
-      max-width: 980px;
-      margin: 0 auto;         /* no default top gap */
-      text-align:center;
+    .event-card {
+      background: #0b0b0b;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #151515;
+      box-shadow: 0 14px 40px rgba(0,0,0,.65);
+      display: flex;
+      flex-direction: column;
     }
-
-    /* PLAYLIST SECTION: title + disclaimer tight, no extra padding */
-    #playlist{
-      padding-top: 46px;
-      padding-bottom: 52px;
-    }
-    #playlist h2{
-      margin-bottom: 8px;
-    }
-    #playlist .note{
-      margin-top: 0;          /* directly under DSP Playlist */
-      margin-bottom: 18px;    /* small gap before embed lead */
-    }
-
-    /* PLAYLIST CAPTION (ABOVE EMBED) */
-    .embed-lead{
-      text-align:center;
-      color: var(--muted);
-      margin: 10px auto 14px; /* tighter */
-      font-size: 1.05rem;
-      max-width: 980px;
-    }
-
-    /* CARDS */
-    .card{
-      border:1px solid #1a1a1a;
-      background: var(--panel);
-      border-radius: var(--radius);
-      padding: 22px;          /* slightly tighter */
-      max-width: 980px;
-      margin: 0 auto;
-      text-align:center;
-    }
-    .card iframe{
-      height: 520px;
-      width:100%;
-      display:block;
-      border:0;
-    }
-
-    .release-img{
-      width: min(900px, 100%);
-      height:auto;
-      display:block;
-      margin: 0 auto;
-      border-radius: var(--radius);
-      border:1px solid #1a1a1a;
-      background:#000;
-    }
-
-    .links-grid{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px 28px;
-      margin-top: 8px;
-      justify-items: center;
-    }
-    .links-grid a{
-      color:#e5e5e5;
-      text-decoration:none;
-      border-bottom:1px solid #444;
-      padding: 6px 0;
+    .event-card img {
       width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .event-card figcaption {
+      padding: 10px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .event-name {
+      font-size: .98rem;
+      font-weight: 600;
+    }
+    .event-meta {
+      font-size: .86rem;
+      color: #bdbdbd;
+    }
+    footer {
+      border-top: 1px solid #151515;
+      padding: 10px 16px 18px;
       text-align: center;
-      max-width: 260px;
+      font-size: .82rem;
+      color: #777;
+      background: #050505;
     }
-    .links-grid a:hover{ border-bottom-color:#777; }
-
-    footer{
-      padding: 34px 24px;
-      text-align:center;
-      font-size: 0.9rem;
-      color:#666;
-    }
-
-    /* MOBILE */
-    @media (max-width: 600px){
-      .wrap{ padding: 0 18px; }
-      section{ padding: 54px 0; }
-      #playlist{ padding-top: 40px; padding-bottom: 44px; }
-      .links-grid{ grid-template-columns: 1fr 1fr; }
-      .hero-title h1{ font-size: 2.4rem; }
-      .hero-title p{ font-size: 1.05rem; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
-
 <body>
-
-  <!-- HERO -->
-  <header class="hero">
-    <img
-      src="assets/DSP_Records_Happy_New_Year_2026_Website_Banner.png"
-      alt="DSP Records Happy New Year 2026 banner for underground bass music and electronic music label website"
-    />
-    <div class="wrap hero-title">
-      <h1>UNDERGROUND BASS MUSIC</h1>
-      <p>DSP Records — built for dark rooms, loud systems, and real connection.</p>
+  <header>
+    <div class="topbar">
+      <div class="brand">DSP RECORDS</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="listen.html">Listen</a>
+        <a href="releases.html">Upcoming Releases</a>
+        <a href="past-events.html">Past Events</a>
+      </nav>
     </div>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about">
+  <main>
     <div class="wrap">
-      <h2>About</h2>
-
-      <div class="about-grid">
-        <div class="about-left">
-          <p>DSP Records is an independent underground electronic music label built for dark rooms, loud systems, and real connection.</p>
-          <p>Founded from years in the scene, DSP exists to protect and push the music itself — the culture, the energy, and the unity that happens when sound, space, and people align.</p>
-          <p>DSP Records isn’t about hype cycles or shortcuts. It’s about consistency, momentum, and building something real — one release, one connection, one system at a time.</p>
-        </div>
-      </div>
-
-      <!-- FEATURED MIX -->
-      <div class="featured-mix" aria-label="Featured artist mix" style="margin-top:26px;">
-        <h2>Featured Artist Mix Sub Fixx-Dark Side Conversion Vol. 05</h2>
-
-        <iframe
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2237296187&color=%230c5444&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-        </iframe>
-
-        <div class="mix-meta">
-          <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener">Sub Fixx</a>
-          &nbsp;·&nbsp;
-          <a href="https://soundcloud.com/subfixx/49dc4002-bb8d-479a-8997-0ee18e65fa82" target="_blank" rel="noopener">
-            Dark Side Conversion Vol. 05
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PLAYLIST -->
-  <section id="playlist">
-    <div class="wrap">
-      <h2>DSP Playlist</h2>
-
-      <!-- DISCLAIMER (moved here, tight under title) -->
-      <div class="note playlist-note">
-        <strong style="color:#fff;">Heads up:</strong><br />
-        All tracks in this playlist are for promotional streaming — they are not the commercial release masters.
-      </div>
-
-      <div class="embed-lead">Upcoming and label releases in one place.</div>
-
-      <div class="card" aria-label="DSP Records SoundCloud releases playlist">
-        <iframe
-          width="100%"
-          height="520"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2158029551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-        </iframe>
-
-        <div style="margin-top:10px;color:#cccccc;font-size:0.95rem; text-align:center;">
-          <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;">Sub Fixx</a>
-          &nbsp;·&nbsp;
-          <a href="https://soundcloud.com/subfixx/sets/dsp-records-the-movement-label" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;">
-            DSP Records – The Movement (Label Releases)
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RELEASE SCHEDULE -->
-  <section>
-    <div class="wrap">
-      <h2>Release Schedule</h2>
-      <p>Current schedule and upcoming drops.</p>
-      <img class="release-img" src="assets/DSP_ReleaseSchedule.png" alt="DSP Records upcoming release schedule" />
-    </div>
-  </section>
-
-  <!-- LINKS -->
-  <section>
-    <div class="wrap">
-      <h2>Streaming &amp; Store Links</h2>
-      <p>Find DSP Records releases across platforms.</p>
-
-      <div class="card">
-        <div class="links-grid">
-          <a href="#" target="_blank" rel="noopener">Beatport</a>
-          <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener">SoundCloud</a>
-          <a href="#" target="_blank" rel="noopener">Spotify</a>
-          <a href="#" target="_blank" rel="noopener">Apple Music</a>
-          <a href="#" target="_blank" rel="noopener">YouTube Music</a>
-          <a href="#" target="_blank" rel="noopener">Amazon Music</a>
-          <a href="#" target="_blank" rel="noopener">Deezer</a>
-          <a href="#" target="_blank" rel="noopener">TIDAL</a>
-          <a href="#" target="_blank" rel="noopener">Bandcamp</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section>
-    <div class="wrap">
-      <h2>Contact</h2>
-
-      <p>
-        <strong style="color:#fff;">DSP Records</strong><br />
-        Record label inquiries • bookings • demo submissions<br />
-        <strong style="color:#fff;">dyrtiesound@live.ca</strong>
+      <h1>Past DSP Hosted Events</h1>
+      <p class="intro">
+        Archive of DSP Records–hosted nights and takeovers. These photos are from
+        <strong>New Year&apos;s Eve 2013 — Black &amp; White Masquerade</strong> at Liquid Nightclub.
+      </p>
+      <p class="event-meta-top">
+        Event date: <strong>2013-12-31</strong> · Photo upload batch: <strong>2026-01-13</strong>
       </p>
 
-      <p style="margin-top:22px;">
-        <strong style="color:#fff;">DnB_Culture / Nocturnal Emissions</strong><br />
-        Drum &amp; bass video submissions • features • project inquiries<br />
-        <strong style="color:#fff;">Dansnakehead@gmail.com</strong>
-      </p>
+      <section class="grid" aria-label="Past DSP hosted event photos">
+        <figure class="event-card">
+          <img src="assets/463774409_27745790708345657_6884067084772722751_n.jpg"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event photo at Liquid Nightclub"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Crowd / Candid</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/463814629_27745790455012349_1556285280747414228_n.jpg"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event photo at Liquid Nightclub"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Crowd / Candid</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/463881711_27745790428345685_8960062146704418160_n.jpg"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event photo at Liquid Nightclub"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Crowd / Candid</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/463883310_27745793118345416_8665644302583192547_n.jpg"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event photo at Liquid Nightclub"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Crowd / Candid</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/463915119_27745790721678989_8698385380782279331_n.jpg"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event photo at Liquid Nightclub"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Crowd / Candid</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/463922487_27745793101678751_8818116139318029462_n.jpg"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event photo at Liquid Nightclub"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Crowd / Candid</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/463983916_27736260999298628_1439275541427281605_n.jpg"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event photo at Liquid Nightclub"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Crowd / Candid</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/464013499_27745790448345683_5892269504594859732_n.jpg"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event photo at Liquid Nightclub"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Crowd / Candid</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/464030248_27743094955281899_2926659682592290800_n.jpg"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event photo at Liquid Nightclub"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Crowd / Candid</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP DJ on stage New Year's Eve 2013 black and White Masquerade.jpg"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event photo at Liquid Nightclub"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 DJ &amp; Dancer</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP Guests New Year's Eve 2013 Black and White Masquerade.jpg"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event guest photo at Liquid Nightclub"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Guests</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP La Goge & guest Eve 2013 black and white masquerade.jpg"
+               alt="DSP Records NYE 2013 La Goge and guest at Black and White Masquerade event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">La Goge &amp; Guest — NYE 2013</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP La Goge Dancer New Year's Eve 2013.jpg"
+               alt="DSP Records NYE 2013 La Goge dancer at Black and White Masquerade"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">La Goge Dancer — NYE 2013</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP New Year's Eve 2013 black and White Masquerade 02.png"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event artwork version 2"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Masquerade Artwork 02</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP New Year's Eve 2013 black and White Masquerade.png"
+               alt="DSP Records New Year's Eve 2013 Black and White Masquerade event artwork"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Masquerade Artwork</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP Silky filth New Year's Eve 2013 black and white masquerade.jpg"
+               alt="DSP Records Silky Filth artist at New Year's Eve 2013 black and white masquerade event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Silky Filth — NYE 2013</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP Silky filth la Goge New Year's Eve 2013 black and White Masquerade.jpg"
+               alt="Silky Filth and La Goge at DSP Records New Year's Eve 2013 black and white masquerade event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Silky Filth &amp; La Goge — NYE 2013</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP Sub fixs and silky filth New Year's Eve 2013 black and White Masquerade.jpg"
+               alt="Sub Fixx and Silky Filth at DSP Records New Year's Eve 2013 black and white masquerade event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Sub Fixx &amp; Silky Filth — NYE 2013</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP photographer Love New Year's Eve 2013 black and white masquerade.jpg"
+               alt="DSP Records photographer capturing New Year's Eve 2013 black and white masquerade event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Photographer Love — NYE 2013</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP sub fixx and silky filth on stage New Year's Eve 2013 black and White masquerade.jpg"
+               alt="Sub Fixx and Silky Filth on stage at DSP Records New Year's Eve 2013 black and white masquerade event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Sub Fixx &amp; Silky Filth On Stage</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP_New-Years-Eve-2013_Black-and-White-Masquerade_Dancefloor-Crowd_01.png"
+               alt="DSP Records New Year's Eve 2013 black and white masquerade dancefloor crowd"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Dancefloor Crowd</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP_NewYearsEve_2013_BlackWhite_Masquerade_DJ_Dancer_03.png"
+               alt="DSP Records New Year's Eve 2013 black and white masquerade DJ and dancer image"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 DJ &amp; Dancer</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP_NewYearsEve_2013_BlackWhite_Masquerade_GroupPortrait_01.png"
+               alt="DSP Records New Year's Eve 2013 black and white masquerade group portrait"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Group Portrait 01</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/DSP_NewYearsEve_2013_BlackWhite_Masquerade_GroupPortrait_03.png"
+               alt="DSP Records New Year's Eve 2013 black and white masquerade group portrait"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Group Portrait 03</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/Dsp Optimus Grime New Year's Eve 2013 black and White Masquerade.jpg"
+               alt="Optimus Grime performing at DSP Records New Year's Eve 2013 black and white masquerade event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Optimus Grime — NYE 2013</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/La Gogoe Dancers DSP New Year's Eve 2013.jpg"
+               alt="La Gogoe dancers performing at DSP Records New Year's Eve 2013 event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">La Gogoe Dancers — NYE 2013</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/Liquid Nightclub.png"
+               alt="Liquid Nightclub logo for DSP Records New Year's Eve 2013 event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Liquid Nightclub — Venue</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/Silky filth DSP medicine New Year's Eve 2013.jpg"
+               alt="Silky Filth performing at DSP Records New Year's Eve 2013 black and white masquerade event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Silky Filth — DSP Medicine NYE 2013</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/batch_DSP La Goge & guest Eve 2013 black and white masquerade.jpg"
+               alt="Batch processed shot of La Goge and guest at DSP Records New Year's Eve 2013 black and white masquerade event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Batch — La Goge &amp; Guest</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/batch_DSP New Year's Eve 2013 black and White Masquerade 02.jpg"
+               alt="Batch processed artwork for DSP Records New Year's Eve 2013 black and white masquerade event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Batch — NYE 2013 Artwork 02</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/batch_DSP_NewYearsEve_2013_BlackWhite_Masquerade_DJ_Dancer_03.jpg"
+               alt="Batch processed DJ and dancer image from DSP Records New Year's Eve 2013 black and white masquerade"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Batch — DJ &amp; Dancer</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/batch_DSP_NewYearsEve_2013_BlackWhite_Masquerade_GroupPortrait_01.jpg"
+               alt="Batch processed group portrait from DSP Records New Year's Eve 2013 black and white masquerade"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Batch — Group Portrait 01</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/batch_DSP_NewYearsEve_2013_BlackWhite_Masquerade_GroupPortrait_02.jpg"
+               alt="Batch processed group portrait from DSP Records New Year's Eve 2013 black and white masquerade"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Batch — Group Portrait 02</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/batch_DSP_NewYearsEve_2013_BlackWhite_Masquerade_GroupPortrait_03.jpg"
+               alt="Batch processed group portrait from DSP Records New Year's Eve 2013 black and white masquerade"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">Batch — Group Portrait 03</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+
+        <figure class="event-card">
+          <img src="assets/dsp-new-years-eve-2013-black-and-white-masquerade.jpg"
+               alt="Overview graphic for DSP Records New Year's Eve 2013 black and white masquerade event"
+               loading="lazy" />
+          <figcaption>
+            <span class="event-name">NYE 2013 Overview</span>
+            <span class="event-meta">Event date: 2013-12-31 · Uploaded: 2026-01-13</span>
+          </figcaption>
+        </figure>
+      </section>
     </div>
-  </section>
+  </main>
 
   <footer>
-    © <span id="y"></span> DSP Records
+    © <span id="year"></span> DSP Records — Dark rooms. Loud systems. Real connections.
   </footer>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
