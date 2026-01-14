@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Listen – DSP Records</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Listen to DSP Records and Sub Fixx – featured mixes and label playlist on SoundCloud." />
+
+  <style>
+    html, body { width:100%; max-width:none; overflow-x:hidden; }
+    body { margin:0; padding:0; }
+    * { box-sizing:border-box; }
+    img, iframe { max-width:100%; }
+
+    :root{
+      --bg:#000;
+      --panel:#0b0b0b;
+      --text:#fff;
+      --muted:#bdbdbd;
+      --line:#151515;
+      --accent:#f2c400;
+      --radius: 16px;
+      --content: 1100px;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+
+    .wrap{
+      width:100%;
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* TOP NAV (same as index) */
+    .site-header{
+      border-bottom:1px solid var(--line);
+      background:#050505;
+    }
+    .header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:10px 24px;
+    }
+    .logo-text{
+      font-size:0.9rem;
+      text-transform:uppercase;
+      letter-spacing:0.25em;
+      font-weight:700;
+    }
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      font-size:0.8rem;
+      text-transform:uppercase;
+      letter-spacing:0.16em;
+    }
+    .nav a{
+      position:relative;
+      padding:4px 0;
+      color:var(--muted);
+    }
+    .nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-3px;
+      height:1px;
+      background:linear-gradient(90deg, transparent, var(--accent), transparent);
+      transform:scaleX(0);
+      transform-origin:center;
+      transition:transform .15s ease-out;
+    }
+    .nav a:hover{
+      color:#fff;
+    }
+    .nav a:hover::after{
+      transform:scaleX(1);
+    }
+
+    section{
+      padding: 60px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    h1{
+      margin:22px 0 8px;
+      font-size:2.4rem;
+      letter-spacing:.5px;
+    }
+    h2{
+      margin:0 0 10px;
+      font-size: 2.0rem;
+      letter-spacing: .5px;
+      text-align:center;
+    }
+    p{
+      margin:0 0 14px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      text-align:center;
+    }
+
+    .card{
+      border:1px solid #1a1a1a;
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 22px;
+      max-width: 980px;
+      margin: 0 auto;
+      text-align:center;
+    }
+
+    .card iframe{
+      width:100%;
+      display:block;
+      border:0;
+    }
+
+    .mix-meta{
+      margin-top: 8px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #cccccc;
+    }
+    .mix-meta a{
+      color:#cccccc;
+      text-decoration:none;
+    }
+    .mix-meta a:hover{ text-decoration:underline; }
+
+    .note{
+      border:1px solid #1a1a1a;
+      background: linear-gradient(180deg, #050505, #000);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      color:#d8d8d8;
+      max-width: 980px;
+      margin: 0 auto 20px;
+      text-align:center;
+    }
+
+    footer{
+      padding: 34px 24px;
+      text-align:center;
+      font-size: 0.9rem;
+      color:#666;
+    }
+
+    @media (max-width: 700px){
+      .wrap{ padding: 0 18px; }
+      section{ padding: 46px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="logo-text">DSP RECORDS</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="listen.html">Listen</a>
+        <a href="releases.html">Releases</a>
+        <a href="past-events.html">Past Events</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <h1>Listen</h1>
+        <p>Full-length DJ journeys and label releases from Sub Fixx &amp; DSP Records.</p>
+      </div>
+    </section>
+
+    <!-- FEATURED MIX -->
+    <section aria-label="Featured artist mix">
+      <div class="wrap">
+        <div class="card">
+          <h2>Featured Mix &mdash; Sub Fixx: Dark Side Conversion Vol. 05</h2>
+
+          <iframe
+            height="300"
+            scrolling="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2237296187&color=%230c5444&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+          </iframe>
+
+          <div class="mix-meta">
+            <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener">Sub Fixx</a>
+            &nbsp;·&nbsp;
+            <a href="https://soundcloud.com/subfixx/49dc4002-bb8d-479a-8997-0ee18e65fa82" target="_blank" rel="noopener">
+              Dark Side Conversion Vol. 05
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LABEL PLAYLIST -->
+    <section id="playlist">
+      <div class="wrap">
+        <h2>DSP Records Playlist</h2>
+
+        <div class="note">
+          <strong style="color:#fff;">Heads up:</strong><br />
+          All tracks in this playlist are for promotional streaming — they are not the commercial release masters.
+        </div>
+
+        <p>Upcoming and label releases in one place.</p>
+
+        <div class="card" aria-label="DSP Records SoundCloud releases playlist">
+          <iframe
+            height="520"
+            scrolling="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2158029551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+          </iframe>
+
+          <div style="margin-top:10px;color:#cccccc;font-size:0.95rem; text-align:center;">
+            <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;">Sub Fixx</a>
+            &nbsp;·&nbsp;
+            <a href="https://soundcloud.com/subfixx/sets/dsp-records-the-movement-label" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;">
+              DSP Records – The Movement (Label Releases)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> DSP Records
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
