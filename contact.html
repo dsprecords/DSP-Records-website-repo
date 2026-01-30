@@ -13,10 +13,12 @@
 
     :root{
       --bg:#000;
+      --panel:#0b0b0b;
       --text:#fff;
       --muted:#bdbdbd;
       --line:#151515;
       --accent:#f2c400;
+      --radius:16px;
       --content:1100px;
     }
 
@@ -38,6 +40,7 @@
       padding: 0 24px;
     }
 
+    /* TOP NAV — MATCH OTHER PAGES */
     .site-header{
       border-bottom:1px solid var(--line);
       background:#050505;
@@ -54,6 +57,7 @@
       text-transform:uppercase;
       letter-spacing:0.25em;
       font-weight:700;
+      white-space:nowrap;
     }
     .nav{
       display:flex;
@@ -62,6 +66,7 @@
       font-size:0.8rem;
       text-transform:uppercase;
       letter-spacing:0.16em;
+      justify-content:flex-end;
     }
     .nav a{
       position:relative;
@@ -80,22 +85,20 @@
       transform-origin:center;
       transition:transform .15s ease-out;
     }
-    .nav a:hover{
-      color:#fff;
-    }
-    .nav a:hover::after{
-      transform:scaleX(1);
-    }
+    .nav a:hover{ color:#fff; }
+    .nav a:hover::after{ transform:scaleX(1); }
 
     section{
       padding:60px 0;
       border-bottom:1px solid var(--line);
     }
+
     h1{
       margin:22px 0 8px;
       font-size:2.4rem;
       letter-spacing:.5px;
     }
+
     p{
       margin:0 0 14px;
       color:var(--muted);
@@ -112,19 +115,27 @@
     @media (max-width:700px){
       .wrap{ padding:0 18px; }
       section{ padding:46px 0; }
+      .header-inner{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .nav{ justify-content:flex-start; }
     }
   </style>
 </head>
+
 <body>
 
+  <!-- TOP NAV -->
   <header class="site-header">
     <div class="wrap header-inner">
       <div class="logo-text">DSP RECORDS</div>
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="listen.html">Listen</a>
         <a href="releases.html">Releases</a>
-        <a href="past-events.html">Past Events</a>
+        <a href="past-events.html">Legacy Archive</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -157,5 +168,6 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
