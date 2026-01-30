@@ -4,12 +4,17 @@
   <meta charset="UTF-8" />
   <title>About – DSP Records</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The story of DSP Records – from underground promotion and artist management to a record label built on long-term momentum, PLUR values, and real connection." />
+  <meta
+    name="description"
+    content="About DSP Records — origins as Dyrtie Sound Productions, core values rooted in PLUR, and the evolution into a system-driven underground bass music label."
+  />
 
   <style>
+    /* HARD RESET */
     html, body { width:100%; max-width:none; overflow-x:hidden; }
     body { margin:0; padding:0; }
     * { box-sizing:border-box; }
+    img { max-width:100%; height:auto; display:block; }
 
     :root{
       --bg:#000;
@@ -18,30 +23,22 @@
       --muted:#bdbdbd;
       --line:#151515;
       --accent:#f2c400;
-      --radius:16px;
-      --content:1100px;
+      --radius: 16px;
+      --content: 1100px;
     }
 
     body{
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.75;
+      line-height: 1.7;
       font-size: 18px;
-      text-align:center;
+      text-align: center;
     }
 
     a{ color:inherit; text-decoration:none; }
 
-    .wrap{
-      width:100%;
-      max-width:var(--content);
-      margin:0 auto;
-      padding:0 24px 60px;
-      text-align:left;
-    }
-
-    /* NAV (MATCHES OTHER PAGES) */
+    /* TOP NAV / SITE HEADER (match home page format) */
     .site-header{
       border-bottom:1px solid var(--line);
       background:#050505;
@@ -52,6 +49,8 @@
       justify-content:space-between;
       gap:16px;
       padding:10px 24px;
+      max-width: var(--content);
+      margin: 0 auto;
     }
     .logo-text{
       font-size:0.9rem;
@@ -89,53 +88,66 @@
     .nav a:hover{ color:#fff; }
     .nav a:hover::after{ transform:scaleX(1); }
 
-    main{ padding-top:40px; }
+    /* PAGE WRAP */
+    .wrap{
+      width:100%;
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 34px 24px 70px;
+      text-align:left;
+    }
 
     h1{
-      margin:0 0 18px;
-      font-size:2.4rem;
-      letter-spacing:.5px;
+      margin: 0 0 10px;
+      font-size: 2.35rem;
+      letter-spacing: .4px;
       text-align:center;
     }
-
-    h2{
-      margin:34px 0 10px;
-      font-size:1.4rem;
-      letter-spacing:.05em;
-      text-transform:uppercase;
-      color:#fff;
+    .intro{
+      margin: 0 auto 26px;
+      max-width: 920px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      text-align:center;
+      line-height:1.65;
     }
 
-    p{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-size:1.02rem;
-    }
-
+    /* ABOUT CONTENT */
     .about-block{
-      background:var(--panel);
+      background: var(--panel);
       border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:26px 24px;
-      margin-top:26px;
+      border-radius: var(--radius);
       box-shadow:0 18px 40px rgba(0,0,0,.7);
+      padding: 22px 22px 26px;
+      margin-top: 18px;
     }
 
+    .about-text{
+      color: #cfcfcf;
+      font-size: 1.03rem;
+      line-height: 1.75;
+      text-align:left;
+      margin: 0;
+      white-space: pre-wrap; /* preserves line breaks exactly */
+    }
+
+    /* FOOTER */
     footer{
-      padding:30px 24px;
+      padding: 22px 24px;
       text-align:center;
-      font-size:0.9rem;
+      font-size: 0.9rem;
       color:#666;
       border-top:1px solid var(--line);
       background:#050505;
     }
 
-    @media (max-width:700px){
-      .wrap{ padding:0 16px 50px; }
-      h1{ font-size:2rem; }
+    /* MOBILE */
+    @media (max-width: 700px){
+      .wrap{ padding: 28px 16px 56px; }
+      h1{ font-size: 2.0rem; }
       .header-inner{
-        flex-direction:column;
-        align-items:flex-start;
+        flex-direction: column;
+        align-items: flex-start;
       }
       .nav{ justify-content:flex-start; }
     }
@@ -144,108 +156,134 @@
 
 <body>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <div class="logo-text">DSP RECORDS</div>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-      <a href="listen.html">Listen</a>
-      <a href="releases.html">Releases</a>
-      <a href="past-events.html">Legacy Archive</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <div class="wrap">
-
-    <h1>About DSP Records</h1>
-
-    <div class="about-block">
-      <h2>Origins — Dyrtie Sound Productions</h2>
-      <p>
-        DSP began in the early 2010s as Dyrtie Sound Productions — an underground promotion and artist management company built from the ground up. It started with monthly shows at Whiskey Creek, a bar and live music venue in Medicine Hat, Alberta.
-      </p>
-      <p>
-        DSP did not rely on house systems. Sound and lighting were brought in specifically for bass music. Systems were tuned for impact. Lighting was built for atmosphere. Every event was constructed intentionally.
-      </p>
-      <p>
-        From those early monthly nights came larger bookings, including headliners connected to major festivals at the time. Momentum grew into weekly Saturday events that opened the stage to more than just the core DSP crew. Local DJs were given opportunities to perform, build confidence, and gain experience in front of real crowds.
-      </p>
-      <p>
-        DSP was not only promoting events — it was operating as a legitimate artist management company. Five DJs were signed under management contracts. Bookings were arranged outside hometowns. Festival opportunities were secured. Artists traveled. Careers were being built carefully and professionally.
-      </p>
-      <p>
-        Halloween 2012 marked a defining moment — DJs performing three shows across two cities over two days, each executed cleanly. No chaos. No drama. Just coordination, discipline, and delivery.
-      </p>
-      <p>
-        DSP’s final nightclub event was New Year’s Eve 2013 at Liquid Nightclub. After that, public promotions and artist management were paused due to life obligations.
-      </p>
-      <p>
-        If DSP had operated continuously for the last decade, there would be far more to display. But what was built was solid.
-      </p>
-      <p>
-        The brand never burned out. It stayed smoldering.
-      </p>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-text">DSP RECORDS</div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="listen.html">Listen</a>
+        <a href="releases.html">Releases</a>
+        <a href="past-events.html">Legacy Archive</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="about-block">
-      <h2>Values Forged Through Experience</h2>
-      <p>
-        DSP’s values are not theoretical. They were not adopted because they look good on a website.
+  <main>
+    <div class="wrap">
+      <h1>About DSP Records</h1>
+      <p class="intro">
+        DSP Records (Dyrtie Sound Productions) — the full story, values, and direction.
       </p>
-      <p>
-        They were developed over time — through lived experience, through mistakes, through growth, and through choosing to move differently.
-      </p>
-      <p>
-        The standards upheld today are the result of years of reflection and rebuilding. Not perfection. Progress. Growth is part of the culture.
-      </p>
-      <p>
-        At the center of DSP is a PLUR-based value system — Peace, Love, Unity, and Respect — not as a slogan, but as a standard.
-      </p>
-      <p>
-        In a scene that can easily slip into ego, politics, and short-term thinking, DSP exists to lead differently. Artists supporting artists. DJs lifting each other up. Clear communication. Professional execution. Accountability without hostility.
-      </p>
-      <p>
-        These values don’t end when the music stops.
-        They don’t disappear when the sun comes up.
-        They carry forward — into studios, into partnerships, into everyday life.
-      </p>
+
+      <section class="about-block" aria-label="About DSP Records long-form biography">
+        <div class="about-text">DSP Records began as Dyrtie Sound Productions — an underground promotion and artist management company built from the ground up in the early 2010s. It started small, structured, and deliberate. Nothing about it was flashy. Nothing about it was inflated. What it was, however, was solid.
+
+Origins — Dyrtie Sound Productions
+
+DSP began with monthly shows at Whiskey Creek in Medicine Hat, Alberta — a bar with a dedicated live music venue attached to the main space. It was not a nightclub. It was not a purpose-built electronic venue. That meant if the events were going to feel right, they had to be built properly.
+
+DSP did not rely on house sound. We brought in our own systems — configured specifically for bass music. Systems designed for weight, clarity, and pressure. Tuned intentionally. Calibrated intentionally. We brought in our own lighting as well — shaping the room visually to match the sound instead of accepting whatever default atmosphere existed.
+
+Load-in. Setup. Sound check. Lighting rig. Teardown. Every event required physical work. None of it was massive scale. But it was disciplined. It was consistent. And it built trust.
+
+Those early nights weren’t about hype. They were about creating rooms where people showed up for the music and left feeling connected.
+
+Growth — From Monthly Shows to Weekly Momentum
+
+As consistency built credibility, DSP moved from monthly events into structured weekly Saturday programming. Momentum increased steadily. That growth created opportunity — not just for the core DSP roster, but for a wider circle of local DJs who were given stage time and proper sound environments.
+
+Headliners were brought in — artists appearing on major festival lineups at the time — but the goal was never to inflate perception. It was to raise the standard locally and create stronger experiences for the crowd.
+
+DSP operated as a legitimate artist management company alongside event production. Formal management agreements were in place. At its peak, five DJs were signed under DSP management. Bookings were secured outside of hometown markets. Artists were placed into startup festivals and regional shows. The focus was long-term development and professional credibility — not just local rotation.
+
+Halloween 2012 became a defining operational moment. Three shows across two cities in two days. Coordinated travel. Coordinated time slots. No issues. No missed sets. No breakdowns. Every show went off without a hitch. It demonstrated something important: organization, discipline, and the ability to execute under pressure.
+
+That same structure later made it possible to organize the Canadian takeover of a UK-based radio station during the COVID lockdown era — coordinating up to twelve DJs across Canada to broadcast live on the last Sunday of each month. It wasn’t about spotlight. It was about keeping the underground connected when dancefloors were closed.
+
+DSP’s final nightclub event was New Year’s Eve 2013 (December 31, 2012). Shortly after, due to life obligations, DSP stepped away from promotions and artist management. It was not a collapse. It was not scandal. It was real life. The brand went quiet.
+
+But it never disappeared.
+
+Public Inactivity — Not Disappearance
+
+DSP was publicly inactive for many years due to life obligations. If it had operated continuously, there would be more to display.
+
+But what was built was solid.
+
+The brand never burned out. It stayed smoldering.
+
+Now it returns with clearer direction and stronger systems.
+
+Culture & Core Values
+
+DSP is rooted in Peace. Love. Unity. Respect.
+
+PLUR was never meant to exist only inside the venue walls. It was never meant to disappear when the event ends. It is a value system meant to extend into communication, collaboration, conflict resolution, accountability, and long-term relationships.
+
+DSP’s values are not theoretical.
+
+They were not adopted because they look good on a website.
+
+They were developed over time — through lived experience, through mistakes, through growth, and through choosing to move differently.
+
+The standards upheld today are the result of years of reflection and rebuilding. Not perfection. Progress. Growth is part of the culture.
+
+Artists should lift each other up. Politics should not outweigh contribution. Integrity should guide decisions. Momentum should be built — not manufactured.
+
+From Events to Record Label
+
+DSP Records is the evolution of that foundation.
+
+The same discipline that went into hauling sound systems, calibrating rooms, managing artists, scheduling multi-city weekends, and coordinating radio takeovers now goes into structured release planning, branding, presentation, and long-term artist development.
+
+DSP Records is not built on hype.
+
+It is built on systems.
+
+It is built on consistency.
+
+It is built on the understanding that momentum is earned.
+
+Scale may change. Values do not.
+
+Where DSP Is Going
+
+The goal is not to recreate the past.
+
+The goal is to build forward with stronger infrastructure.
+
+To develop artists with long-term vision.
+
+To create releases that translate from studio to stage.
+
+To relaunch events when the foundation is ready — not prematurely.
+
+To lead by example.
+
+The direction is steady. The foundation is earned. The intention is clear.
+
+These values don’t end when the music stops.
+They don’t disappear when the sun comes up.
+They carry forward — into studios, into partnerships, into everyday life.
+
+Built systems.
+Long-term momentum.
+Real connection.
+
+Always fresh. Still dirty.</div>
+      </section>
     </div>
+  </main>
 
-    <div class="about-block">
-      <h2>From Promotion to Record Label</h2>
-      <p>
-        DSP Records is the next evolution — a structured label platform built on the same foundation that powered the events.
-      </p>
-      <p>
-        The mission is long-term momentum over hype. Systems over shortcuts. Community over politics.
-      </p>
-      <p>
-        The goal is not to inflate the past, but to build forward with stronger systems and clearer direction.
-      </p>
-      <p>
-        Built systems.
-        Long-term momentum.
-        Real connection.
-      </p>
-      <p style="color:#fff;font-weight:700;">
-        Always fresh. Still dirty.
-      </p>
-    </div>
+  <footer>
+    © <span id="y"></span> DSP Records
+  </footer>
 
-  </div>
-</main>
-
-<footer>
-  © <span id="y"></span> DSP Records
-</footer>
-
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
