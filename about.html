@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <title>About – DSP Records</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The story of DSP Records – from underground event promotion and artist support to a full record label focused on dark rooms, loud systems, and real connection." />
+  <meta name="description" content="The story of DSP Records – from underground event production and artist management to a record label built on structure, growth, and real connection." />
 
   <style>
     html, body { width:100%; max-width:none; overflow-x:hidden; }
     body { margin:0; padding:0; }
     * { box-sizing:border-box; }
-    img { max-width:100%; }
 
     :root{
       --bg:#000;
@@ -19,45 +18,48 @@
       --muted:#bdbdbd;
       --line:#151515;
       --accent:#f2c400;
-      --radius: 16px;
-      --content: 1100px;
+      --radius:16px;
+      --content:1100px;
     }
 
     body{
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      font-size: 18px;
-      text-align: center;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.75;
+      font-size:18px;
+      text-align:center;
     }
 
     a{ color:inherit; text-decoration:none; }
 
     .wrap{
       width:100%;
-      max-width: var(--content);
-      margin: 0 auto;
-      padding: 0 24px 60px;
+      max-width:var(--content);
+      margin:0 auto;
+      padding:0 24px 60px;
     }
 
     .site-header{
       border-bottom:1px solid var(--line);
       background:#050505;
     }
+
     .header-inner{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
       padding:10px 24px;
+      gap:16px;
     }
+
     .logo-text{
       font-size:0.9rem;
       text-transform:uppercase;
       letter-spacing:0.25em;
       font-weight:700;
     }
+
     .nav{
       display:flex;
       flex-wrap:wrap;
@@ -66,56 +68,27 @@
       text-transform:uppercase;
       letter-spacing:0.16em;
     }
+
     .nav a{
-      position:relative;
-      padding:4px 0;
       color:var(--muted);
-    }
-    .nav a::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:-3px;
-      height:1px;
-      background:linear-gradient(90deg, transparent, var(--accent), transparent);
-      transform:scaleX(0);
-      transform-origin:center;
-      transition:transform .15s ease-out;
-    }
-    .nav a:hover{
-      color:#fff;
-    }
-    .nav a:hover::after{
-      transform:scaleX(1);
+      padding:4px 0;
+      position:relative;
     }
 
-    main{
-      padding-top:40px;
-    }
+    .nav a:hover{ color:#fff; }
+
+    main{ padding-top:40px; }
+
     h1{
-      margin:0 0 8px;
-      font-size:2.4rem;
-      letter-spacing:.5px;
-    }
-    h2{
-      margin:26px 0 8px;
-      font-size:1.5rem;
-      text-align:left;
-    }
-    p{
       margin:0 0 12px;
-      text-align:left;
-      color:var(--muted);
-      font-size:1.02rem;
+      font-size:2.4rem;
     }
 
     .intro{
       max-width:820px;
-      margin:0 auto 30px;
+      margin:0 auto 32px;
       color:var(--muted);
       font-size:1.05rem;
-      text-align:center;
     }
 
     .about-block{
@@ -123,155 +96,206 @@
       border-radius:var(--radius);
       border:1px solid var(--line);
       box-shadow:0 18px 40px rgba(0,0,0,.7);
-      padding:22px 22px 26px;
-      margin-top:24px;
+      padding:26px;
+      margin-top:28px;
       text-align:left;
     }
 
-    ul{
-      margin:6px 0 14px 20px;
-      padding:0;
-      color:var(--muted);
-      font-size:1.0rem;
+    h2{
+      margin:0 0 12px;
+      font-size:1.5rem;
+      color:#fff;
     }
-    li{
-      margin-bottom:6px;
+
+    p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:1.02rem;
+      text-align:left;
+    }
+
+    .emphasis{
+      color:#fff;
+      font-weight:600;
+    }
+
+    .closing{
+      margin-top:18px;
+      font-weight:600;
+      color:#fff;
     }
 
     footer{
-      padding: 24px;
+      padding:24px;
       text-align:center;
-      font-size: 0.9rem;
+      font-size:0.9rem;
       color:#666;
     }
 
     @media (max-width:700px){
       .wrap{ padding:0 16px 40px; }
-      h1{ font-size:2.0rem; }
+      h1{ font-size:2rem; }
     }
   </style>
 </head>
+
 <body>
 
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <div class="logo-text">DSP RECORDS</div>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="listen.html">Listen</a>
-        <a href="releases.html">Releases</a>
-        <a href="past-events.html">Past Events</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="logo-text">DSP RECORDS</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="listen.html">Listen</a>
+      <a href="releases.html">Releases</a>
+      <a href="legacy-archive.html">Legacy Archive</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <div class="wrap">
-      <h1>About DSP Records</h1>
-      <p class="intro">
-        DSP Records (Dyrtie Sound Productions) started as an underground events and artist support project
-        and evolved into a record label built for dark rooms, loud systems, and real connection.
+<main>
+  <div class="wrap">
+    <h1>About DSP Records</h1>
+    <p class="intro">
+      DSP Records began as an underground event and artist management company and has evolved into a record label built on structure, growth, and real connection.
+    </p>
+
+    <div class="about-block">
+      <h2>Origins — Dyrtie Sound Productions</h2>
+      <p>
+        DSP began in the early 2010s as <span class="emphasis">Dyrtie Sound Productions</span>, a small but structured underground promotion and artist management company.
       </p>
-
-      <div class="about-block">
-        <h2>Origins &mdash; Dyrtie Sound Productions</h2>
-        <p>
-          DSP began life in the early 2010s as <strong style="color:#fff;">Dyrtie Sound Productions</strong>,
-          a small but relentless underground promotion brand. The mission was simple:
-          bring bass-heavy music into proper venues, support local DJs and performers, and build nights where
-          people walked in as strangers and left as part of the same story.
-        </p>
-        <p>
-          Those early years were about hauling gear, negotiating with venues, and throwing parties for people
-          who cared more about sound systems and community than dress codes or bottle service.
-        </p>
-      </div>
-
-      <div class="about-block">
-        <h2>Events &amp; Milestones</h2>
-        <p>Over time, DSP grew into a trusted name on flyers and lineups across Alberta and beyond:</p>
-        <ul>
-          <li>
-            <strong style="color:#fff;">Liquid Nightclub &mdash; Medicine Hat, AB</strong><br />
-            New Year&rsquo;s Eve 2013 &ldquo;Black &amp; White Masquerade&rdquo; and multiple bass-driven nights featuring DJs,
-            dancers, live performers and full-room production.
-          </li>
-          <li>
-            <strong style="color:#fff;">Whiskey Creek Nightclub &mdash; Medicine Hat, AB</strong><br />
-            DSP-hosted takeovers focused on underground bass and drum &amp; bass, with packed dancefloors and high-energy crowd interaction.
-          </li>
-          <li>
-            <strong style="color:#fff;">Defunk x DSP &mdash; Liquid Nightclub</strong><br />
-            Collaborative shows supporting touring headliners like Defunk while showcasing local support acts and building the regional scene.
-          </li>
-          <li>
-            <strong style="color:#fff;">Sal&rsquo;s on 17th &mdash; Calgary, AB</strong><br />
-            Infamous Productions x DSP Halloween events bringing DJs, costumes and heavy sound to one of Calgary&rsquo;s busiest strips.
-          </li>
-          <li>
-            <strong style="color:#fff;">Aurora Nightclub &mdash; Banff, AB</strong><br />
-            DSP &amp; Tech Noir Productions teaming up for nightlife events in the Rockies, connecting local crews and visiting artists.
-          </li>
-          <li>
-            <strong style="color:#fff;">UK Radio Takeover &mdash; COVID Era</strong><br />
-            During the COVID lockdowns, DSP organized a Canadian takeover of a UK-based radio station. On the last Sunday
-            of every month, DSP curated up to twelve DJs from across Canada to broadcast live into the UK airwaves, keeping
-            the underground connected when dancefloors were closed.
-          </li>
-        </ul>
-        <p>
-          These nights, broadcasts and memories are the backbone of the DSP story: real people, real sound systems, real connection.
-        </p>
-      </div>
-
-      <div class="about-block">
-        <h2>From Events to Record Label</h2>
-        <p>
-          After years of focusing on live events, DSP began shifting toward recorded music.
-          The same drive that filled rooms started moving into studios, production sessions and focused release planning.
-        </p>
-        <p>
-          <strong style="color:#fff;">DSP Records</strong> was born as the label side of that journey &mdash; a place to release
-          system-driven underground music with the same ethics that built the events:
-        </p>
-        <ul>
-          <li><strong style="color:#fff;">Artist-first</strong> &mdash; fair, transparent and built around long-term development.</li>
-          <li><strong style="color:#fff;">Scene-driven</strong> &mdash; contributing to the culture, not extracting from it.</li>
-          <li><strong style="color:#fff;">Underground always</strong> &mdash; quality over hype, momentum over cheap shortcuts.</li>
-        </ul>
-        <p>
-          Today DSP Records runs a structured release schedule across digital platforms, pairing studio work with artwork,
-          visualizers and long-form mixes meant to be heard front to back &mdash; not just skipped through one track at a time.
-        </p>
-      </div>
-
-      <div class="about-block">
-        <h2>Where DSP Is Going Next</h2>
-        <p>
-          The label is a chapter, not the ending.
-        </p>
-        <ul>
-          <li>Relaunch DSP-branded events and takeovers with a stronger catalog behind them.</li>
-          <li>Develop <strong style="color:#fff;">DSP Sound Labs / DSP Studios</strong> as a physical hub for DJs and producers.</li>
-          <li>Grow a roster of artists who share the same underground values and long-term vision.</li>
-          <li>Connect the full pipeline from demo submissions to releases to live shows and tours.</li>
-        </ul>
-        <p>
-          DSP Records exists for people who still believe in dark rooms, loud systems and real connection.
-          The story started in the clubs and it will circle back there &mdash; with a full label, catalog and community behind it.
-        </p>
-      </div>
+      <p>
+        It started with monthly shows at Whiskey Creek in Medicine Hat, Alberta — a bar with a dedicated live music room attached to the main space. The venue wasn’t designed specifically for bass-driven electronic events, so DSP approached it differently.
+      </p>
+      <p>
+        We brought in our own sound. We brought in our own lighting.
+      </p>
+      <p>
+        Not to inflate the scale — but to build the environment properly. Systems were configured specifically for bass-heavy music, tuned for clarity and weight. Lighting was added intentionally to shape atmosphere and give each event identity.
+      </p>
+      <p>
+        Load-in, setup, calibration, teardown — everything was handled directly.
+      </p>
+      <p>
+        None of it was massive. But it was deliberate. And it built momentum.
+      </p>
     </div>
-  </main>
 
-  <footer>
-    © <span id="y"></span> DSP Records
-  </footer>
+    <div class="about-block">
+      <h2>Growth & Weekly Momentum</h2>
+      <p>
+        As consistency built trust, DSP began booking touring headliners who were appearing on major festival lineups at the time, pairing them with strong local support.
+      </p>
+      <p>
+        Monthly events evolved into structured weekly Saturday programming, creating stage opportunities not only for the core DSP roster but for a broader circle of local DJs.
+      </p>
+      <p>
+        The intention was never exclusivity. It was momentum through inclusion.
+      </p>
+    </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+    <div class="about-block">
+      <h2>Artist Management & Operational Discipline</h2>
+      <p>
+        DSP operated as a legitimate artist management company with formal agreements and structured booking efforts. At its height, DSP managed five signed DJs.
+      </p>
+      <p>
+        Halloween 2012 marked a defining milestone: three coordinated shows across two cities in two days — executed cleanly and professionally.
+      </p>
+      <p>
+        DSP’s final nightclub production was New Year’s Eve 2013 (December 31, 2012). Shortly after, due to life obligations, DSP stepped away from promotions and management.
+      </p>
+      <p>
+        There was no collapse. No fallout. Just real life.
+      </p>
+      <p>
+        The brand went quiet — but it never disappeared.
+      </p>
+    </div>
+
+    <div class="about-block">
+      <h2>UK Radio Takeover — Staying Connected</h2>
+      <p>
+        During the COVID lockdown years, DSP organized a Canadian takeover of a UK-based radio station, coordinating DJs across provinces to broadcast live into the UK airwaves.
+      </p>
+      <p>
+        It wasn’t about exposure. It was about continuity.
+      </p>
+    </div>
+
+    <div class="about-block">
+      <h2>Culture & Core Values</h2>
+      <p>
+        DSP is rooted in <span class="emphasis">Peace. Love. Unity. Respect.</span>
+      </p>
+      <p>
+        PLUR is not meant to disappear when the sun comes up — it should carry into communication, collaboration, and long-term relationships.
+      </p>
+      <p>
+        DSP’s values are not theoretical. They were not adopted because they look good on a website.
+      </p>
+      <p>
+        They were developed over time — through lived experience, through growth, and through choosing to move differently.
+      </p>
+      <p>
+        The standards upheld today are the result of years of reflection and rebuilding. Not perfection. Progress.
+      </p>
+      <p>
+        Growth is part of the culture.
+      </p>
+    </div>
+
+    <div class="about-block">
+      <h2>From Events to Record Label</h2>
+      <p>
+        After years of live event production and artist management, DSP shifted toward recorded music and structured digital releases.
+      </p>
+      <p>
+        DSP Records is the evolution of that foundation.
+      </p>
+      <p>
+        The same discipline that went into production, coordination, and execution now goes into release planning, branding, and long-term artist development.
+      </p>
+    </div>
+
+    <div class="about-block">
+      <h2>Where DSP Is Now</h2>
+      <p>
+        DSP was publicly inactive for many years due to life obligations. If it had operated continuously, there would be more to display.
+      </p>
+      <p>
+        But what was built was solid.
+      </p>
+      <p>
+        The brand never burned out. It stayed smoldering.
+      </p>
+      <p>
+        Now it returns with clearer direction and stronger systems.
+      </p>
+      <p>
+        Because raves don’t end at night. They end when the sun comes up.
+      </p>
+      <p class="closing">
+        Built systems.<br/>
+        Long-term momentum.<br/>
+        Real connection.<br/><br/>
+        Always fresh. Still dirty.
+      </p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © <span id="y"></span> DSP Records
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
