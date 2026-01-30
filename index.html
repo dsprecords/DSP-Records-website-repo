@@ -11,7 +11,7 @@
     html, body { width:100%; max-width:none; overflow-x:hidden; }
     body { margin:0; padding:0; }
     * { box-sizing:border-box; }
-    img, iframe { max-width:100%; }
+    img { max-width:100%; height:auto; display:block; }
 
     :root{
       --bg:#000;
@@ -21,7 +21,7 @@
       --line:#151515;
       --accent:#f2c400;
       --radius: 16px;
-      --content: 1100px; /* centered column width */
+      --content: 1100px;
     }
 
     body{
@@ -60,6 +60,7 @@
       text-transform:uppercase;
       letter-spacing:0.25em;
       font-weight:700;
+      white-space:nowrap;
     }
     .nav{
       display:flex;
@@ -68,30 +69,14 @@
       font-size:0.8rem;
       text-transform:uppercase;
       letter-spacing:0.16em;
+      justify-content:flex-end;
     }
     .nav a{
       position:relative;
       padding:4px 0;
       color:var(--muted);
     }
-    .nav a::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:-3px;
-      height:1px;
-      background:linear-gradient(90deg, transparent, var(--accent), transparent);
-      transform:scaleX(0);
-      transform-origin:center;
-      transition:transform .15s ease-out;
-    }
-    .nav a:hover{
-      color:#fff;
-    }
-    .nav a:hover::after{
-      transform:scaleX(1);
-    }
+    .nav a:hover{ color:#fff; }
 
     /* HERO */
     .hero{
@@ -107,7 +92,7 @@
     }
     .hero-title{
       border-top: 1px solid var(--line);
-      padding: 16px 0 32px;
+      padding: 16px 0 34px;
       text-align:center;
     }
     .hero-title h1{
@@ -121,127 +106,126 @@
       margin: 6px auto 0;
       color:#d6d6d6;
       font-size: 1.1rem;
-      max-width: 900px;
+      max-width: 920px;
       text-align: center;
     }
 
     /* SECTIONS */
     section{
-      padding: 72px 0;
+      padding: 68px 0;
       border-bottom: 1px solid var(--line);
     }
-
     h2{
-      margin:0 0 10px;
-      font-size: 2.4rem;
+      margin:0 0 12px;
+      font-size: 2.2rem;
       letter-spacing: .5px;
       text-align:center;
     }
-
     p{
-      margin:0 0 14px;
+      margin:0 auto 14px;
       color: var(--muted);
       font-size: 1.08rem;
       text-align:center;
-    }
-
-    /* FEATURED MIX */
-    .featured-mix{
-      max-width:980px;
-      margin:0 auto;
-      text-align:center;
-    }
-    .mix-meta{
-      margin-top: 8px;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #cccccc;
-    }
-    .mix-meta a{
-      color:#cccccc;
-      text-decoration:none;
-    }
-    .mix-meta a:hover{ text-decoration:underline; }
-
-    /* NOTE / DISCLAIMER */
-    .note{
-      border:1px solid #1a1a1a;
-      background: linear-gradient(180deg, #050505, #000);
-      border-radius: var(--radius);
-      padding: 18px 22px;
-      color:#d8d8d8;
-      max-width: 980px;
-      margin: 0 auto;
-      text-align:center;
-    }
-
-    /* PLAYLIST SECTION: title + disclaimer tight, no extra padding */
-    #playlist{
-      padding-top: 46px;
-      padding-bottom: 52px;
-    }
-    #playlist h2{
-      margin-bottom: 8px;
-    }
-    #playlist .note{
-      margin-top: 0;
-      margin-bottom: 18px;
-    }
-
-    /* PLAYLIST CAPTION (ABOVE EMBED) */
-    .embed-lead{
-      text-align:center;
-      color: var(--muted);
-      margin: 10px auto 14px;
-      font-size: 1.05rem;
       max-width: 980px;
     }
 
-    /* CARD FOR EMBEDS / BLOCKS */
+    /* CONTENT CARD */
     .card{
       border:1px solid #1a1a1a;
       background: var(--panel);
       border-radius: var(--radius);
-      padding: 22px;
+      padding: 26px 22px;
       max-width: 980px;
       margin: 0 auto;
-      text-align:center;
+      text-align:left;
       box-shadow:0 18px 40px rgba(0,0,0,.7);
     }
-    .card iframe{
-      height: 520px;
-      width:100%;
-      display:block;
-      border:0;
+    .card h3{
+      margin:0 0 10px;
+      font-size: 1.2rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#fff;
+      text-align:left;
+    }
+    .card p{
+      text-align:left;
+      max-width:none;
+      margin:0 0 12px;
+      color:#cfcfcf;
+      font-size:1.02rem;
+      line-height:1.65;
+    }
+    .card ul{
+      margin: 10px 0 0;
+      padding: 0 0 0 18px;
+      color:#cfcfcf;
+      font-size:1.02rem;
+      line-height:1.65;
+    }
+    .card li{ margin: 8px 0; }
+
+    /* DEMO CTA */
+    .cta{
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top:1px solid #1a1a1a;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 16px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .cta .email{
+      font-weight:800;
+      letter-spacing:.02em;
+      color:#fff;
+    }
+    .btn{
+      display:inline-block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border:1px solid #2a2a2a;
+      background: linear-gradient(180deg, #0c0c0c, #050505);
+      color:#f2f2f2;
+      font-size: .92rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      border-color:#3a3a3a;
     }
 
-    .release-img{
-      width: min(900px, 100%);
-      height:auto;
-      display:block;
-      margin: 0 auto;
-      border-radius: var(--radius);
-      border:1px solid #1a1a1a;
-      background:#000;
+    /* SECOND NAV BAR (internal pages) */
+    .subnav{
+      background:#050505;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      padding: 14px 0;
     }
-
-    .links-grid{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px 28px;
-      margin-top: 8px;
-      justify-items: center;
+    .subnav .subnav-inner{
+      max-width: var(--content);
+      margin:0 auto;
+      padding: 0 24px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 18px;
+      justify-content:center;
+      align-items:center;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:.82rem;
     }
-    .links-grid a{
-      color:#e5e5e5;
-      text-decoration:none;
-      border-bottom:1px solid #444;
-      padding: 6px 0;
-      width: 100%;
-      text-align: center;
-      max-width: 260px;
+    .subnav a{
+      color:var(--muted);
+      padding: 6px 6px;
+      border-bottom:1px solid transparent;
     }
-    .links-grid a:hover{ border-bottom-color:#777; }
+    .subnav a:hover{
+      color:#fff;
+      border-bottom-color: var(--accent);
+    }
 
     footer{
       padding: 34px 24px;
@@ -253,15 +237,15 @@
     /* MOBILE */
     @media (max-width: 600px){
       .wrap{ padding: 0 18px; }
-      section{ padding: 54px 0; }
-      #playlist{ padding-top: 40px; padding-bottom: 44px; }
-      .links-grid{ grid-template-columns: 1fr 1fr; }
+      section{ padding: 52px 0; }
       .hero-title h1{ font-size: 2.1rem; }
       .hero-title p{ font-size: 1.0rem; }
       .header-inner{
         flex-direction:column;
         align-items:flex-start;
       }
+      .card{ text-align:left; }
+      .cta{ justify-content:flex-start; }
     }
   </style>
 </head>
@@ -272,7 +256,7 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <div class="logo-text">DSP RECORDS</div>
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="listen.html">Listen</a>
         <a href="releases.html">Releases</a>
@@ -287,124 +271,74 @@
   <section class="hero">
     <img
       src="assets/dsp-records-underground-bass-music-banner.png"
-      alt="DSP Records Happy New Year 2026 banner for underground bass music and electronic music label website"
+      alt="DSP Records banner for underground bass music and electronic music label website"
     />
     <div class="wrap hero-title">
       <h1>UNDERGROUND BASS MUSIC</h1>
       <p>
         DSP Records is an independent, international underground bass music label based in British Columbia, Canada.
-        Founded in 2010, we focus on bass-heavy electronic music, providing artists with professional exposure,
-        credibility, and long-term, artist-first support.
+        Founded in 2010, we focus on bass-heavy electronic music, professional exposure, credibility,
+        and long-term, artist-first development.
       </p>
     </div>
   </section>
 
-  <!-- FEATURED MIX (no About section here anymore) -->
-  <section id="featured">
+  <!-- MISSION / VALUES / DEMO SUBMISSIONS -->
+  <section id="mission">
     <div class="wrap">
-      <div class="featured-mix" aria-label="Featured artist mix">
-        <h2>Featured Artist Mix &mdash; Sub Fixx: Dark Side Conversion Vol. 05</h2>
+      <h2>Mission &amp; Core Values</h2>
 
-        <iframe
-          width="100%"
-          height="300"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2237296187&color=%230c5444&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-        </iframe>
+      <div class="card" aria-label="DSP Records mission statement and core values">
+        <h3>Mission Statement</h3>
+        <p>
+          DSP Records exists to build long-term momentum for underground bass artists — through consistent releases,
+          real-world credibility, and an artist-first approach that prioritizes craft, community, and culture over hype.
+        </p>
 
-        <div class="mix-meta">
-          <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener">Sub Fixx</a>
-          &nbsp;·&nbsp;
-          <a href="https://soundcloud.com/subfixx/49dc4002-bb8d-479a-8997-0ee18e65fa82" target="_blank" rel="noopener">
-            Dark Side Conversion Vol. 05
+        <h3>Core Values</h3>
+        <ul>
+          <li><strong>Artist-first development:</strong> long-term growth over short-term spikes.</li>
+          <li><strong>Quality &amp; consistency:</strong> disciplined output, clean branding, and strong delivery.</li>
+          <li><strong>Underground culture:</strong> respect the scene, the dancefloor, and the people in it.</li>
+          <li><strong>Integrity:</strong> clear communication, fair collaboration, and professional standards.</li>
+          <li><strong>Momentum:</strong> success is built — release by release, show by show.</li>
+        </ul>
+
+        <div class="cta" aria-label="Demo submissions">
+          <div>
+            <div style="color:#cfcfcf; font-size:.98rem; margin-bottom:2px;">Demo submissions / bookings / label inquiries</div>
+            <div class="email">dyrtiesound@live.ca</div>
+          </div>
+
+          <!-- mailto makes it one-click from web -->
+          <a class="btn" href="mailto:dyrtiesound@live.ca?subject=DSP%20Records%20Demo%20Submission" aria-label="Email demo submission to DSP Records">
+            Send a Demo
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PLAYLIST -->
-  <section id="playlist">
-    <div class="wrap">
-      <h2>DSP Playlist</h2>
-
-      <!-- DISCLAIMER -->
-      <div class="note playlist-note">
-        <strong style="color:#fff;">Heads up:</strong><br />
-        All tracks in this playlist are for promotional streaming — they are not the commercial release masters.
-      </div>
-
-      <div class="embed-lead">Upcoming and label releases in one place.</div>
-
-      <div class="card" aria-label="DSP Records SoundCloud releases playlist">
-        <iframe
-          width="100%"
-          height="520"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2158029551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-        </iframe>
-
-        <div style="margin-top:10px;color:#cccccc;font-size:0.95rem; text-align:center;">
-          <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;">Sub Fixx</a>
-          &nbsp;·&nbsp;
-          <a href="https://soundcloud.com/subfixx/sets/dsp-records-the-movement-label" target="_blank" rel="noopener" style="color:#cccccc;text-decoration:none;">
-            DSP Records – The Movement (Label Releases)
-          </a>
-        </div>
-      </div>
+  <!-- SECOND INTERNAL NAV BAR (as requested) -->
+  <div class="subnav" role="navigation" aria-label="Site pages quick links">
+    <div class="subnav-inner">
+      <a href="listen.html">Listen</a>
+      <a href="releases.html">Releases</a>
+      <a href="past-events.html">Past Events</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
-  </section>
+  </div>
 
-  <!-- RELEASE SCHEDULE -->
-  <section>
+  <!-- OPTIONAL: quick note / direction (no embeds) -->
+  <section id="listen-cta">
     <div class="wrap">
-      <h2>Release Schedule</h2>
-      <p>Current schedule and upcoming drops.</p>
-      <img class="release-img" src="assets/DSP_ReleaseSchedule.png" alt="DSP Records upcoming release schedule" />
-    </div>
-  </section>
-
-  <!-- LINKS -->
-  <section>
-    <div class="wrap">
-      <h2>Streaming &amp; Store Links</h2>
-      <p>Find DSP Records releases across platforms.</p>
-
-      <div class="card">
-        <div class="links-grid">
-          <a href="#" target="_blank" rel="noopener">Beatport</a>
-          <a href="https://soundcloud.com/subfixx" target="_blank" rel="noopener">SoundCloud</a>
-          <a href="#" target="_blank" rel="noopener">Spotify</a>
-          <a href="#" target="_blank" rel="noopener">Apple Music</a>
-          <a href="#" target="_blank" rel="noopener">YouTube Music</a>
-          <a href="#" target="_blank" rel="noopener">Amazon Music</a>
-          <a href="#" target="_blank" rel="noopener">Deezer</a>
-          <a href="#" target="_blank" rel="noopener">TIDAL</a>
-          <a href="#" target="_blank" rel="noopener">Bandcamp</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section>
-    <div class="wrap">
-      <h2>Contact</h2>
-
+      <h2>Listen Now</h2>
       <p>
-        <strong style="color:#fff;">DSP Records</strong><br />
-        Record label inquiries • bookings • demo submissions<br />
-        <strong style="color:#fff;">dyrtiesound@live.ca</strong>
+        Streaming embeds have moved off the home page. Head to the Listen page for the featured mix and DSP playlist.
       </p>
-
-      <p style="margin-top:22px;">
-        <strong style="color:#fff;">DnB_Culture / Nocturnal Emissions</strong><br />
-        Drum &amp; bass video submissions • features • project inquiries<br />
-        <strong style="color:#fff;">Dansnakehead@gmail.com</strong>
+      <p style="margin-top:16px;">
+        <a class="btn" href="listen.html">Go to Listen</a>
       </p>
     </div>
   </section>
