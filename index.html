@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <title>DSP Records</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DSP Records is an independent, international underground bass music label based in British Columbia, Canada. Founded in 2010, focusing on bass-heavy electronic music and long-term artist-first development." />
+  <meta
+    name="description"
+    content="DSP Records is an independent underground bass music label based in British Columbia, Canada. Built on artist-first development, community, and PLUR values beyond the sunrise."
+  />
 
   <style>
     /* HARD RESET */
@@ -72,19 +75,22 @@
       justify-content:flex-end;
     }
     .nav a{
-      position:relative;
       padding:4px 0;
       color:var(--muted);
     }
     .nav a:hover{ color:#fff; }
 
-    /* HERO */
+    /* HERO — flush directly under nav */
     .hero{
+      margin:0;
+      padding:0;
       width:100%;
       background:#000;
       border-bottom: 1px solid var(--line);
     }
     .hero img{
+      margin:0;
+      padding:0;
       width:100%;
       height:auto;
       display:block;
@@ -92,7 +98,7 @@
     }
     .hero-title{
       border-top: 1px solid var(--line);
-      padding: 16px 0 34px;
+      padding: 14px 0 28px;
       text-align:center;
     }
     .hero-title h1{
@@ -112,7 +118,7 @@
 
     /* SECTIONS */
     section{
-      padding: 68px 0;
+      padding: 64px 0;
       border-bottom: 1px solid var(--line);
     }
     h2{
@@ -142,8 +148,8 @@
     }
     .card h3{
       margin:0 0 10px;
-      font-size: 1.2rem;
-      letter-spacing:.08em;
+      font-size: 1.12rem;
+      letter-spacing:.10em;
       text-transform:uppercase;
       color:#fff;
       text-align:left;
@@ -154,16 +160,33 @@
       margin:0 0 12px;
       color:#cfcfcf;
       font-size:1.02rem;
-      line-height:1.65;
+      line-height:1.72;
     }
-    .card ul{
-      margin: 10px 0 0;
-      padding: 0 0 0 18px;
-      color:#cfcfcf;
-      font-size:1.02rem;
-      line-height:1.65;
+
+    .divider{
+      height:1px;
+      background:#1a1a1a;
+      border:0;
+      margin: 14px 0;
     }
-    .card li{ margin: 8px 0; }
+
+    /* Core value chips (fast scan, not point-form paragraphs) */
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 10px;
+    }
+    .chip{
+      border:1px solid #1a1a1a;
+      background: linear-gradient(180deg, #0c0c0c, #050505);
+      padding: 8px 10px;
+      border-radius: 999px;
+      color:#e8e8e8;
+      font-size: .92rem;
+      letter-spacing:.02em;
+      white-space:nowrap;
+    }
 
     /* DEMO CTA */
     .cta{
@@ -193,9 +216,7 @@
       letter-spacing:.14em;
       white-space:nowrap;
     }
-    .btn:hover{
-      border-color:#3a3a3a;
-    }
+    .btn:hover{ border-color:#3a3a3a; }
 
     /* SECOND NAV BAR (internal pages) */
     .subnav{
@@ -237,15 +258,15 @@
     /* MOBILE */
     @media (max-width: 600px){
       .wrap{ padding: 0 18px; }
-      section{ padding: 52px 0; }
+      section{ padding: 50px 0; }
       .hero-title h1{ font-size: 2.1rem; }
       .hero-title p{ font-size: 1.0rem; }
       .header-inner{
         flex-direction:column;
         align-items:flex-start;
       }
-      .card{ text-align:left; }
       .cta{ justify-content:flex-start; }
+      .chip{ font-size:.90rem; }
     }
   </style>
 </head>
@@ -260,15 +281,15 @@
         <a href="index.html">Home</a>
         <a href="listen.html">Listen</a>
         <a href="releases.html">Releases</a>
-        <a href="past-events.html">Past Events</a>
+        <a href="past-events.html">Legacy Archive</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- HERO (flush directly under nav) -->
+  <section class="hero" aria-label="DSP Records hero banner">
     <img
       src="assets/dsp-records-underground-bass-music-banner.png"
       alt="DSP Records banner for underground bass music and electronic music label website"
@@ -276,42 +297,75 @@
     <div class="wrap hero-title">
       <h1>UNDERGROUND BASS MUSIC</h1>
       <p>
-        DSP Records is an independent, international underground bass music label based in British Columbia, Canada.
-        Founded in 2010, we focus on bass-heavy electronic music, professional exposure, credibility,
-        and long-term, artist-first development.
+        DSP Records is an independent underground bass label based in British Columbia, Canada — built on artist-first development,
+        real community values, and long-term momentum.
       </p>
     </div>
   </section>
 
-  <!-- MISSION / VALUES / DEMO SUBMISSIONS -->
-  <section id="mission">
+  <!-- HOME SUMMARY (keeps ALL key info, but condensed for homepage) -->
+  <section id="home-summary">
     <div class="wrap">
-      <h2>Mission &amp; Core Values</h2>
+      <h2>What DSP Stands For</h2>
 
-      <div class="card" aria-label="DSP Records mission statement and core values">
-        <h3>Mission Statement</h3>
+      <div class="card" aria-label="DSP Records mission and values summary">
+        <h3>Mission</h3>
         <p>
-          DSP Records exists to build long-term momentum for underground bass artists — through consistent releases,
+          DSP Records exists to build long-term momentum for underground bass artists through consistent releases,
           real-world credibility, and an artist-first approach that prioritizes craft, community, and culture over hype.
         </p>
 
-        <h3>Core Values</h3>
-        <ul>
-          <li><strong>Artist-first development:</strong> long-term growth over short-term spikes.</li>
-          <li><strong>Quality &amp; consistency:</strong> disciplined output, clean branding, and strong delivery.</li>
-          <li><strong>Underground culture:</strong> respect the scene, the dancefloor, and the people in it.</li>
-          <li><strong>Integrity:</strong> clear communication, fair collaboration, and professional standards.</li>
-          <li><strong>Momentum:</strong> success is built — release by release, show by show.</li>
-        </ul>
+        <hr class="divider" />
+
+        <h3>Roots, Legitimacy, and the Return</h3>
+        <p>
+          DSP’s roots go back to the early 2010s as <strong style="color:#fff;">Dyrtie Sound Productions</strong> — a legitimate underground
+          promotion and artist management company with real management agreements, booking contracts, and professional engagements.
+          At its height, DSP managed a roster of <strong style="color:#fff;">five signed DJs</strong>.
+        </p>
+        <p>
+          DSP’s final nightclub production was <strong style="color:#fff;">New Year’s Eve 2013 (December 31, 2012)</strong> — after which the brand
+          stepped away due to life obligations. No drama. No collapse. Just real life. The brand went quiet, but it never disappeared —
+          it stayed under the surface, waiting. DSP Records is the continuation of that foundation, rebuilt with clearer structure and deeper intention.
+        </p>
+
+        <hr class="divider" />
+
+        <h3>Community Over Politics</h3>
+        <p>
+          DSP is built on the belief that scenes get stronger when artists lift each other up — not when ego, gatekeeping, and politics take over.
+          This is a platform that intends to lead by example: collaboration over competition, transparency over drama, and culture protected through action.
+        </p>
+
+        <hr class="divider" />
+
+        <h3>PLUR Beyond the Sunrise</h3>
+        <p>
+          DSP is rooted in <strong style="color:#fff;">Peace. Love. Unity. Respect.</strong> Not as aesthetic — as practice.
+          PLUR should still mean something when the sun comes up. It should show up in how artists treat each other, how business is handled,
+          how disagreements are resolved, and how opportunities are shared — even when it’s inconvenient.
+        </p>
+
+        <div class="chips" aria-label="DSP Records core values highlights">
+          <span class="chip">Artist-first development</span>
+          <span class="chip">Quality over hype</span>
+          <span class="chip">Momentum over shortcuts</span>
+          <span class="chip">Contribution over ego</span>
+          <span class="chip">Community over politics</span>
+          <span class="chip">PLUR beyond the sunrise</span>
+        </div>
 
         <div class="cta" aria-label="Demo submissions">
           <div>
-            <div style="color:#cfcfcf; font-size:.98rem; margin-bottom:2px;">Demo submissions / bookings / label inquiries</div>
+            <div style="color:#cfcfcf; font-size:.98rem; margin-bottom:2px;">
+              Demo submissions / bookings / label inquiries
+            </div>
             <div class="email">dyrtiesound@live.ca</div>
           </div>
 
-          <!-- mailto makes it one-click from web -->
-          <a class="btn" href="mailto:dyrtiesound@live.ca?subject=DSP%20Records%20Demo%20Submission" aria-label="Email demo submission to DSP Records">
+          <a class="btn"
+             href="mailto:dyrtiesound@live.ca?subject=DSP%20Records%20Demo%20Submission"
+             aria-label="Email demo submission to DSP Records">
             Send a Demo
           </a>
         </div>
@@ -319,18 +373,18 @@
     </div>
   </section>
 
-  <!-- SECOND INTERNAL NAV BAR (as requested) -->
+  <!-- INTERNAL SITE LINKS BAR (pages on THIS site) -->
   <div class="subnav" role="navigation" aria-label="Site pages quick links">
     <div class="subnav-inner">
       <a href="listen.html">Listen</a>
       <a href="releases.html">Releases</a>
-      <a href="past-events.html">Past Events</a>
+      <a href="past-events.html">Legacy Archive</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
 
-  <!-- OPTIONAL: quick note / direction (no embeds) -->
+  <!-- LISTEN CTA (no embeds on home page) -->
   <section id="listen-cta">
     <div class="wrap">
       <h2>Listen Now</h2>
@@ -339,6 +393,23 @@
       </p>
       <p style="margin-top:16px;">
         <a class="btn" href="listen.html">Go to Listen</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- POETIC CLOSE + TAGLINES -->
+  <section id="close">
+    <div class="wrap">
+      <h2>Built for the Long Run</h2>
+      <p style="max-width:980px;">
+        Culture isn’t built by noise — it’s built by consistency. By how you move when there’s no spotlight.
+        By how you treat people when the bass fades and the sun comes up.
+      </p>
+      <p style="max-width:980px; margin-top:18px; color:#d6d6d6;">
+        Built systems. Long-term momentum. Real connection.
+      </p>
+      <p style="max-width:980px; margin-top:8px; color:#ffffff; font-weight:800; letter-spacing:.04em;">
+        Always fresh. Still dirty.
       </p>
     </div>
   </section>
