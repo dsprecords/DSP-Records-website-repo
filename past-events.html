@@ -4,13 +4,16 @@
   <meta charset="UTF-8" />
   <title>Past Events – DSP Records</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Past DSP Records hosted events including New Year's Eve 2013 at Liquid Nightclub, Whiskey Creek, Defunk live shows, Halloween at Sal's, and Aurora Nightclub in Banff." />
+  <meta
+    name="description"
+    content="Past DSP Records hosted events including New Year's Eve 2013 at Liquid Nightclub, Whiskey Creek, Sinfully Seductive Saturdays, Defunk hosted nights, DSP DJ sets, and event posters."
+  />
 
   <style>
     html, body { width:100%; max-width:none; overflow-x:hidden; }
     body { margin:0; padding:0; }
     * { box-sizing:border-box; }
-    img { max-width:100%; }
+    img { max-width:100%; height:auto; }
 
     :root{
       --bg:#000;
@@ -83,16 +86,11 @@
       transform-origin:center;
       transition:transform .15s ease-out;
     }
-    .nav a:hover{
-      color:#fff;
-    }
-    .nav a:hover::after{
-      transform:scaleX(1);
-    }
+    .nav a:hover{ color:#fff; }
+    .nav a:hover::after{ transform:scaleX(1); }
 
-    main{
-      padding-top:40px;
-    }
+    main{ padding-top:40px; }
+
     h1{
       margin:0 0 8px;
       font-size:2.4rem;
@@ -136,11 +134,21 @@
       display:flex;
       flex-direction:column;
     }
-    .event-card img{
+
+    /* Uniform image size */
+    .media{
       width:100%;
-      display:block;
-      object-fit:cover;
+      aspect-ratio: 4 / 3; /* change to 1/1 if you want perfect squares */
+      overflow:hidden;
+      background:#070707;
     }
+    .media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
     .event-card figcaption{
       padding:10px 14px 12px;
     }
@@ -160,6 +168,9 @@
       text-align:center;
       font-size: 0.9rem;
       color:#666;
+      border-top:1px solid var(--line);
+      background:#050505;
+      margin-top:44px;
     }
 
     @media (max-width:700px){
@@ -188,7 +199,490 @@
     <div class="wrap">
       <h1>Past DSP Hosted Events</h1>
       <p class="intro">
-     
+        A visual archive of classic DSP nights — the dancefloors, the crews, the headliners, and the posters that built the era.
+      </p>
+
+      <!-- Whiskey Creek -->
+      <section class="event-section" id="whiskey-creek">
+        <h2>Whiskey Creek</h2>
+        <p class="event-meta-top">Medicine Hat, AB — crowd moments + DJ highlights</p>
+
+        <div class="grid">
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Whiskey-Creek-DSP-Records-Live-Crowd-Hero.png" alt="Whiskey Creek — live crowd hero shot" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Crowd Hero</p>
+              <p class="event-meta">Whiskey Creek</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/DSP_WhiskeyCreek_MedicineHatAB_DanceFloor_05.png" alt="Whiskey Creek — dancefloor photo 05" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Dancefloor 05</p>
+              <p class="event-meta">Medicine Hat, AB</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/DSP_WhiskeyCreek_MedicineHatAB_DanceFloor_07.png" alt="Whiskey Creek — dancefloor photo 07" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Dancefloor 07</p>
+              <p class="event-meta">Medicine Hat, AB</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Whiskey-Creek-DSP-Records-Live-DJ- Paradigm-theroem-Sub-Fixx.png" alt="Whiskey Creek — DJ set featuring Paradigm, The Roem, Sub Fixx" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">DJ Set</p>
+              <p class="event-meta">Paradigm / The Roem / Sub Fixx</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Whiskey-Creek-DSP-Records-Live-DJ-Horse-Play.png" alt="Whiskey Creek — DJ Horse Play live" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">DJ Horse Play</p>
+              <p class="event-meta">Whiskey Creek</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Whiskey-Creek-DSP-Records-Live-DJ-Sub-Fixx-Red.png" alt="Whiskey Creek — Sub Fixx live (red lighting)" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Sub Fixx (Red)</p>
+              <p class="event-meta">Whiskey Creek</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Sinfully Seductive Saturdays -->
+      <section class="event-section" id="sinfully-seductive-saturdays">
+        <h2>Sinfully Seductive Saturdays</h2>
+        <p class="event-meta-top">Liquid Nightclub — dancefloor + DJ crew moments</p>
+
+        <div class="grid">
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Sinfully seductive Saturdays.jpg" alt="Sinfully Seductive Saturdays — cover image" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Cover</p>
+              <p class="event-meta">Sinfully Seductive Saturdays</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Sinfully-Seductive-Saturdays-Dancefloor-Liquid-Nightclub-03.png" alt="Sinfully Seductive Saturdays — dancefloor at Liquid Nightclub 03" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Dancefloor 03</p>
+              <p class="event-meta">Liquid Nightclub</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Sinfully-Seductive-Saturdays-Dancefloor-Liquid-Nightclub-2013-01.png" alt="Sinfully Seductive Saturdays — dancefloor at Liquid Nightclub 2013 01" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Dancefloor 2013-01</p>
+              <p class="event-meta">Liquid Nightclub</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Sinfully-Seductive-Saturdays-Liquid-Nightclub-DSP-01.png" alt="Sinfully Seductive Saturdays — Liquid Nightclub DSP 01" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Liquid Nightclub 01</p>
+              <p class="event-meta">DSP Night</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Sinfully-Seductive-Saturdays-Liquid-Nightclub-DSP-02.png" alt="Sinfully Seductive Saturdays — Liquid Nightclub DSP 02" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Liquid Nightclub 02</p>
+              <p class="event-meta">DSP Night</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Sinfully_Seductive_Saturdays_05_DSP_Records_Neon_Dancefloor.png" alt="Sinfully Seductive Saturdays — neon dancefloor 05" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Neon Dancefloor 05</p>
+              <p class="event-meta">DSP Records</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- NYE 2013 -->
+      <section class="event-section" id="nye-2013">
+        <h2>New Year’s Eve 2013</h2>
+        <p class="event-meta-top">Liquid Nightclub — NYE crew shots, DJs, and dancefloor energy</p>
+
+        <div class="grid">
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-12-31_DSP_Records_NewYearsEve_DanceFloor.png" alt="Liquid Nightclub — New Year's Eve 2013 dancefloor" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Dancefloor</p>
+              <p class="event-meta">2013-12-31</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-12-31_DSP_Records_NewYearsEve_SilkyFilth_SubFixx_FullCrew.png" alt="Liquid Nightclub — NYE 2013 full crew (Silky Filth, Sub Fixx)" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Full Crew</p>
+              <p class="event-meta">Silky Filth / Sub Fixx</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Liquid-Nightclub-DSP-Records-Group-Photo.png" alt="Liquid Nightclub — DSP Records group photo" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Group Photo</p>
+              <p class="event-meta">Liquid Nightclub</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-DJ-Action.png" alt="Liquid Nightclub — NYE 2013 DJ action" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">DJ Action</p>
+              <p class="event-meta">NYE 2013</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-DJ-02.png" alt="Liquid Nightclub — NYE 2013 DJ photo 02" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">DJ 02</p>
+              <p class="event-meta">NYE 2013</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-DSP-DJ-Crew-01.png" alt="Liquid Nightclub — NYE 2013 DSP DJ crew 01" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">DSP DJ Crew</p>
+              <p class="event-meta">NYE 2013</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-DSP-DJ-Sub-Fixx.png" alt="Liquid Nightclub — NYE 2013 DJ Sub Fixx" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Sub Fixx</p>
+              <p class="event-meta">NYE 2013</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-DSP-Gogo-01..png" alt="Liquid Nightclub — NYE 2013 go-go dancers 01" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Go-Go 01</p>
+              <p class="event-meta">NYE 2013</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-LaGoge-GoGo-Dancers-02.png" alt="Liquid Nightclub — NYE 2013 LaGoge go-go dancers 02" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Go-Go 02</p>
+              <p class="event-meta">NYE 2013</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Liquid-Nightclub-NYE-DSP_Records_NewYearsEve_2013_SilkyFilth_SubFixx.png" alt="Liquid Nightclub — NYE 2013 Silky Filth and Sub Fixx" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Silky Filth / Sub Fixx</p>
+              <p class="event-meta">New Year’s Eve 2013</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- DSP DJs -->
+      <section class="event-section" id="dsp-djs">
+        <h2>DSP DJs</h2>
+        <p class="event-meta-top">Live sets, core crew, and restored legacy shots</p>
+
+        <div class="grid">
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/DSP_Records_Live_DJ_Set_Enhanced_Legacy.png" alt="DSP Records — live DJ set enhanced legacy photo" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Live DJ Set (Legacy)</p>
+              <p class="event-meta">Enhanced</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/DSP_Records_RIP_Brakewood_Live_DJ_Selfie_Legacy.png" alt="DSP Records — RIP Brakewood live DJ selfie legacy" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">RIP Brakewood</p>
+              <p class="event-meta">Legacy Selfie</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/DSP_DJS_BackToBack_LiveSet_02.png" alt="DSP DJs — back to back live set 02" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Back-to-Back</p>
+              <p class="event-meta">Live Set 02</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/DSP_DJS_Live_Performance_01.png" alt="DSP DJs — live performance 01" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Live Performance 01</p>
+              <p class="event-meta">DSP DJs</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/DSP_DJS_Live_Performance_03.png" alt="DSP DJs — live performance 03" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Live Performance 03</p>
+              <p class="event-meta">DSP DJs</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/DSP_DJS_Live_Performance_04.png" alt="DSP DJs — live performance 04" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Live Performance 04</p>
+              <p class="event-meta">DSP DJs</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/DSP_DJS_Live_Performance_05.png" alt="DSP DJs — live performance 05" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Live Performance 05</p>
+              <p class="event-meta">DSP DJs</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/DSP_DJS_Live_Performance_DJ-Prone.png" alt="DSP DJs — live performance DJ Prone" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">DJ Prone</p>
+              <p class="event-meta">Live Performance</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/DSP_Records_Founding_DJ_Crew_Restored.png" alt="DSP Records — founding DJ crew restored" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Founding DJ Crew</p>
+              <p class="event-meta">Restored</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Defunk Hosted By DSP -->
+      <section class="event-section" id="defunk-hosted">
+        <h2>Defunk Hosted by DSP</h2>
+        <p class="event-meta-top">Headliner moments + on-stage shots + dancefloor energy</p>
+
+        <div class="grid">
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Defunk_Live_at_Liquid_Night_Club_DSP_Events_Headliner_Set_02.png" alt="Defunk live at Liquid Night Club — DSP events headliner set 02" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Headliner Set 02</p>
+              <p class="event-meta">Liquid Nightclub</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Defunk_Live_at_Liquid_Night_Club_DSP_Events_Sub_Fixx_x_Defunk_On_Stage_01.png" alt="Defunk live at Liquid Night Club — Sub Fixx and Defunk on stage 01" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">On Stage 01</p>
+              <p class="event-meta">Sub Fixx x Defunk</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Defunk_Live_in_Medicine_Hat_DSP_Records_Dancefloor-02.png" alt="Defunk live in Medicine Hat — DSP Records dancefloor 02" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Dancefloor 02</p>
+              <p class="event-meta">Medicine Hat</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Defunk_Live_in_Medicine_Hat_DSP_Records_Dancefloor_.png" alt="Defunk live in Medicine Hat — DSP Records dancefloor" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Dancefloor</p>
+              <p class="event-meta">Medicine Hat</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Event Posters -->
+      <section class="event-section" id="event-posters">
+        <h2>Event Posters</h2>
+        <p class="event-meta-top">Classic flyers and poster art from the archive</p>
+
+        <div class="grid">
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Audio perversion.jpg" alt="Event poster — Audio Perversion" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Audio Perversion</p>
+              <p class="event-meta">Event Poster</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Canadian radio takeover of UK station.jpg" alt="Event poster — Canadian radio takeover of UK station" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Canadian Radio Takeover</p>
+              <p class="event-meta">Event Poster</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Desperate House vibes.jpg" alt="Event poster — Desperate House Vibes" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Desperate House Vibes</p>
+              <p class="event-meta">Event Poster</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Dgtl Envy.jpg" alt="Event poster — Dgtl Envy" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Dgtl Envy</p>
+              <p class="event-meta">Event Poster</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Operation Brakes.jpg" alt="Event poster — Operation Brakes" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Operation Brakes</p>
+              <p class="event-meta">Event Poster</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Rhythmic seduction.jpg" alt="Event poster — Rhythmic Seduction" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Rhythmic Seduction</p>
+              <p class="event-meta">Event Poster</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/Sinfully seductive Saturdays.jpg" alt="Event poster — Sinfully Seductive Saturdays" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Sinfully Seductive Saturdays</p>
+              <p class="event-meta">Event Poster</p>
+            </figcaption>
+          </figure>
+
+          <figure class="event-card">
+            <div class="media">
+              <img src="assets/assets/covers/down rabit hole poster.jpg" alt="Event poster — Down Rabit Hole" loading="lazy" decoding="async">
+            </div>
+            <figcaption>
+              <p class="event-name">Down Rabit Hole</p>
+              <p class="event-meta">Event Poster</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
   <footer>
     © <span id="y"></span> DSP Records
   </footer>
@@ -196,5 +690,6 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
