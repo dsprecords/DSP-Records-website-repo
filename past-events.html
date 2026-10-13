@@ -4,197 +4,345 @@
   <meta charset="UTF-8" />
   <title>DSP Legacy Image Archive – DSP Records</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="DSP legacy image archive — past DSP Records hosted events including New Year's Eve 2013 at Liquid Nightclub, Whiskey Creek, Sinfully Seductive Saturdays, Defunk hosted nights, DSP DJ sets, and event posters."
-  />
+  <meta name="description" content="DSP legacy image archive — past DSP Records hosted events including New Year's Eve 2013 at Liquid Nightclub, Whiskey Creek, Sinfully Seductive Saturdays, Defunk hosted nights, DSP DJ sets, and event posters." />
 
   <style>
-    /* HARD RESET */
-    html, body { width:100%; max-width:none; overflow-x:hidden; }
-    body { margin:0; padding:0; }
-    * { box-sizing:border-box; }
-    img { max-width:100%; height:auto; display:block; }
+    /* PAGE RESET */
+    html, body {
+      width: 100%;
+      max-width: none;
+      overflow-x: hidden;
+    }
 
-    :root{
-      --bg:#000;
-      --panel:#0b0b0b;
-      --text:#fff;
-      --muted:#bdbdbd;
-      --line:#151515;
-      --accent:#f2c400;
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #000;
+      color: #fff;
+      text-align: center;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    :root {
+      --bg: #000;
+      --panel: #0b0b0b;
+      --text: #fff;
+      --muted: #bdbdbd;
+      --line: #151515;
+      --accent: #f2c400;
       --radius: 16px;
       --content: 1200px;
     }
 
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      text-align:center;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    a{ color:inherit; text-decoration:none; }
-
-    /* HEADER — MATCH HOME PAGE FORMAT */
-    .wrap{
-      width:100%;
+    /* HEADER */
+    .wrap {
+      width: 100%;
       max-width: var(--content);
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    .site-header{
-      border-bottom:1px solid var(--line);
-      background:#050505;
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: #050505;
     }
 
-    .header-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:10px 24px;
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 24px;
     }
 
-    .logo-text{
-      font-size:0.9rem;
-      text-transform:uppercase;
-      letter-spacing:0.25em;
-      font-weight:700;
-      white-space:nowrap;
+    .logo-text {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
-    .nav{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      font-size:0.8rem;
-      text-transform:uppercase;
-      letter-spacing:0.16em;
-      justify-content:flex-end;
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      justify-content: flex-end;
     }
 
-    .nav a{
-      position:relative;
-      padding:4px 0;
-      color:var(--muted);
+    .nav a {
+      position: relative;
+      padding: 4px 0;
+      color: var(--muted);
     }
 
-    .nav a::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:-3px;
-      height:1px;
-      background:linear-gradient(90deg, transparent, var(--accent), transparent);
-      transform:scaleX(0);
-      transform-origin:center;
-      transition:transform .15s ease-out;
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -3px;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent),
+        transparent
+      );
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.15s ease-out;
     }
 
-    .nav a:hover{ color:#fff; }
-    .nav a:hover::after{ transform:scaleX(1); }
-
-    /* PAGE LAYOUT */
-    main{
-      padding-top:34px;
+    .nav a:hover {
+      color: #fff;
     }
 
-    .page{
-      width:100%;
+    .nav a:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* MAIN PAGE */
+    main {
+      padding-top: 34px;
+    }
+
+    .page {
+      width: 100%;
       max-width: var(--content);
-      margin:0 auto;
+      margin: 0 auto;
       padding: 0 24px 70px;
-      text-align:left;
+      text-align: left;
     }
 
-    h1{
-      margin:0 0 10px;
-      font-size:2.2rem;
-      letter-spacing:.4px;
-      text-align:center;
+    h1 {
+      margin: 0 0 10px;
+      font-size: 2.2rem;
+      letter-spacing: 0.4px;
+      text-align: center;
     }
 
-    .intro{
-      margin:0 auto 28px;
+    .intro {
+      margin: 0 auto 28px;
       max-width: 920px;
-      color:var(--muted);
-      font-size:1.02rem;
-      text-align:center;
-      line-height:1.6;
+      color: var(--muted);
+      font-size: 1.02rem;
+      text-align: center;
+      line-height: 1.6;
     }
 
-    /* SECTIONS */
-    .section{
+    /* ARCHIVE SECTIONS */
+    .section {
       margin: 36px 0 8px;
       padding-top: 10px;
-      border-top:1px solid var(--line);
+      border-top: 1px solid var(--line);
     }
-    .section:first-of-type{ border-top:none; }
 
-    .section h2{
+    .section:first-of-type {
+      border-top: none;
+    }
+
+    .section h2 {
       margin: 10px 0 14px;
       font-size: 1.35rem;
-      letter-spacing: .08em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color:#fff;
-      text-align:left;
+      color: #fff;
+      text-align: left;
     }
 
-    /*
-      Masonry-like layout without fixed boxes:
-      - natural aspect ratios
-      - no dedicated slots/frames
-    */
-    .masonry{
-      column-width: 320px;
-      column-gap: 14px;
+    /* IMAGE GRID: FOUR COLUMNS ON DESKTOP */
+    .masonry {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      align-items: start;
     }
 
-    .masonry img{
-      width:100%;
-      height:auto;
-      margin: 0 0 14px;
-      break-inside: avoid;
+    .masonry a.image-link {
+      display: block;
+      min-width: 0;
+      cursor: zoom-in;
+      border-radius: 10px;
+      outline-offset: 4px;
+    }
+
+    .masonry img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
       border-radius: 10px;
       background: transparent;
       transform: translateZ(0);
+      transition: transform 0.16s ease, opacity 0.16s ease;
+    }
+
+    .masonry a.image-link:hover img {
+      transform: scale(1.025);
+      opacity: 0.9;
+    }
+
+    /* ENLARGED IMAGE VIEWER */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.94);
+      cursor: zoom-out;
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox img {
+      display: block;
+      max-width: 96vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.65);
+      cursor: default;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      padding: 4px 10px;
+      border: 1px solid #777;
+      border-radius: 6px;
+      background: #111;
+      color: #fff;
+      font-size: 2rem;
+      line-height: 1.2;
+      cursor: pointer;
+    }
+
+    .lightbox-close:hover {
+      background: #333;
+    }
+
+    .lightbox-caption {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 10px;
+      color: #ddd;
+      font-size: 0.9rem;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    /* TABLET */
+    @media (max-width: 900px) {
+      .masonry {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 
     /* MOBILE */
-    @media (max-width: 680px){
-      .wrap{ padding: 0 16px; }
-      .page{ padding: 0 16px 56px; }
-      .masonry{ column-width: 220px; column-gap: 10px; }
-      .masonry img{ margin-bottom: 10px; border-radius: 8px; }
-      .section h2{ text-align:center; }
-      .header-inner{
-        flex-direction:column;
-        align-items:flex-start;
+    @media (max-width: 600px) {
+      .wrap {
+        padding: 0 16px;
       }
-      .nav{ justify-content:flex-start; }
+
+      .page {
+        padding: 0 16px 56px;
+      }
+
+      .masonry {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .masonry img {
+        border-radius: 8px;
+      }
+
+      .masonry a.image-link {
+        border-radius: 8px;
+      }
+
+      .section h2 {
+        text-align: center;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .lightbox {
+        padding: 12px;
+      }
+
+      .lightbox img {
+        max-width: 98vw;
+        max-height: 86vh;
+      }
+
+      .lightbox-close {
+        top: 8px;
+        right: 10px;
+      }
     }
 
-    footer{
+    @media (prefers-reduced-motion: reduce) {
+      .masonry img {
+        transition: none;
+      }
+    }
+
+    /* FOOTER */
+    footer {
       padding: 22px 24px;
-      text-align:center;
+      text-align: center;
       font-size: 0.9rem;
-      color:#666;
-      border-top:1px solid var(--line);
-      background:#050505;
-      margin-top:44px;
+      color: #666;
+      border-top: 1px solid var(--line);
+      background: #050505;
+      margin-top: 44px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- TOP NAV — MATCH HOME PAGE -->
+  <!-- HEADER AND NAVIGATION -->
   <header class="site-header">
     <div class="wrap header-inner">
       <div class="logo-text">DSP RECORDS</div>
+
       <nav class="nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="listen.html">Listen</a>
@@ -208,91 +356,135 @@
 
   <main>
     <div class="page">
+
       <h1>DSP Legacy Image Archive</h1>
+
       <p class="intro">
         A wall of DSP history — crowd energy, crews, headliners, and the posters that built the era.
       </p>
 
-      <!-- Whiskey Creek -->
+      <!-- WHISKEY CREEK -->
       <section class="section" id="whiskey-creek">
         <h2>Whiskey Creek</h2>
+
         <div class="masonry">
           <img src="assets/assets/covers/Whiskey-Creek-DSP-Records-Live-Crowd-Hero.png" alt="Whiskey Creek — live crowd hero shot" loading="eager" fetchpriority="high" decoding="async">
+
           <img src="assets/assets/covers/DSP_WhiskeyCreek_MedicineHatAB_DanceFloor_05.png" alt="Whiskey Creek — dancefloor photo 05" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/DSP_WhiskeyCreek_MedicineHatAB_DanceFloor_07.png" alt="Whiskey Creek — dancefloor photo 07" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Whiskey-Creek-DSP-Records-Live-DJ- Paradigm-theroem-Sub-Fixx.png" alt="Whiskey Creek — DJ set featuring Paradigm, The Roem, Sub Fixx" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Whiskey-Creek-DSP-Records-Live-DJ-Horse-Play.png" alt="Whiskey Creek — DJ Horse Play live" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Whiskey-Creek-DSP-Records-Live-DJ-Sub-Fixx-Red.png" alt="Whiskey Creek — Sub Fixx live (red lighting)" loading="lazy" decoding="async">
         </div>
       </section>
 
-      <!-- Sinfully Seductive Saturdays -->
+      <!-- SINFULLY SEDUCTIVE SATURDAYS -->
       <section class="section" id="sinfully-seductive-saturdays">
         <h2>Sinfully Seductive Saturdays</h2>
+
         <div class="masonry">
           <img src="assets/assets/covers/Sinfully-Seductive-Saturdays-Dancefloor-Liquid-Nightclub-03.png" alt="Sinfully Seductive Saturdays — dancefloor at Liquid Nightclub 03" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Sinfully-Seductive-Saturdays-Dancefloor-Liquid-Nightclub-2013-01.png" alt="Sinfully Seductive Saturdays — dancefloor at Liquid Nightclub 2013 01" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Sinfully-Seductive-Saturdays-Liquid-Nightclub-DSP-01.png" alt="Sinfully Seductive Saturdays — Liquid Nightclub DSP 01" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Sinfully-Seductive-Saturdays-Liquid-Nightclub-DSP-02.png" alt="Sinfully Seductive Saturdays — Liquid Nightclub DSP 02" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Sinfully_Seductive_Saturdays_05_DSP_Records_Neon_Dancefloor.png" alt="Sinfully Seductive Saturdays — neon dancefloor 05" loading="lazy" decoding="async">
         </div>
       </section>
 
-      <!-- NYE 2013 -->
+      <!-- NEW YEAR'S EVE 2013 -->
       <section class="section" id="nye-2013">
         <h2>New Year’s Eve 2013</h2>
+
         <div class="masonry">
           <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-12-31_DSP_Records_NewYearsEve_DanceFloor.png" alt="Liquid Nightclub — New Year's Eve 2013 dancefloor" loading="eager" fetchpriority="high" decoding="async">
+
           <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-12-31_DSP_Records_NewYearsEve_SilkyFilth_SubFixx_FullCrew.png" alt="Liquid Nightclub — NYE 2013 full crew (Silky Filth, Sub Fixx)" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Liquid-Nightclub-DSP-Records-Group-Photo.png" alt="Liquid Nightclub — DSP Records group photo" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-DJ-Action.png" alt="Liquid Nightclub — NYE 2013 DJ action" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-DJ-02.png" alt="Liquid Nightclub — NYE 2013 DJ photo 02" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-DSP-DJ-Crew-01.png" alt="Liquid Nightclub — NYE 2013 DSP DJ crew 01" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-DSP-DJ-Sub-Fixx.png" alt="Liquid Nightclub — NYE 2013 DJ Sub Fixx" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-DSP-Gogo-01..png" alt="Liquid Nightclub — NYE 2013 go-go dancers 01" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Liquid-Nightclub-NYE-2013-LaGoge-GoGo-Dancers-02.png" alt="Liquid Nightclub — NYE 2013 LaGoge go-go dancers 02" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Liquid-Nightclub-NYE-DSP_Records_NewYearsEve_2013_SilkyFilth_SubFixx.png" alt="Liquid Nightclub — NYE 2013 Silky Filth and Sub Fixx" loading="lazy" decoding="async">
         </div>
       </section>
 
-      <!-- DSP DJs -->
+      <!-- DSP DJS -->
       <section class="section" id="dsp-djs">
         <h2>DSP DJs</h2>
+
         <div class="masonry">
           <img src="assets/assets/covers/DSP_Records_Live_DJ_Set_Enhanced_Legacy.png" alt="DSP Records — live DJ set enhanced legacy photo" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/DSP_Records_RIP_Brakewood_Live_DJ_Selfie_Legacy.png" alt="DSP Records — RIP Brakewood live DJ selfie legacy" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/DSP_DJS_BackToBack_LiveSet_02.png" alt="DSP DJs — back to back live set 02" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/DSP_DJS_Live_Performance_01.png" alt="DSP DJs — live performance 01" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/DSP_DJS_Live_Performance_03.png" alt="DSP DJs — live performance 03" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/DSP_DJS_Live_Performance_04.png" alt="DSP DJs — live performance 04" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/DSP_DJS_Live_Performance_05.png" alt="DSP DJs — live performance 05" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/DSP_DJS_Live_Performance_DJ-Prone.png" alt="DSP DJs — live performance DJ Prone" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/DSP_Records_Founding_DJ_Crew_Restored.png" alt="DSP Records — founding DJ crew restored" loading="lazy" decoding="async">
         </div>
       </section>
 
-      <!-- Defunk Hosted By DSP -->
+      <!-- DEFUNK HOSTED BY DSP -->
       <section class="section" id="defunk-hosted">
         <h2>Defunk Hosted by DSP</h2>
+
         <div class="masonry">
           <img src="assets/assets/covers/Defunk_Live_at_Liquid_Night_Club_DSP_Events_Headliner_Set_02.png" alt="Defunk live at Liquid Night Club — headliner set 02" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Defunk_Live_at_Liquid_Night_Club_DSP_Events_Sub_Fixx_x_Defunk_On_Stage_01.png" alt="Defunk live at Liquid Night Club — Sub Fixx x Defunk on stage 01" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Defunk_Live_in_Medicine_Hat_DSP_Records_Dancefloor-02.png" alt="Defunk live in Medicine Hat — dancefloor 02" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Defunk_Live_in_Medicine_Hat_DSP_Records_Dancefloor_.png" alt="Defunk live in Medicine Hat — dancefloor" loading="lazy" decoding="async">
         </div>
       </section>
 
-      <!-- Event Posters -->
+      <!-- EVENT POSTERS -->
       <section class="section" id="event-posters">
         <h2>Event Posters</h2>
+
         <div class="masonry">
           <img src="assets/assets/covers/Audio perversion.jpg" alt="Event poster — Audio Perversion" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Canadian radio takeover of UK station.jpg" alt="Event poster — Canadian radio takeover of UK station" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Desperate House vibes.jpg" alt="Event poster — Desperate House Vibes" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Dgtl Envy.jpg" alt="Event poster — Dgtl Envy" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Operation Brakes.jpg" alt="Event poster — Operation Brakes" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Rhythmic seduction.jpg" alt="Event poster — Rhythmic Seduction" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/Sinfully seductive Saturdays.jpg" alt="Event poster — Sinfully Seductive Saturdays" loading="lazy" decoding="async">
+
           <img src="assets/assets/covers/down rabit hole poster.jpg" alt="Event poster — Down Rabit Hole" loading="lazy" decoding="async">
         </div>
       </section>
@@ -300,12 +492,110 @@
     </div>
   </main>
 
+  <!-- ENLARGED IMAGE VIEWER -->
+  <div
+    class="lightbox"
+    id="image-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged image viewer"
+  >
+    <button
+      class="lightbox-close"
+      id="lightbox-close"
+      type="button"
+      aria-label="Close enlarged image"
+    >&times;</button>
+
+    <img id="lightbox-image" src="" alt="" />
+
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <!-- FOOTER -->
   <footer>
     © <span id="y"></span> DSP Records
   </footer>
 
   <script>
+    // Automatically update the copyright year.
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Make every image clickable without changing the original image paths.
+    document.querySelectorAll(".masonry img").forEach(function(img) {
+      const link = document.createElement("a");
+
+      link.className = "image-link";
+      link.href = img.getAttribute("src");
+      link.setAttribute(
+        "aria-label",
+        "Enlarge image: " + (img.alt || "Archive image")
+      );
+
+      img.parentNode.insertBefore(link, img);
+      link.appendChild(img);
+    });
+
+    // Image viewer elements.
+    const lightbox = document.getElementById("image-lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const closeButton = document.getElementById("lightbox-close");
+
+    let previousFocus = null;
+
+    // Open the selected image.
+    function openLightbox(img) {
+      previousFocus = document.activeElement;
+
+      lightboxImage.src = img.getAttribute("src");
+      lightboxImage.alt = img.alt || "Enlarged archive image";
+      lightboxCaption.textContent = img.alt || "";
+
+      lightbox.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+
+      closeButton.focus();
+    }
+
+    // Close the image viewer.
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      lightboxImage.src = "";
+      document.body.style.overflow = "";
+
+      if (previousFocus && typeof previousFocus.focus === "function") {
+        previousFocus.focus();
+      }
+    }
+
+    // Attach the click action to every image.
+    document.querySelectorAll(".masonry a.image-link").forEach(function(link) {
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        openLightbox(link.querySelector("img"));
+      });
+    });
+
+    // Close using the X button.
+    closeButton.addEventListener("click", closeLightbox);
+
+    // Close when clicking the dark background outside the image.
+    lightbox.addEventListener("click", function(event) {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Close by pressing Escape.
+    document.addEventListener("keydown", function(event) {
+      if (
+        event.key === "Escape" &&
+        lightbox.classList.contains("is-open")
+      ) {
+        closeLightbox();
+      }
+    });
   </script>
 
 </body>
