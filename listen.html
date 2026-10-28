@@ -1,203 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Listen – DSP Records</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Listen to DSP Records and Sub Fixx – featured mixes and label playlist on SoundCloud." />
-
-  <style>
-    /* HARD RESET */
-    html, body { width:100%; max-width:none; overflow-x:hidden; }
-    body { margin:0; padding:0; }
-    * { box-sizing:border-box; }
-    img, iframe { max-width:100%; }
-
-    :root{
-      --bg:#000;
-      --panel:#0b0b0b;
-      --text:#fff;
-      --muted:#bdbdbd;
-      --line:#151515;
-      --accent:#f2c400;
-      --radius: 16px;
-      --content: 750
-        px;
-    }
-
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      font-size: 18px;
-      text-align: center;
-    }
-
-    a{ color:inherit; text-decoration:none; }
-
-    .wrap{
-      width:100%;
-      max-width: var(--content);
-      margin: 0 auto;
-      padding: 0 50px;
-    }
-
-    /* TOP NAV — MATCH HOME PAGE */
-    .site-header{
-      border-bottom:1px solid var(--line);
-      background:#050505;
-    }
-    .header-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:10px 50px;
-    }
-    .logo-text{
-      font-size:0.9rem;
-      text-transform:uppercase;
-      letter-spacing:0.25em;
-      font-weight:700;
-      white-space:nowrap;
-    }
-    .nav{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      font-size:0.8rem;
-      text-transform:uppercase;
-      letter-spacing:0.16em;
-      justify-content:flex-end;
-    }
-    .nav a{
-      position:relative;
-      padding:4px 0;
-      color:var(--muted);
-    }
-    .nav a::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:-3px;
-      height:1px;
-      background:linear-gradient(90deg, transparent, var(--accent), transparent);
-      transform:scaleX(0);
-      transform-origin:center;
-      transition:transform .15s ease-out;
-    }
-    .nav a:hover{ color:#fff; }
-    .nav a:hover::after{ transform:scaleX(1); }
-
-    /* SECTIONS */
-    section{
-      padding: 60px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    h1{
-      margin:22px 0 8px;
-      font-size:2.4rem;
-      letter-spacing:.5px;
-    }
-    h2{
-      margin:0 0 10px;
-      font-size: 2.0rem;
-      letter-spacing: .5px;
-      text-align:center;
-    }
-    p{
-      margin:0 0 14px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      text-align:center;
-    }
-
-    .card{
-      border:1px solid #1a1a1a;
-      background: var(--panel);
-      border-radius: var(--radius);
-      padding: 22px;
-      max-width: 980px;
-      margin: 0 auto;
-      text-align:center;
-      box-shadow:0 18px 40px rgba(0,0,0,.7);
-    }
-
-    .card iframe{
-      width:100%;
-      display:block;
-      border:0;
-    }
-
-    .mix-meta{
-      margin-top: 8px;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #cccccc;
-    }
-    .mix-meta a{
-      color:#cccccc;
-      text-decoration:none;
-    }
-    .mix-meta a:hover{ text-decoration:underline; }
-
-    .note{
-      border:1px solid #1a1a1a;
-      background: linear-gradient(180deg, #050505, #000);
-      border-radius: var(--radius);
-      padding: 18px 22px;
-      color:#d8d8d8;
-      max-width: 980px;
-      margin: 0 auto 20px;
-      text-align:center;
-      box-shadow:0 18px 40px rgba(0,0,0,.7);
-    }
-
-    footer{
-      padding: 34px 24px;
-      text-align:center;
-      font-size: 0.9rem;
-      color:#666;
-    }
-
-    @media (max-width: 700px){
-      .wrap{ padding: 0 18px; }
-      section{ padding: 46px 0; }
-      .header-inner{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-      .nav{ justify-content:flex-start; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSP Records - Upcoming Releases</title>
+    <!-- Using Google Fonts to emulate the poster's cinematic font style -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #080808;
+            color: #eaeaea;
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            margin: 0;
+            padding: 50px 20px;
+            /* Creates a slight center glow to mimic the poster's background */
+            background-image: radial-gradient(circle at center, #1a1410 0%, #080808 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #d4a373; /* Coppery-gold color matching the poster */
+            font-size: 2.5em;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            margin-bottom: 40px;
+            font-variant: small-caps;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            font-size: 1.25em;
+            font-variant: small-caps;
+            letter-spacing: 1.5px;
+            width: 100%;
+            max-width: 600px;
+        }
+        tr {
+            transition: background-color 0.3s;
+        }
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.05); /* Highlight row on hover */
+        }
+        td {
+            padding: 12px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .date {
+            text-align: right;
+            color: #b0b0b0;
+            width: 40%;
+        }
+        .separator {
+            text-align: center;
+            color: #d4a373;
+            width: 10%;
+        }
+        .title {
+            text-align: left;
+            font-weight: bold;
+            width: 50%;
+        }
+        .title a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .title a:hover {
+            color: #d4a373;
+            text-shadow: 0px 0px 8px rgba(212, 163, 115, 0.5);
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- TOP NAV — MATCH HOME PAGE -->
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <div class="logo-text">DSP RECORDS</div>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="listen.html">Listen</a>
-        <a href="releases.html">Releases</a>
-        <a href="past-events.html">Legacy Archive</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <div class="container">
+        <!-- Logo Image -->
+        <img src="Dirty_Sound_Productions_Email_Watermark_ Signature.jpg" alt="DSP Records Logo" class="logo">
+       
+        <h2>Upcoming Releases</h2>
+       
+        <table>
+            <tbody>
+                <!-- TO ADD A NEW RELEASE: Copy from <tr> to </tr> and paste below -->
+              <tr>
+                    <td class="date">2026-12-26</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">The Cylons Are Coming "ELIXIR ( aka, ELX )</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-12-10</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Kicking Up Dirt "Sub Fixx"</a></td>
+                </tr>
+              <tr>
+                    <td class="date">2025-12-01</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Hold Me "Sub Fixx"</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2025-12-12</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Dark Aria "Sub Fixx" </a></td>
+                </tr>
+                <tr>
+                    <td class="date">2025-12-26</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Complicated "Sub Fixx"</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-01-09</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">One Thing "Sub Fixx"</a></td>
+                </tr>
+            
+                <tr>
+                    <td class="date">2026-02-06</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Popular Monster "Sub Fixx"</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-02-20</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Ocean Drive "Sub Fixx"</a></td>
+                </tr>
+               
+                <tr>
+                    <td class="date">2026-03-20</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Why Do You</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-04-03</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Find You</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-04-17</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Guerrilla Warfare</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-05-01</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Decepticons</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-05-15</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Antihero</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-05-29</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Beggin</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-06-12</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">AI Invasion</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-06-26</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Dark Psyche</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-07-10</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Taste</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-07-24</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Sound Break</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-08-07</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Take That</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-08-21</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Straight Up</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-09-04</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">So Wrong</a></td>
+                </tr>
+                <tr>
+                    <td class="date">2026-09-18</td>
+                    <td class="separator">—</td>
+                    <td class="title"><a href="#">Often</a></td>
+                </tr>
+                <!-- End of releases -->
+            </tbody>
+        </table>
     </div>
-  </header>
 
-  <main>
-    <section>
-      <div class="wrap">
-        <h1>Listen</h1>
-        <p>Full-length DJ journeys and label releases from Sub Fixx &amp; DSP Records.</p>
-      </div>
-    </section>
-
+</body>
+</html>
 dsp listen
     <
