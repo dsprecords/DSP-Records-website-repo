@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Releases - DSP Records</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="DSP Records release catalog and upcoming releases.">
+<meta name="description" content="DSP Records releases and upcoming music.">
 
 <style>
 
@@ -26,8 +26,6 @@ a{
     text-decoration:none;
 }
 
-/* ---------- SITE THEME ---------- */
-
 :root{
     --bg:#000;
     --panel:#0b0b0b;
@@ -35,7 +33,6 @@ a{
     --text:#fff;
     --muted:#bdbdbd;
     --accent:#f2c400;
-    --radius:16px;
 }
 
 .wrap{
@@ -45,7 +42,7 @@ a{
     padding:0 24px;
 }
 
-/* ---------- NAVIGATION ---------- */
+/* NAVIGATION */
 
 .site-header{
     border-bottom:1px solid var(--line);
@@ -65,7 +62,6 @@ a{
     text-transform:uppercase;
     letter-spacing:.25em;
     font-weight:700;
-    white-space:nowrap;
 }
 
 .nav{
@@ -85,18 +81,17 @@ a{
     color:#fff;
 }
 
-/* ---------- PAGE HEADER ---------- */
+/* PAGE HEADER */
 
 .page-header{
     text-align:center;
-    padding:50px 24px 30px;
+    padding:50px 24px;
     border-bottom:1px solid var(--line);
 }
 
 .page-header h1{
     margin:0;
     font-size:3rem;
-    letter-spacing:2px;
 }
 
 .page-header p{
@@ -104,11 +99,12 @@ a{
     margin-top:10px;
 }
 
-/* ---------- RELEASES ---------- */
+/* RELEASE LIST */
 
 .release-list{
+    width:100%;
     max-width:1200px;
-    margin:40px auto;
+    margin:30px auto;
 }
 
 .release-card{
@@ -116,7 +112,7 @@ a{
     align-items:center;
     gap:20px;
 
-    padding:16px;
+    padding:20px;
 
     border-bottom:1px solid var(--line);
 
@@ -125,10 +121,6 @@ a{
 
 .release-card:hover{
     background:#090909;
-}
-
-.release-cover{
-    flex-shrink:0;
 }
 
 .release-cover img{
@@ -144,15 +136,14 @@ a{
 }
 
 .release-title{
-    font-size:1.25rem;
+    font-size:1.2rem;
     font-weight:700;
-    margin-bottom:6px;
+    margin-bottom:5px;
 }
 
 .release-artist{
     color:var(--accent);
-    font-size:1rem;
-    margin-bottom:6px;
+    margin-bottom:5px;
 }
 
 .release-date{
@@ -162,25 +153,21 @@ a{
 
 .buy-link{
     color:var(--accent);
-    font-size:.85rem;
     text-transform:uppercase;
-    letter-spacing:.12em;
-    white-space:nowrap;
+    font-size:.85rem;
+    letter-spacing:.15em;
 }
 
-/* ---------- FOOTER ---------- */
+/* FOOTER */
 
 footer{
     border-top:1px solid var(--line);
+    text-align:center;
     padding:30px;
     color:#666;
-    text-align:center;
 }
 
-
-
-
-/* ---------- MOBILE ---------- */
+/* MOBILE */
 
 @media (max-width:768px){
 
@@ -202,18 +189,6 @@ footer{
         height:70px;
     }
 
-    .release-title{
-        font-size:1rem;
-    }
-
-    .release-artist{
-        font-size:.85rem;
-    }
-
-    .release-date{
-        font-size:.8rem;
-    }
-
     .buy-link{
         display:none;
     }
@@ -233,13 +208,11 @@ footer{
         </div>
 
         <nav class="nav">
-
             <a href="index.html">Home</a>
             <a href="releases.html">Releases</a>
             <a href="past-events.html">Legacy Archive</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-
         </nav>
 
     </div>
@@ -263,11 +236,9 @@ footer{
        target="_blank">
 
         <div class="release-cover">
-
             <img
                 src="assets/artist-promotions/elixir/DSP_Records_V2_Cylons_Are_Coming_elixir_Cover_Art.png"
-                alt="The Cylons Are Coming Cover">
-
+                alt="The Cylons Are Coming">
         </div>
 
         <div class="release-info">
@@ -287,30 +258,25 @@ footer{
         </div>
 
         <div class="buy-link">
-            Stream On Soundcloud
+            PRE-ORDER
         </div>
 
-  <div class="release-list">
+    </a>
 
     <a class="release-card"
-       href=https://soundcloud.com/subfixx/wicked-1
+       href="https://soundcloud.com/subfixx/wicked-1"
        target="_blank">
 
-
-    
-
-</div>
-     <div class="release-cover">
-
+        <div class="release-cover">
             <img
-                src=assets/artist-promotions/sub-fixx/wicked.jpg
-
+                src="assets/artist-promotions/sub-fixx/wicked.jpg"
+                alt="Wicked">
         </div>
 
         <div class="release-info">
 
             <div class="release-title">
-               Wicked
+                Wicked
             </div>
 
             <div class="release-artist">
@@ -330,15 +296,14 @@ footer{
     </a>
 
 </div>
-    
 
 <footer>
-
     © <span id="y"></span> DSP Records · Always Fresh. Still Dirty.
-
 </footer>
 
 <script>
 document.getElementById("y").textContent = new Date().getFullYear();
 </script>
 
+</body>
+</html>
