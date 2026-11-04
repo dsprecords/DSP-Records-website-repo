@@ -116,21 +116,75 @@
     }
 
     footer{
-      padding: 34px 24px;
-      text-align:center;
-      font-size: 0.9rem;
-      color:#666;
+     .release-list{
+    max-width:1000px;
+    margin:40px auto 0;
+}
+
+.release-card{
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    padding:16px;
+    margin-bottom:12px;
+
+    background:#0b0b0b;
+    border:1px solid #1a1a1a;
+    border-radius:16px;
+
+    transition:.2s ease;
+}
+
+.release-card:hover{
+    background:#111;
+    border-color:#333;
+}
+
+.release-card img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:8px;
+    flex-shrink:0;
+}
+
+.release-info{
+    text-align:left;
+}
+
+.release-title{
+    font-size:1.2rem;
+    color:#fff;
+    font-weight:700;
+}
+
+.release-artist{
+    color:#f2c400;
+    margin-top:4px;
+}
+
+.release-date{
+    color:#888;
+    margin-top:4px;
+    font-size:.9rem;
+}
+
+@media (max-width:700px){
+
+    .release-card{
+        gap:12px;
     }
 
-    @media (max-width:700px){
-      .wrap{ padding:0 18px; }
-      section{ padding:46px 0; }
-      .header-inner{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-      .nav{ justify-content:flex-start; }
+    .release-card img{
+        width:70px;
+        height:70px;
     }
+
+    .release-title{
+        font-size:1rem;
+    }
+}
   </style>
 </head>
 
@@ -156,11 +210,34 @@
       <div class="wrap">
         <h1>Release Schedule</h1>
         <p>Current DSP Records schedule and upcoming drops.</p>
-        <img class="release-img" src="assets/DSP_ReleaseSchedule.png" alt="DSP Records upcoming release schedule" />
       </div>
     </section>
   </main>
+<div class="release-list">
 
+    <a class="release-card" href="https://soundcloud.com/dj-elixir-2" target="_blank">
+
+        <img
+            src="assets/artist-promotions/elixir/DSP_Records_V2_Cylons_Are_Coming_elixir_Cover_Art.png"
+            alt="The Cylons Are Coming Cover">
+
+        <div class="release-info">
+            <div class="release-title">
+                The Cylons Are Coming
+            </div>
+
+            <div class="release-artist">
+                ELIXIR
+            </div>
+
+            <div class="release-date">
+                November 26, 2026
+            </div>
+        </div>
+
+    </a>
+
+</div>
   <footer>
     © <span id="y"></span> DSP Records
   </footer>
