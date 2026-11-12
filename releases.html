@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <title>Releases - DSP Records</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="DSP Records releases and upcoming music.">
+<meta name="description" content="DSP Records release catalog and upcoming releases.">
 
 <style>
+
 html,
 body{
     margin:0;
@@ -25,6 +26,8 @@ a{
     text-decoration:none;
 }
 
+/* ---------- SITE THEME ---------- */
+
 :root{
     --bg:#000;
     --panel:#0b0b0b;
@@ -32,7 +35,7 @@ a{
     --text:#fff;
     --muted:#bdbdbd;
     --accent:#f2c400;
-    --beatport:#94D500;
+    --radius:16px;
 }
 
 .wrap{
@@ -42,11 +45,13 @@ a{
     padding:0 24px;
 }
 
-/* NAVIGATION */
+/* ---------- NAVIGATION ---------- */
+
 .site-header{
     border-bottom:1px solid var(--line);
     background:#050505;
 }
+
 .header-inner{
     display:flex;
     align-items:center;
@@ -54,12 +59,15 @@ a{
     gap:16px;
     padding:10px 24px;
 }
+
 .logo-text{
     font-size:.9rem;
     text-transform:uppercase;
     letter-spacing:.25em;
     font-weight:700;
+    white-space:nowrap;
 }
+
 .nav{
     display:flex;
     flex-wrap:wrap;
@@ -68,440 +76,521 @@ a{
     text-transform:uppercase;
     letter-spacing:.16em;
 }
+
 .nav a{
     color:var(--muted);
 }
+
 .nav a:hover{
     color:#fff;
 }
 
-/* PAGE HEADER */
+/* ---------- PAGE HEADER ---------- */
+
 .page-header{
     text-align:center;
-    padding:50px 24px;
+    padding:50px 24px 30px;
     border-bottom:1px solid var(--line);
 }
+
 .page-header h1{
     margin:0;
     font-size:3rem;
+    letter-spacing:2px;
 }
+
 .page-header p{
     color:var(--muted);
     margin-top:10px;
 }
 
-/* 3-COLUMN ROW RELEASE LIST */
+/* ---------- RELEASES ---------- */
+
 .release-list{
-    width:100%;
-    max-width:1100px;
+    max-width:1200px;
     margin:40px auto;
-    padding:0 20px;
 }
 
 .release-card{
     display:flex;
-    flex-direction:row;
     align-items:center;
-    justify-content:space-between;
-    gap:28px;
-    padding:24px;
+    gap:20px;
+
+    padding:16px;
+
     border-bottom:1px solid var(--line);
-    background:var(--panel);
-    border-radius:10px;
-    margin-bottom:24px;
-    transition:background-color 0.2s ease;
+
+    transition:.2s ease;
 }
 
 .release-card:hover{
-    background:#101010;
+    background:#090909;
 }
 
-/* DIV 1: ALBUM COVER */
 .release-cover{
     flex-shrink:0;
-    width:160px;
-    height:160px;
 }
 
 .release-cover img{
-    width:100%;
-    height:100%;
+    width:100px;
+    height:100px;
     object-fit:cover;
-    border-radius:8px;
-    cursor:zoom-in;
-    display:block;
-    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius:6px;
 }
 
-.release-cover img:hover{
-    transform:scale(1.03);
-    box-shadow:0 4px 16px rgba(0,0,0,0.6);
-}
-
-/* DIV 2: TITLE & ACTION BUTTONS */
 .release-info{
     flex:1;
-    min-width:220px;
     text-align:left;
 }
 
 .release-title{
-    font-size:1.35rem;
+    font-size:1.25rem;
     font-weight:700;
     margin-bottom:6px;
-    line-height:1.2;
 }
 
 .release-artist{
     color:var(--accent);
-    font-weight:600;
-    font-size:1.05rem;
+    font-size:1rem;
     margin-bottom:6px;
 }
 
 .release-date{
     color:#888;
     font-size:.9rem;
-    margin-bottom:18px;
 }
 
-.release-actions{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    padding:10px 18px;
-    font-size:0.75rem;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:0.12em;
-    border-radius:4px;
-    cursor:pointer;
-    transition:0.2s ease;
-    display:inline-block;
-}
-
-.btn-presave{
-    background:#1c1c1c;
-    color:#fff;
-    border:1px solid #3d3d3d;
-}
-
-.btn-presave:hover{
-    background:#2c2c2c;
-    border-color:#666;
-}
-
-.btn-beatport{
-    background:var(--beatport);
-    color:#000;
-    border:1px solid var(--beatport);
-}
-
-.btn-beatport:hover{
-    background:#a8f000;
-    border-color:#a8f000;
-}
-
-/* DIV 3: SOUNDCLOUD PLAYER */
-.release-player{
-    flex-shrink:0;
-    width:200px;
-    height:200px;
-    border-radius:8px;
-    overflow:hidden;
-    background:#000;
-}
-
-.release-player iframe{
-    display:block;
-    border:none;
-}
-
-/* LIGHTBOX MODAL */
-.lightbox{
-    display:none;
-    position:fixed;
-    z-index:9999;
-    top:0;
-    left:0;
-    width:100vw;
-    height:100vh;
-    background:rgba(0, 0, 0, 0.92);
-    align-items:center;
-    justify-content:center;
-}
-
-.lightbox img{
-    max-width:90%;
-    max-height:85%;
-    border-radius:8px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.8);
-}
-
-.lightbox-close{
-    position:absolute;
-    top:20px;
-    right:30px;
-    color:#fff;
-    font-size:40px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.lightbox-close:hover{
+.buy-link{
     color:var(--accent);
+    font-size:.85rem;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    white-space:nowrap;
 }
 
-/* FOOTER */
+/* ---------- FOOTER ---------- */
+
 footer{
     border-top:1px solid var(--line);
-    text-align:center;
     padding:30px;
     color:#666;
+    text-align:center;
 }
 
-/* RESPONSIVE STACK FOR TABLETS & PHONES */
-@media (max-width:850px){
-    .release-card{
-        flex-direction:column;
-        text-align:center;
-        gap:20px;
-    }
-    .release-info{
-        text-align:center;
-    }
-    .release-actions{
-        justify-content:center;
-    }
+/* ---------- MOBILE ---------- */
+
+@media (max-width:768px){
+
     .header-inner{
         flex-direction:column;
         align-items:flex-start;
     }
+
     .page-header h1{
         font-size:2rem;
     }
+
+    .release-card{
+        gap:14px;
+    }
+
+    .release-cover img{
+        width:70px;
+        height:70px;
+    }
+
+    .release-title{
+        font-size:1rem;
+    }
+
+    .release-artist{
+        font-size:.85rem;
+    }
+
+    .release-date{
+        font-size:.8rem;
+    }
+
+    .buy-link{
+        display:none;
+    }
 }
+
 </style>
 </head>
 
 <body>
 
 <header class="site-header">
+
     <div class="wrap header-inner">
+
         <div class="logo-text">
             DSP RECORDS
         </div>
+
         <nav class="nav">
+
             <a href="index.html">Home</a>
             <a href="releases.html">Releases</a>
             <a href="past-events.html">Legacy Archive</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
+
         </nav>
+
     </div>
+
 </header>
 
 <section class="page-header">
+
     <h1>RELEASES</h1>
-    <p>Support DSP Records artists through official release channels.</p>
+
+    <p>
+        Support DSP Records artists through official release channels.
+    </p>
+
+</section>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Releases - DSP Records</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DSP Records release catalog and upcoming releases.">
+
+<style>
+
+html,
+body{
+    margin:0;
+    padding:0;
+    background:#000;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* ---------- SITE THEME ---------- */
+
+:root{
+    --bg:#000;
+    --panel:#0b0b0b;
+    --line:#151515;
+    --text:#fff;
+    --muted:#bdbdbd;
+    --accent:#f2c400;
+    --radius:16px;
+}
+
+.wrap{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 24px;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.site-header{
+    border-bottom:1px solid var(--line);
+    background:#050505;
+}
+
+.header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:10px 24px;
+}
+
+.logo-text{
+    font-size:.9rem;
+    text-transform:uppercase;
+    letter-spacing:.25em;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+.nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    font-size:.8rem;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+}
+
+.nav a{
+    color:var(--muted);
+}
+
+.nav a:hover{
+    color:#fff;
+}
+
+/* ---------- PAGE HEADER ---------- */
+
+.page-header{
+    text-align:center;
+    padding:50px 24px 30px;
+    border-bottom:1px solid var(--line);
+}
+
+.page-header h1{
+    margin:0;
+    font-size:3rem;
+    letter-spacing:2px;
+}
+
+.page-header p{
+    color:var(--muted);
+    margin-top:10px;
+}
+
+/* ---------- RELEASES ---------- */
+
+.release-list{
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.release-card{
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    padding:16px;
+
+    border-bottom:1px solid var(--line);
+
+    transition:.2s ease;
+}
+
+.release-card:hover{
+    background:#090909;
+}
+
+.release-cover{
+    flex-shrink:0;
+}
+
+.release-cover img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:6px;
+}
+
+.release-info{
+    flex:1;
+    text-align:left;
+}
+
+.release-title{
+    font-size:1.25rem;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+.release-artist{
+    color:var(--accent);
+    font-size:1rem;
+    margin-bottom:6px;
+}
+
+.release-date{
+    color:#888;
+    font-size:.9rem;
+}
+
+.buy-link{
+    color:var(--accent);
+    font-size:.85rem;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    white-space:nowrap;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+    border-top:1px solid var(--line);
+    padding:30px;
+    color:#666;
+    text-align:center;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:768px){
+
+    .header-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .page-header h1{
+        font-size:2rem;
+    }
+
+    .release-card{
+        gap:14px;
+    }
+
+    .release-cover img{
+        width:70px;
+        height:70px;
+    }
+
+    .release-title{
+        font-size:1rem;
+    }
+
+    .release-artist{
+        font-size:.85rem;
+    }
+
+    .release-date{
+        font-size:.8rem;
+    }
+
+    .buy-link{
+        display:none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="wrap header-inner">
+
+        <div class="logo-text">
+            DSP RECORDS
+        </div>
+
+        <nav class="nav">
+
+            <a href="index.html">Home</a>
+            <a href="releases.html">Releases</a>
+            <a href="past-events.html">Legacy Archive</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<section class="page-header">
+
+    <h1>RELEASES</h1>
+
+    <p>
+        Support DSP Records artists through official release channels.
+    </p>
+
 </section>
 
 <div class="release-list">
 
-    <!-- RELEASE 1 -->
-    <div class="release-card">
-        <!-- Div 1: Cover with Lightbox -->
+    <a class="release-card"
+       href="https://soundcloud.com/dj-elixir-2"
+       target="_blank">
+
         <div class="release-cover">
-            <img src="assets/artist-promotions/elixir/DSP_Records_V2_Cylons_Are_Coming_elixir_Cover_Art.png" alt="The Cylons Are Coming" onclick="openLightbox(this.src)">
+
+            <img
+                src="assets/artist-promotions/elixir/DSP_Records_V2_Cylons_Are_Coming_elixir_Cover_Art.png"
+                alt="The Cylons Are Coming Cover">
+
         </div>
 
-        <!-- Div 2: Information & Action Buttons -->
         <div class="release-info">
-            <div class="release-title">The Cylons Are Coming (Bass House)</div>
-            <div class="release-artist">ELIXIR</div>
-            <div class="release-date">November 26, 2026</div>
-            <div class="release-actions">
-                <a href="#" class="btn btn-presave">Pre-Save</a>
-                <a href="#" class="btn btn-beatport">Buy on Beatport</a>
+
+            <div class="release-title">
+                The Cylons Are Coming
             </div>
-        </div>
 
-        <!-- Div 3: SoundCloud Player -->
-        <div class="release-player"><iframe width="200%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2435384718&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dsp_records" title="DSP Records" target="_blank" style="color: #cccccc; text-decoration: none;">DSP Records</a> · <a href="https://soundcloud.com/dsp_records/dark-aria-sub-fixx-remix" title="Dark Aria (Sub Fixx Remix)" target="_blank" style="color: #cccccc; text-decoration: none;">Dark Aria (Sub Fixx Remix)</a></div>
-        </div>
-    </div>
-
-    <!-- RELEASE 2 -->
-    <div class="release-card">
-        <!-- Div 1: Cover with Lightbox -->
-        <div class="release-cover">
-            <img src="assets/artist-promotions/sub-fixx/Stright_Up-Sub_Fixx-DSP_Records-Cover_Art.png" alt="Straight Up" onclick="openLightbox(this.src)">
-        </div>
-
-        <!-- Div 2: Information & Action Buttons -->
-        <div class="release-info">
-            <div class="release-title">Stright Up (Drum & Bass)</div>
-            <div class="release-artist">Sub Fixx</div>
-            <div class="release-date">December 23, 2026</div>
-            <div class="release-actions">
-                <a href="#" class="btn btn-presave">Pre-Save</a>
-                <a href="#" class="btn btn-beatport">Buy on Beatport</a>
+            <div class="release-artist">
+                ELIXIR
             </div>
-        </div>
 
-        <!-- Div 3: SoundCloud Player -->
-        <div class="release-player">
-            <iframe width="200" height="200" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2435395809&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dsp_records" title="DSP Records" target="_blank" style="color: #cccccc; text-decoration: none;">DSP Records</a> · <a href="https://soundcloud.com/dsp_records/sub-fixx-find-you-1" title="Sub Fixx - Find You" target="_blank" style="color: #cccccc; text-decoration: none;">Sub Fixx - Find You</a></div>
-        </div>
-    </div>
-
-    <!-- RELEASE 3 -->
-    <div class="release-card">
-        <!-- Div 1: Cover with Lightbox -->
-        <div class="release-cover">
-            <img src="assets/artist-promotions/sub-fixx/Chaos Reigns album cover Sub Fixx and Spindle Shanks.png" alt="Chaos Reigns" onclick="openLightbox(this.src)">
-        </div>
-
-        <!-- Div 2: Information & Action Buttons -->
-        <div class="release-info">
-            <div class="release-title">Chaos Rains EP (Drum & Bass)</div>
-            <div class="release-artist">Sub Fixx Feat Spindle Shanks (UK)</div>
-            <div class="release-date">October 29, 2026</div>
-            <div class="release-actions">
-                <a href="#" class="btn btn-presave">Pre-Save</a>
-                <a href="#" class="btn btn-beatport">Buy on Beatport</a>
+            <div class="release-date">
+                November 26, 2026
             </div>
+
         </div>
 
-        <!-- Div 3: SoundCloud Player -->
-        <div class="release-player">
-            <iframe width="200" height="200" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2435395809&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dsp_records" title="DSP Records" target="_blank" style="color: #cccccc; text-decoration: none;">DSP Records</a> · <a href="https://soundcloud.com/dsp_records/sub-fixx-find-you-1" title="Sub Fixx - Find You" target="_blank" style="color: #cccccc; text-decoration: none;">Sub Fixx - Find You</a></div>
-        </div>
-    </div>
-
-    <!-- RELEASE 4 -->
-    <div class="release-card">
-        <!-- Div 1: Cover with Lightbox -->
-        <div class="release-cover">
-            <img src="assets/artist-promotions/sub-fixx/Kicking_Up_Dirt-Sub_Fixx-DSP_Records-Cover_Art.png" alt="Kicking Up Dirt" onclick="openLightbox(this.src)">
+        <div class="buy-link">
+            PRE-ORDER
         </div>
 
-        <!-- Div 2: Information & Action Buttons -->
-        <div class="release-info">
-            <div class="release-title">Kicking Up Dirt (Garage)</div>
-            <div class="release-artist">Sub Fixx</div>
-            <div class="release-date">December 09, 2026</div>
-            <div class="release-actions">
-                <a href="#" class="btn btn-presave">Pre-Save</a>
-                <a href="#" class="btn btn-beatport">Buy on Beatport</a>
-            </div>
-        </div>
+  <div class="release-list">
 
-        <!-- Div 3: SoundCloud Player -->
-        <div class="release-player">
-            <iframe width="200" height="200" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2435395809&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dsp_records" title="DSP Records" target="_blank" style="color: #cccccc; text-decoration: none;">DSP Records</a> · <a href="https://soundcloud.com/dsp_records/sub-fixx-find-you-1" title="Sub Fixx - Find You" target="_blank" style="color: #cccccc; text-decoration: none;">Sub Fixx - Find You</a></div>
-        </div>
-    </div>
+    <a class="release-card"
+       href=https://soundcloud.com/subfixx/wicked-1
+       target="_blank">
 
-    <!-- RELEASE 5 -->
-    <div class="release-card">
-        <!-- Div 1: Cover with Lightbox -->
-        <div class="release-cover">
-            <img src="assets/artist-promotions/sub-fixx/Disaster_Alubm_Cover_Sub_Fixx_DSP_Records.png" alt="Disaster" onclick="openLightbox(this.src)">
-        </div>
 
-        <!-- Div 2: Information & Action Buttons -->
-        <div class="release-info">
-            <div class="release-title">Disaster (Bass House)</div>
-            <div class="release-artist">Sub Fixx</div>
-            <div class="release-date">December 23, 2026</div>
-            <div class="release-actions">
-                <a href="#" class="btn btn-presave">Pre-Save</a>
-                <a href="#" class="btn btn-beatport">Buy on Beatport</a>
-            </div>
-        </div>
-
-        <!-- Div 3: SoundCloud Player -->
-        <div class="release-player">
-            <iframe width="200" height="200" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2435395809&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dsp_records" title="DSP Records" target="_blank" style="color: #cccccc; text-decoration: none;">DSP Records</a> · <a href="https://soundcloud.com/dsp_records/sub-fixx-find-you-1" title="Sub Fixx - Find You" target="_blank" style="color: #cccccc; text-decoration: none;">Sub Fixx - Find You</a></div>
-        </div>
-    </div>
-
-    <!-- RELEASE 6 -->
-    <div class="release-card">
-        <!-- Div 1: Cover with Lightbox -->
-        <div class="release-cover">
-            <img src="assets/artist-promotions/sub-fixx/wicked.jpg" alt="Wicked" onclick="openLightbox(this.src)">
-        </div>
-
-        <!-- Div 2: Information & Action Buttons -->
-        <div class="release-info">
-            <div class="release-title">Wicked (Bass House)</div>
-            <div class="release-artist">Sub Fixx</div>
-            <div class="release-date">November 12, 2026</div>
-            <div class="release-actions">
-                <a href="#" class="btn btn-presave">Pre-Save</a>
-                <a href="#" class="btn btn-beatport">Buy on Beatport</a>
-            </div>
-        </div>
-
-        <!-- Div 3: SoundCloud Player -->
-        <div class="release-player">
-            <iframe width="200" height="200" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2435395809&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dsp_records" title="DSP Records" target="_blank" style="color: #cccccc; text-decoration: none;">DSP Records</a> · <a href="https://soundcloud.com/dsp_records/sub-fixx-find-you-1" title="Sub Fixx - Find You" target="_blank" style="color: #cccccc; text-decoration: none;">Sub Fixx - Find You</a></div>
-        </div>
-    </div>
-
-    <!-- RELEASE 7 -->
-    <div class="release-card">
-        <!-- Div 1: Cover with Lightbox -->
-        <div class="release-cover">
-            <img src="assets/artist-promotions/sub-fixx/Stand Alone.jpg" alt="Stand Alone" onclick="openLightbox(this.src)">
-        </div>
-
-        <!-- Div 2: Information & Action Buttons -->
-        <div class="release-info">
-            <div class="release-title">Stand Alone (Bass House)</div>
-            <div class="release-artist">Sub Fixx</div>
-            <div class="release-date">November 12, 2026</div>
-            <div class="release-actions">
-                <a href="#" class="btn btn-presave">Pre-Save</a>
-                <a href="#" class="btn btn-beatport">Buy on Beatport</a>
-            </div>
-        </div>
-
-        <!-- Div 3: SoundCloud Player -->
-        <div class="release-player">
-            <iframe width="200" height="200" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2435395809&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dsp_records" title="DSP Records" target="_blank" style="color: #cccccc; text-decoration: none;">DSP Records</a> · <a href="https://soundcloud.com/dsp_records/sub-fixx-find-you-1" title="Sub Fixx - Find You" target="_blank" style="color: #cccccc; text-decoration: none;">Sub Fixx - Find You</a></div>
-        </div>
-    </div>
+    
 
 </div>
+     <div class="release-cover">
 
-<!-- Lightbox Modal -->
-<div id="coverLightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="lightbox-close">&times;</span>
-    <img id="lightboxImg" src="" alt="Enlarged Cover Artwork">
+            <img
+                src=assets/artist-promotions/sub-fixx/wicked.jpg
+
+        </div>
+
+        <div class="release-info">
+
+            <div class="release-title">
+               Wicked
+            </div>
+
+            <div class="release-artist">
+                Sub Fixx
+            </div>
+
+            <div class="release-date">
+                November 12, 2026
+            </div>
+
+        </div>
+
+        <div class="buy-link">
+            PRE-ORDER
+        </div>
+
+    </a>
+
 </div>
+    
 
 <footer>
+
     © <span id="y"></span> DSP Records · Always Fresh. Still Dirty.
+
 </footer>
 
 <script>
 document.getElementById("y").textContent = new Date().getFullYear();
-
-function openLightbox(src) {
-    document.getElementById('lightboxImg').src = src;
-    document.getElementById('coverLightbox').style.display = 'flex';
-}
-
-function closeLightbox() {
-    document.getElementById('coverLightbox').style.display = 'none';
-}
 </script>
 
-</body>
-</html>
