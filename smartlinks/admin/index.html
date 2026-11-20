@@ -3,60 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DSP Records Release Manager</title>
+<title>DSP Records Smart Link Manager</title>
 
 <style>
 body{
-background:#111;
-color:white;
-font-family:Arial,sans-serif;
-max-width:900px;
-margin:auto;
-padding:40px;
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+    max-width:900px;
+    margin:auto;
+    padding:30px;
+}
+
+.logo{
+    display:block;
+    margin:0 auto 30px;
+    max-width:350px;
+    width:90%;
 }
 
 h1{
-text-align:center;
+    text-align:center;
 }
 
 label{
-display:block;
-margin-top:15px;
-font-weight:bold;
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
 }
 
 input{
-width:100%;
-padding:10px;
-margin-top:5px;
-border:none;
-border-radius:4px;
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border:none;
+    border-radius:5px;
 }
 
 button{
-margin-top:20px;
-padding:15px 25px;
-background:#ff5500;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
+    margin-top:25px;
+    padding:15px 25px;
+    background:#ff5500;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
 }
 
 textarea{
-width:100%;
-height:300px;
-margin-top:20px;
-background:#222;
-color:white;
-padding:15px;
+    width:100%;
+    height:350px;
+    margin-top:20px;
+    background:#222;
+    color:white;
+    padding:15px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>DSP Records Release Manager</h1>
+<img src="../assets/DSP-Smartlink-Logo.png" class="logo">
+
+<h1>DSP Records Smart Link Manager</h1>
 
 <label>Artist Name</label>
 <input id="artist">
@@ -85,24 +94,23 @@ padding:15px;
 <label>SoundCloud Link</label>
 <input id="soundcloud">
 
-<button onclick="generatePage()">
-Generate Release Page
-</button>
+<button onclick="generatePage()">Generate Release Page</button>
 
 <textarea id="output"></textarea>
 
 <script>
-
 function generatePage(){
 
 let artist=document.getElementById('artist').value;
 let title=document.getElementById('title').value;
 
-document.getElementById('output').value =
-'Release Ready: ' + artist + ' - ' + title;
+let slug=title.toLowerCase()
+.replace(/[^a-z0-9\s]/g,'')
+.replace(/\s+/g,'-');
 
+document.getElementById('output').value=
+'Release URL:\nhttps://dsprecords.ca/smartlinks/releases/'+slug+'/';
 }
-
 </script>
 
 </body>
