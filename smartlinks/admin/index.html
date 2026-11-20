@@ -6,6 +6,7 @@
 <title>DSP Records Smart Link Manager</title>
 
 <style>
+
 body{
     background:#111;
     color:white;
@@ -16,14 +17,10 @@ body{
 }
 
 .logo{
+    width:90%;
+    max-width:500px;
     display:block;
     margin:0 auto 30px;
-    max-width:350px;
-    width:90%;
-}
-
-h1{
-    text-align:center;
 }
 
 label{
@@ -52,12 +49,21 @@ button{
 
 textarea{
     width:100%;
-    height:350px;
+    height:600px;
     margin-top:20px;
     background:#222;
     color:white;
     padding:15px;
 }
+
+.preview{
+    width:100%;
+    max-width:400px;
+    display:none;
+    margin:20px auto;
+    border-radius:8px;
+}
+
 </style>
 </head>
 
@@ -73,8 +79,10 @@ textarea{
 <label>Release Title</label>
 <input id="title">
 
-<label>Artwork URL</label>
-<input id="artwork">
+<label>Cover Artwork</label>
+<input type="file" id="artwork" accept="image/*">
+
+<img id="preview" class="preview">
 
 <label>Beatport Link</label>
 <input id="beatport">
@@ -99,18 +107,120 @@ textarea{
 <textarea id="output"></textarea>
 
 <script>
+
+let artworkData="";
+
+document.getElementById('artwork').addEventListener('change', function(e){
+
+const file=e.target.files[0];
+
+if(file){
+
+const reader=new FileReader();
+
+reader.onload=function(event){
+
+artworkData=event.target.result;
+
+document.getElementById('preview').src=artworkData;
+document.getElementById('preview').style.display='block';
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+});
+
 function generatePage(){
 
 let artist=document.getElementById('artist').value;
 let title=document.getElementById('title').value;
+let beatport=document.getElementById('beatport').value;
+let traxsource=document.getElementById('traxsource').value;
+let juno=document.getElementById('juno').value;
+let apple=document.getElementById('apple').value;
+let amazon=document.getElementById('amazon').value;
+let soundcloud=document.getElementById('soundcloud').value;
 
-let slug=title.toLowerCase()
-.replace(/[^a-z0-9\s]/g,'')
-.replace(/\s+/g,'-');
+let page=`<!DOCTYPE html>
+<html>
+<head>
+<title>${title}</title>
+<style>
 
-document.getElementById('output').value=
-'Release URL:\nhttps://dsprecords.ca/smartlinks/releases/'+slug+'/';
+body{
+background:#111;
+color:white;
+font-family:Arial,sans-serif;
+text-align:center;
+padding:40px;
 }
+
+.logo{
+width:90%;
+max-width:500px;
+margin-bottom:25px;
+}
+
+.cover{
+width:100%;
+max-width:400px;
+border-radius:8px;
+margin-bottom:25px;
+}
+
+.button{
+display:block;
+max-width:400px;
+margin:15px auto;
+padding:18px;
+border-radius:6px;
+font-weight:bold;
+text-decoration:none;
+color:white;
+}
+
+.beatport{background:#01FF95;color:black;}
+.traxsource{background:#1E88E5;}
+.juno{background:#7E57C2;}
+.apple{background:#FA243C;}
+.amazon{background:#00A8E1;}
+.soundcloud{background:#FF5500;}
+
+</style>
+</head>
+
+<body>
+
+<img src="../../assets/DSP-Smartlink-Logo.png" class="logo">
+
+<img src="${artworkData}" class="cover">
+
+<h1>${title}</h1>
+
+<h2>${artist}</h2>
+
+<a class="button beatport" href="${beatport}">BUY ON BEATPORT</a>
+
+<a class="button traxsource" href="${traxsource}">BUY ON TRAXSOURCE</a>
+
+<a class="button juno" href="${juno}">BUY ON JUNO DOWNLOAD</a>
+
+<a class="button apple" href="${apple}">BUY ON APPLE MUSIC</a>
+
+<a class="button amazon" href="${amazon}">BUY ON AMAZON MUSIC</a>
+
+<a class="button soundcloud" href="${soundcloud}">STREAM ON SOUNDCLOUD</a>
+
+</body>
+</html>`;
+
+document.getElementById('output').value=page;
+
+}
+
 </script>
 
 </body>
