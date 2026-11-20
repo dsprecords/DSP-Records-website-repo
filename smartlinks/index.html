@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSP Records Release Manager</title>
+
+<style>
+
+body{
+    background:#111;
+    color:white;
+    font-family:Arial, sans-serif;
+    max-width:900px;
+    margin:auto;
+    padding:40px;
+}
+
+h1{
+    text-align:center;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:4px;
+    border:none;
+}
+
+button{
+    margin-top:25px;
+    padding:15px 30px;
+    background:#ff5500;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+textarea{
+    width:100%;
+    height:300px;
+    margin-top:20px;
+    background:#222;
+    color:white;
+    padding:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>DSP Records Release Manager</h1>
+
+<label>Artist Name</label>
+<input id="artist">
+
+<label>Release Title</label>
+<input id="title">
+
+<label>Artwork URL</label>
+<input id="artwork">
+
+<label>Beatport Link</label>
+<input id="beatport">
+
+<label>Traxsource Link</label>
+<input id="traxsource">
+
+<label>Juno Download Link</label>
+<input id="juno">
+
+<label>Apple Music Link</label>
+<input id="apple">
+
+<label>Amazon Music Link</label>
+<input id="amazon">
+
+<label>SoundCloud Link</label>
+<input id="soundcloud">
+
+<button onclick="generatePage()">
+Generate Release Page
+</button>
+
+<textarea id="output"></textarea>
+
+<script>
+
+function generatePage(){
+
+let artist = document.getElementById('artist').value;
+let title = document.getElementById('title').value;
+let artwork = document.getElementById('artwork').value;
+let beatport = document.getElementById('beatport').value;
+let traxsource = document.getElementById('traxsource').value;
+let juno = document.getElementById('juno').value;
+let apple = document.getElementById('apple').value;
+let amazon = document.getElementById('amazon').value;
+let soundcloud = document.getElementById('soundcloud').value;
+
+let page = `<!DOCTYPE html>
+<html>
+<head>
+<title>${title}</title>
+
+<style>
+
+body{
+background:#111;
+color:white;
+font-family:Arial,sans-serif;
+text-align:center;
+padding:40px;
+}
+
+.logo{
+max-width:250px;
+margin-bottom:30px;
+}
+
+.cover{
+max-width:400px;
+width:100%;
+border-radius:10px;
+}
+
+.button{
+display:block;
+max-width:400px;
+margin:15px auto;
+padding:18px;
+background:#ff5500;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
+}
+
+.soundcloud{
+background:#333;
+}
+
+</style>
+</head>
+
+<body>
+
+<img src="../assets/dsp-logo.png" class="logo">
+
+<img src="${artwork}" class="cover">
+
+<h1>${title}</h1>
+
+<h2>${artist}</h2>
+
+<a class="button" href="${beatport}" target="_blank">
+BUY ON BEATPORT
+</a>
+
+<a class="button" href="${traxsource}" target="_blank">
+BUY ON TRAXSOURCE
+</a>
+
+<a class="button" href="${juno}" target="_blank">
+BUY ON JUNO DOWNLOAD
+</a>
+
+<a class="button" href="${apple}" target="_blank">
+BUY ON APPLE MUSIC
+</a>
+
+<a class="button" href="${amazon}" target="_blank">
+BUY ON AMAZON MUSIC
+</a>
+
+<a class="button soundcloud" href="${soundcloud}" target="_blank">
+STREAM ON SOUNDCLOUD
+</a>
+
+</body>
+</html>`;
+
+document.getElementById('output').value = page;
+
+}
+
+</script>
+
+</body>
+</html>
