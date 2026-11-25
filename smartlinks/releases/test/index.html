@@ -42,10 +42,39 @@ color:white;
 .apple{background:#FA243C;}
 .amazon{background:#00A8E1;}
 .soundcloud{background:#FF5500;}
+	
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
 
 </style>
 </head>
 <body>
+
+<!-- The video -->
+<video autoplay muted loop id="myVideo">
+  <source src="https://youtu.be/ksgONdEnOqk" type="video/mp4">
+</video>
+
+<!-- Optional: some overlay text to describe the video -->
+<div class="content">
+  
 
 <img src="../../assets/DSP_Records_logo-sm.png" class="logo"></br>
 
@@ -65,5 +94,7 @@ color:white;
 
 <b>70%</b> of <b>all sales</b> go directly to the artist.
 
+</div>
+	
 </body>
 </html>
