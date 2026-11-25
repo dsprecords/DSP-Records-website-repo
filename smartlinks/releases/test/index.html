@@ -5,13 +5,31 @@
 <style>
 
 body{
-background:#111;
 color:white;
 font-family:Arial,sans-serif;
 text-align:center;
-padding:40px;
+padding:0px;
 }
 
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+	
 .logo{
 width:90%;
 max-width:500px;
@@ -43,24 +61,6 @@ color:white;
 .amazon{background:#00A8E1;}
 .soundcloud{background:#FF5500;}
 	
-/* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
-
-/* Add some content at the bottom of the video/page */
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-}
 
 
 </style>
