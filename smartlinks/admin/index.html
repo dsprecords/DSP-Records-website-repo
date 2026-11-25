@@ -6,64 +6,66 @@
 <title>DSP Records Smart Link Manager</title>
 
 <style>
+
 body{
-background:#111;
-color:#fff;
-font-family:Arial,sans-serif;
-max-width:900px;
-margin:auto;
-padding:30px;
+    background:#111;
+    color:#fff;
+    font-family:Arial,sans-serif;
+    max-width:900px;
+    margin:auto;
+    padding:30px;
 }
 
 .logo{
-width:90%;
-max-width:500px;
-display:block;
-margin:0 auto 30px;
+    width:90%;
+    max-width:500px;
+    display:block;
+    margin:0 auto 30px;
 }
 
 input{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:none;
-border-radius:5px;
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:5px;
 }
 
 button{
-padding:15px 25px;
-margin:5px;
-border:none;
-border-radius:5px;
-cursor:pointer;
-background:#ff5500;
-color:white;
+    padding:15px 25px;
+    margin:5px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    background:#ff5500;
+    color:white;
 }
 
 .preview{
-width:100%;
-max-width:400px;
-display:none;
-margin:20px auto;
-border-radius:8px;
+    width:100%;
+    max-width:400px;
+    display:none;
+    margin:20px auto;
+    border-radius:8px;
 }
 
 .output{
-background:#222;
-padding:20px;
-margin-top:20px;
-border-radius:8px;
-word-break:break-all;
+    background:#222;
+    padding:20px;
+    margin-top:20px;
+    border-radius:8px;
+    word-break:break-all;
 }
 
 textarea{
-width:100%;
-height:450px;
-margin-top:20px;
-background:#222;
-color:white;
-padding:15px;
+    width:100%;
+    height:450px;
+    margin-top:20px;
+    background:#222;
+    color:white;
+    padding:15px;
 }
+
 </style>
 </head>
 
@@ -74,31 +76,21 @@ padding:15px;
 <h2>DSP Records Smart Link Manager</h2>
 
 <input id="artist" placeholder="Artist Name">
-
 <input id="title" placeholder="Release Title">
-
 <input id="slug" placeholder="Release URL Slug (the-cylons-are-coming)">
-
 <input type="file" id="artwork" accept="image/*">
 
 <img id="preview" class="preview">
 
 <input id="beatport" placeholder="Beatport Link">
-
 <input id="traxsource" placeholder="Traxsource Link">
-
 <input id="juno" placeholder="Juno Download Link">
-
 <input id="apple" placeholder="Apple Music Link">
-
 <input id="amazon" placeholder="Amazon Music Link">
-
 <input id="soundcloud" placeholder="SoundCloud Link">
 
 <button onclick="generatePage()">Generate Release</button>
-
 <button onclick="copyCode()">Copy Code</button>
-
 <button onclick="downloadCode()">Download HTML</button>
 
 <div id="finalUrl" class="output">
@@ -113,24 +105,24 @@ let artworkData="";
 
 document.getElementById("artwork").addEventListener("change",function(e){
 
-const file=e.target.files[0];
+    const file=e.target.files[0];
 
-if(file){
+    if(file){
 
-const reader=new FileReader();
+        const reader=new FileReader();
 
-reader.onload=function(event){
+        reader.onload=function(event){
 
-artworkData=event.target.result;
+            artworkData=event.target.result;
 
-document.getElementById("preview").src=artworkData;
-document.getElementById("preview").style.display="block";
+            document.getElementById("preview").src=artworkData;
+            document.getElementById("preview").style.display="block";
 
-};
+        };
 
-reader.readAsDataURL(file);
+        reader.readAsDataURL(file);
 
-}
+    }
 
 });
 
@@ -151,100 +143,37 @@ document.getElementById("finalUrl").innerHTML =
 "https://dsprecords.ca/smartlinks/releases/" + slug + "/";
 
 let page = `<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>${title}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>${artist} - ${title}</title>
+
 <style>
 
 body{
-background:#111;
-color:white;
-font-family:Arial,sans-serif;
-text-align:center;
-padding:40px;
+    background:#111;
+    color:#fff;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    margin:0;
+    padding:30px 20px 60px;
+}
+
+.container{
+    max-width:450px;
+    margin:0 auto;
 }
 
 .logo{
-width:90%;
-max-width:500px;
-margin-bottom:20px;
+    width:140px;
+    height:auto;
+    display:block;
+    margin:0 auto 20px;
 }
 
 .cover{
-width:100%;
-max-width:400px;
-border-radius:8px;
-margin-bottom:25px;
-}
-
-.button{
-display:block;
-max-width:400px;
-margin:15px auto;
-padding:18px;
-border-radius:6px;
-font-weight:bold;
-text-decoration:none;
-color:white;
-}
-
-.beatport{background:#01FF95;color:black;}
-.traxsource{background:#1E88E5;}
-.juno{background:#7E57C2;}
-.apple{background:#FA243C;}
-.amazon{background:#00A8E1;}
-.soundcloud{background:#FF5500;}
-
-</style>
-</head>
-<body>
-
-<img src="../../assets/DSP-Smartlink-Logo.png" class="logo">
-
-<img src="${artworkData}" class="cover">
-
-<h1>${title}</h1>
-<h2>${artist}</h2>
-
-<a class="button beatport" href="${beatport}">BUY ON BEATPORT</a>
-<a class="button traxsource" href="${traxsource}">BUY ON TRAXSOURCE</a>
-<a class="button juno" href="${juno}">BUY ON JUNO DOWNLOAD</a>
-<a class="button apple" href="${apple}">BUY ON APPLE MUSIC</a>
-<a class="button amazon" href="${amazon}">BUY ON AMAZON MUSIC</a>
-<a class="button soundcloud" href="${soundcloud}">STREAM ON SOUNDCLOUD</a>
-
-</body>
-</html>`;
-
-document.getElementById("output").value = page;
-
-}
-
-function copyCode(){
-document.getElementById("output").select();
-navigator.clipboard.writeText(document.getElementById("output").value);
-}
-
-function downloadCode(){
-
-let slug=document.getElementById("slug").value;
-
-let blob=new Blob(
-[document.getElementById("output").value],
-{type:"text/html"}
-);
-
-let a=document.createElement("a");
-
-a.href=URL.createObjectURL(blob);
-
-a.download=slug + ".html";
-
-a.click();
-
-}
-
-</script>
-
-</body>
-</html>
+    width:100%;
+    max-width:450px;
+    border-radius
